@@ -18,42 +18,63 @@ export const Hero = () => {
         height={150}
         alt="dollar"
       />
-
-      <Image
-        className={styles.money2}
-        src={heroImages.money}
+      <ScrollImage
+        topProgression={[0, 0.5, 1]}
+        topDefinition={["30%", "-100%", "-100%"]}
+        leftProgression={[0, 0.5, 1]}
+        leftDefinition={["70%", "100%", "100%"]}
+        imageSource={heroImages.money}
         width={150}
         height={150}
         alt="dollar"
       />
-      <Image
-        className={styles.money3}
-        src={heroImages.money}
+      <ScrollImage
+        topProgression={[0, 0.5, 1]}
+        topDefinition={["65%", "100%", "100%"]}
+        leftProgression={[0, 0.5, 1]}
+        leftDefinition={["30%", "-100%", "-100%"]}
+        imageSource={heroImages.money}
         width={150}
         height={150}
         alt="dollar"
       />
-      <Image
-        className={styles.money4}
-        src={heroImages.money}
+      <ScrollImage
+        topProgression={[0, 0.5, 1]}
+        topDefinition={["70%", "100%", "100%"]}
+        leftProgression={[0, 0.5, 1]}
+        leftDefinition={["60%", "100%", "100%"]}
+        imageSource={heroImages.money}
         width={150}
         height={150}
         alt="dollar"
       />
-      <Image
-        className={styles.money5}
-        src={heroImages.money}
+      <ScrollImage
+        topProgression={[0, 0.5, 1]}
+        topDefinition={["25%", "-100%", "-100%"]}
+        leftProgression={[0, 0.5, 1]}
+        leftDefinition={["15%", "-100%", "-100%"]}
+        imageSource={heroImages.money}
         width={150}
         height={150}
         alt="dollar"
       />
-      <Image
+      <ScrollImage
+        topProgression={[0, 0.5, 1]}
+        topDefinition={["20%", "-100%", "-100%"]}
+        leftProgression={[0, 0.5, 1]}
+        leftDefinition={["50%", "100%", "100%"]}
+        imageSource={heroImages.money}
+        width={150}
+        height={150}
+        alt="dollar"
+      />
+      {/* <Image
         className={styles.money6}
         src={heroImages.money}
         width={150}
         height={150}
         alt="dollar"
-      />
+      /> */}
       <div className={styles.content}>
         <div className={styles.textContainer}>
           <h1>Drexel Financial Services</h1>
