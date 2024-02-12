@@ -1,5 +1,23 @@
-$primary: #64ff00;
+$lightShade: #f9f8f8;
+$lightAccent: #dca26c;
+$mainBrandColor: #050a30;
+$mainBrandColorRgba: rgba(147, 177, 193, 0.8);
+$darkAccent: #c7c7c7;
+$darkShade: #3b5875;
+$brandBlack: #191919;
+$success: #5ea25d;
+$warning: #db9225;
+$danger: #ff5733;
 
-:export {
-  primaryColor: $primary;
-}
+// breakpoints:
+$miniMobile: 150px;
+$smallMobile: 320px;
+$Mobile: 481px;
+$tablet: 769px;
+$smallDesktop: 1025px;
+$desktop: 1201px;
+$largeDesktop: 2200px;
+
+// :export {
+//   primaryColor: $primary;
+// }
