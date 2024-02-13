@@ -13,26 +13,78 @@ export const Hero = () => {
 
   const right = useTransform(
     scrollYProgress,
-    [0, 0.4, 1],
-    ["0%", "-15%", "-15%"]
+    [0, 0.4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [
+      "0%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+    ]
   );
 
   const bottom = useTransform(
     scrollYProgress,
-    [0, 0.4, 1],
-    ["0%", "-15%", "-15%"]
+    [0, 0.4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [
+      "0%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+      "-15%",
+    ]
   );
 
   const left = useTransform(
     scrollYProgress,
-    [0, 0.4, 1],
-    ["0%", "-15%", "-15%"]
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [
+      "0%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+    ]
   );
 
   const top = useTransform(
     scrollYProgress,
-    [0, 0.4, 1],
-    ["0%", "-15%", "-15%"]
+    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [
+      "0%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+      "-1500%",
+    ]
   );
 
   return (
@@ -40,65 +92,265 @@ export const Hero = () => {
       className={styles.container}
       style={{ position: "relative", opacity, top, left }}
     >
+      {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
-        topProgression={[0, 0.5, 1]}
-        topDefinition={["41%", "100%", "100%"]}
-        leftProgression={[0, 0.5, 1]}
-        leftDefinition={["4%", "-100%", "-100%"]}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "41%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+        ]}
+        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        leftDefinition={[
+          "4%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+        ]}
+        rightDefinition={null}
+        rightProgression={null}
         imageSource={heroImages.money}
         width={150}
         height={150}
         alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
       />
       <ScrollComponent
-        topProgression={[0, 0.5, 1]}
-        topDefinition={["30%", "-100%", "-100%"]}
-        leftProgression={[0, 0.5, 1]}
-        leftDefinition={["70%", "100%", "100%"]}
+        alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "65%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+        ]}
+        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        leftDefinition={[
+          "30%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+        ]}
+        rightDefinition={null}
+        rightProgression={null}
         imageSource={heroImages.money}
         width={150}
         height={150}
-        alt="dollar"
       />
       <ScrollComponent
-        topProgression={[0, 0.5, 1]}
-        topDefinition={["65%", "100%", "100%"]}
-        leftProgression={[0, 0.5, 1]}
-        leftDefinition={["30%", "-100%", "-100%"]}
+        alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "25%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+        ]}
+        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        leftDefinition={[
+          "15%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+        ]}
+        rightDefinition={null}
+        rightProgression={null}
         imageSource={heroImages.money}
         width={150}
         height={150}
+      />
+      {/* RIGHT SIDE MONEY SIGNS:  */}
+      <ScrollComponent
         alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "40%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+          "-250%",
+        ]}
+        rightProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        rightDefinition={[
+          "20%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+        ]}
+        leftDefinition={null}
+        leftProgression={null}
+        imageSource={heroImages.money}
+        width={150}
+        height={150}
       />
       <ScrollComponent
-        topProgression={[0, 0.5, 1]}
-        topDefinition={["70%", "100%", "100%"]}
-        leftProgression={[0, 0.5, 1]}
-        leftDefinition={["60%", "100%", "100%"]}
+        alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "70%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+        ]}
+        rightProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        rightDefinition={[
+          "20%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+        ]}
+        leftDefinition={null}
+        leftProgression={null}
         imageSource={heroImages.money}
         width={150}
         height={150}
-        alt="dollar"
       />
       <ScrollComponent
-        topProgression={[0, 0.5, 1]}
-        topDefinition={["25%", "-100%", "-100%"]}
-        leftProgression={[0, 0.5, 1]}
-        leftDefinition={["15%", "-100%", "-100%"]}
+        alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "20%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+        ]}
+        rightProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        rightDefinition={[
+          "30%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+          "-2000%",
+        ]}
+        leftDefinition={null}
+        leftProgression={null}
         imageSource={heroImages.money}
         width={150}
         height={150}
-        alt="dollar"
-      />
-      <ScrollComponent
-        topProgression={[0, 0.5, 1]}
-        topDefinition={["20%", "-100%", "-100%"]}
-        leftProgression={[0, 0.5, 1]}
-        leftDefinition={["50%", "100%", "100%"]}
-        imageSource={heroImages.money}
-        width={150}
-        height={150}
-        alt="dollar"
       />
       <div className={styles.content}>
         <motion.div

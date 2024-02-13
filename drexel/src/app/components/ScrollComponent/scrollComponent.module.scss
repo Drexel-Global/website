@@ -1,0 +1,13 @@
+.container {
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50dvh;
+    width: 50%;
+    padding: 0 4rem;
+    p {
+      text-align: justify;
+    }
+  }
+}

@@ -6,6 +6,11 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ["res.cloudinary.com" ]
+    // domains: ["res.cloudinary.com" ]
+    remotePatterns: [{
+      protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+    }]
   },
 }
