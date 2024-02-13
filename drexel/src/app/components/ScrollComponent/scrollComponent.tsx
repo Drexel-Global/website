@@ -7,13 +7,13 @@ type ScrollImageProps = {
   topDefinition: Array<string>;
   leftProgression: Array<number>;
   leftDefinition: Array<string>;
-  imageSource: string;
-  width: number;
-  height: number;
-  alt: string;
+  imageSource: string | null;
+  width: number | null;
+  height: number | null;
+  alt: string | null;
 };
 
-export const ScrollImage = ({
+export const ScrollComponent = ({
   topProgression,
   topDefinition,
   leftProgression,
@@ -36,7 +36,9 @@ export const ScrollImage = ({
         zIndex: "1",
       }}
     >
-      <Image src={imageSource} width={width} height={height} alt={alt} />
+      {imageSource && width && height && alt && (
+        <Image src={imageSource} width={width} height={height} alt={alt} />
+      )}
     </motion.div>
   );
 };
