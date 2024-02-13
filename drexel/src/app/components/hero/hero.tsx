@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./hero.module.scss";
 import { heroImages } from "@/app/assets/heroImages/heroImages";
 import { ScrollComponent } from "../ScrollComponent/scrollComponent";
@@ -8,6 +7,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
+  const routeToIndex = () => {
+    const element = document.getElementById("services");
+    if (element) {
+      const navbarHeight = 100;
+      const offset = element.offsetTop - navbarHeight;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+    }
+  };
 
   const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [1, 0, 0]);
 
@@ -364,9 +371,8 @@ export const Hero = () => {
         >
           <h1>Drexel Financial Services</h1>
           <p>"Some Tag Line Here"</p>
-          <Link href="/services">
-            <button>Our Services</button>
-          </Link>
+
+          <button onClick={() => routeToIndex()}>Our Services</button>
         </motion.div>
         <motion.div
           style={{

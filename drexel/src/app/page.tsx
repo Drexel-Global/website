@@ -10,6 +10,7 @@ import { heroImages } from "./assets/heroImages/heroImages";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
+
   return (
     <main className={styles.container}>
       <motion.div
