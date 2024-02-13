@@ -15,7 +15,7 @@ export default function Home() {
     <main className={styles.container}>
       <motion.div
         className={styles.progressBar}
-        style={{ scaleX: scrollYProgress }}
+        style={{ scaleX: scrollYProgress, zIndex: 101 }}
       />
       <Hero />
       <CaricatureAsideWrapper>

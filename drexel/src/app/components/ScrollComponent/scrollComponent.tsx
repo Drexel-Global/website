@@ -70,6 +70,8 @@ export const ScrollComponent = ({
             }
           : {
               height: "50dvh",
+              margin: "0 auto",
+              width: "70%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
+
   const routeToIndex = () => {
     const element = document.getElementById("services");
     if (element) {
@@ -15,8 +16,6 @@ export const Hero = () => {
       window.scrollTo({ top: offset, behavior: "smooth" });
     }
   };
-
-  const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [1, 0, 0]);
 
   const right = useTransform(
     scrollYProgress,
@@ -97,7 +96,7 @@ export const Hero = () => {
   return (
     <motion.div
       className={styles.container}
-      style={{ position: "relative", opacity, top, left }}
+      style={{ position: "relative", top, left }}
     >
       {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
@@ -366,7 +365,6 @@ export const Hero = () => {
             position: "relative",
             left,
             top,
-            opacity,
           }}
         >
           <h1>Drexel Financial Services</h1>
@@ -381,7 +379,6 @@ export const Hero = () => {
             bottom,
             width: "60rem",
             height: "60rem",
-            opacity,
             zIndex: "2",
           }}
         >
