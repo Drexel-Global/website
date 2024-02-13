@@ -21,7 +21,7 @@ export const CaricatureAside = () => {
         className={styles.header}
         style={{ opacity, position, top: "100px" }}
       >
-        Why You Should Work With Us?
+        Our Services
       </motion.h2>
     </div>
   );

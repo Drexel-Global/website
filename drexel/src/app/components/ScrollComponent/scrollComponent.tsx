@@ -25,8 +25,12 @@ export const ScrollComponent = ({
 }: ScrollImageProps) => {
   const { scrollYProgress } = useScroll();
 
+  // some images need to have left properties on wide screen it creates issues.
+  // add here with if conditions so properties can be null in type definition.
+
   const top = useTransform(scrollYProgress, topProgression, topDefinition);
   const left = useTransform(scrollYProgress, leftProgression, leftDefinition);
+
   return (
     <motion.div
       style={{

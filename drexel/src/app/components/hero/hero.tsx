@@ -112,8 +112,8 @@ export const Hero = () => {
         >
           <h1>Drexel Financial Services</h1>
           <p>"Some Tag Line Here"</p>
-          <Link href="/why-us">
-            <button>Why Drexel</button>
+          <Link href="/services">
+            <button>Our Services</button>
           </Link>
         </motion.div>
         <motion.div
@@ -121,9 +121,10 @@ export const Hero = () => {
             position: "relative",
             right,
             bottom,
-            width: "50%",
-            height: "50%",
+            width: "60rem",
+            height: "60rem",
             opacity,
+            zIndex: "2",
           }}
         >
           <Image
