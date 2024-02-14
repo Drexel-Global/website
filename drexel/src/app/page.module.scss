@@ -24,8 +24,20 @@
 
   .blogContainer {
     border: 2px solid red;
-    // height: 1500px;
-    // width: 70%;
-    // margin: 0 auto;
+    height: 1000px;
+    position: relative;
+    margin-bottom: -400px;
+    bottom: 400px;
+    z-index: 1;
+  }
+
+  .svg {
+    position: relative;
+    bottom: 25rem;
+  }
+
+  .path {
+    bottom: 100rem;
+    stroke-width: 0;
   }
 }

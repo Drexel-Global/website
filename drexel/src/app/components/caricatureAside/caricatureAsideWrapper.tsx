@@ -10,7 +10,11 @@ export const CaricatureAsideWrapper = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
-  const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.1, 0.7, 0.75],
+    [0, 1, 1, 0]
+  );
   const top = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
 
   return (
