@@ -11,7 +11,7 @@ export const CaricatureAsideWrapper = ({
   const { scrollYProgress } = useScroll();
 
   const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const top = useTransform(scrollYProgress, [0, 0.3], [300, 0]);
+  const top = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
 
   return (
     <div className={styles.container} id="services">
@@ -44,6 +44,12 @@ export const CaricatureAsideWrapper = ({
         </motion.a>
         <motion.a className={styles.navLink} onClick={() => routeToIndex("6")}>
           Service 6
+        </motion.a>
+        <motion.a
+          className={styles.navLink}
+          onClick={() => routeToIndex("investor")}
+        >
+          The Investor
         </motion.a>
       </motion.div>
       {children}

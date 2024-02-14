@@ -1,6 +1,17 @@
 @import "./styles/variables.module.scss";
 
 .container {
+  // .circle {
+  //   width: 1000px;
+  //   height: 1000px;
+  //   border-radius: 50%;
+  //   background-color: rgb(112, 112, 112); /* Background color */
+  //   position: absolute;
+  //   top: -10rem;
+  //   left: -30rem;
+  //   z-index: 98;
+  //   opacity: 0.5;
+  // }
   .progressBar {
     position: fixed;
     top: 0;
@@ -9,5 +20,12 @@
     height: 10px;
     background: $darkAccent;
     transform-origin: 0%;
+  }
+
+  .blogContainer {
+    border: 2px solid red;
+    // height: 1500px;
+    // width: 70%;
+    // margin: 0 auto;
   }
 }
