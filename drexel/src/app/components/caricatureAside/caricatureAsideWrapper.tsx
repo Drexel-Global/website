@@ -13,22 +13,12 @@ export const CaricatureAsideWrapper = ({
   const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
   const top = useTransform(scrollYProgress, [0, 0.3], [300, 0]);
 
-  // const routeToIndex = (id: string) => {
-  //   console.log("Ran: ", id);
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     const navbarHeight = 0;
-  //     const offset = element.offsetTop - navbarHeight;
-  //     window.scrollTo({ top: offset, behavior: "smooth" });
-  //   }
-  // };
-
   return (
     <div className={styles.container} id="services">
       <motion.h2
         className={styles.header}
         style={{
-          zIndex: 102,
+          zIndex: 10,
           top,
           opacity,
           paddingBottom: "1rem",

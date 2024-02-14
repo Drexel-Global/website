@@ -14,8 +14,15 @@
     align-items: center;
     width: 25%;
 
-    .logo {
-      @include hoverEffect(1);
+    .logoContainer {
+      position: absolute;
+      width: 15rem;
+      height: 15rem;
+      top: 1.5rem;
+      left: 5rem;
+      .logo {
+        @include hoverEffect(1);
+      }
     }
   }
   .linkSection {
