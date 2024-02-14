@@ -1,12 +1,20 @@
+"use client";
 import React from "react";
 import styles from "./nav.module.scss";
 import Link from "next/link";
+import { routeToIndex } from "@/app/utils/scrollTo";
 
 export const Nav = () => {
   return (
     <nav className={styles.container}>
       <div className={styles.logoSection}>
-        <h2>Logo Here</h2>
+        <h2
+          className={styles.logo}
+          id="logo"
+          onClick={() => routeToIndex("logo")}
+        >
+          Logo Here
+        </h2>
       </div>
       <div className={styles.linkSection}>
         <ul>

@@ -1,3 +1,5 @@
+@import "../../styles/mixins.module.scss";
+
 .container {
   position: fixed;
   display: flex;
@@ -11,6 +13,10 @@
     display: flex;
     align-items: center;
     width: 25%;
+
+    .logo {
+      @include hoverEffect(1);
+    }
   }
   .linkSection {
     display: flex;

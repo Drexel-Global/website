@@ -4,18 +4,10 @@ import styles from "./hero.module.scss";
 import { heroImages } from "@/app/assets/heroImages/heroImages";
 import { ScrollComponent } from "../ScrollComponent/scrollComponent";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { routeToIndex } from "@/app/utils/scrollTo";
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
-
-  const routeToIndex = () => {
-    const element = document.getElementById("services");
-    if (element) {
-      const navbarHeight = 100;
-      const offset = element.offsetTop - navbarHeight;
-      window.scrollTo({ top: offset, behavior: "smooth" });
-    }
-  };
 
   const right = useTransform(
     scrollYProgress,
@@ -100,6 +92,7 @@ export const Hero = () => {
     >
       {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
+        scrollId={null}
         position="absolute"
         text={null}
         flexDirection={null}
@@ -143,6 +136,7 @@ export const Hero = () => {
         translateLeftAmount={null}
       />
       <ScrollComponent
+        scrollId={null}
         alt="dollar"
         translateRightAmount={null}
         translateLeftAmount={null}
@@ -186,6 +180,7 @@ export const Hero = () => {
         height={150}
       />
       <ScrollComponent
+        scrollId={null}
         alt="dollar"
         translateRightAmount={null}
         translateLeftAmount={null}
@@ -230,6 +225,7 @@ export const Hero = () => {
       />
       {/* RIGHT SIDE MONEY SIGNS:  */}
       <ScrollComponent
+        scrollId={null}
         alt="dollar"
         translateRightAmount={null}
         translateLeftAmount={null}
@@ -273,6 +269,7 @@ export const Hero = () => {
         height={150}
       />
       <ScrollComponent
+        scrollId={null}
         alt="dollar"
         translateRightAmount={null}
         translateLeftAmount={null}
@@ -316,6 +313,7 @@ export const Hero = () => {
         height={150}
       />
       <ScrollComponent
+        scrollId={null}
         alt="dollar"
         translateRightAmount={null}
         translateLeftAmount={null}
@@ -370,7 +368,7 @@ export const Hero = () => {
           <h1>Drexel Financial Services</h1>
           <p>"Some Tag Line Here"</p>
 
-          <button onClick={() => routeToIndex()}>Our Services</button>
+          <button onClick={() => routeToIndex("services")}>Our Services</button>
         </motion.div>
         <motion.div
           style={{

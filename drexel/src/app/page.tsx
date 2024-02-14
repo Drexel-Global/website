@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import styles from "./page.module.scss";
 import { motion, useScroll } from "framer-motion";
 import { Hero } from "./components/hero/hero";
@@ -20,6 +19,7 @@ export default function Home() {
       <Hero />
       <CaricatureAsideWrapper>
         <ScrollComponent
+          scrollId="1"
           position={null}
           topProgression={null}
           topDefinition={null}
@@ -37,6 +37,7 @@ export default function Home() {
           text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
         />
         <ScrollComponent
+          scrollId="2"
           position={null}
           topProgression={null}
           topDefinition={null}
@@ -54,6 +55,7 @@ export default function Home() {
           text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
         />
         <ScrollComponent
+          scrollId="3"
           position={null}
           topProgression={null}
           topDefinition={null}
@@ -71,6 +73,7 @@ export default function Home() {
           text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
         />
         <ScrollComponent
+          scrollId="4"
           position={null}
           topProgression={null}
           topDefinition={null}
@@ -88,6 +91,7 @@ export default function Home() {
           text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
         />
         <ScrollComponent
+          scrollId="5"
           position={null}
           topProgression={null}
           topDefinition={null}
@@ -105,6 +109,7 @@ export default function Home() {
           text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
         />
         <ScrollComponent
+          scrollId="6"
           position={null}
           topProgression={null}
           topDefinition={null}

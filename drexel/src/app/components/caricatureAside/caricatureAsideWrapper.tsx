@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./caricatureAsideWrapper.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { routeToIndex } from "@/app/utils/scrollTo";
 
 export const CaricatureAsideWrapper = ({
   children,
@@ -9,30 +10,52 @@ export const CaricatureAsideWrapper = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
-  const position = useTransform(
-    scrollYProgress,
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [
-      "relative",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-      "sticky",
-    ]
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const top = useTransform(scrollYProgress, [0, 0.3], [300, 0]);
+
+  // const routeToIndex = (id: string) => {
+  //   console.log("Ran: ", id);
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     const navbarHeight = 0;
+  //     const offset = element.offsetTop - navbarHeight;
+  //     window.scrollTo({ top: offset, behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <div className={styles.container} id="services">
-      <motion.h2 className={styles.header} style={{ position, top: "100px" }}>
+      <motion.h2
+        className={styles.header}
+        style={{
+          zIndex: 102,
+          top,
+          opacity,
+          paddingBottom: "1rem",
+        }}
+      >
         Our Services
       </motion.h2>
+      <motion.div className={styles.pageNav} style={{ top, opacity }}>
+        <motion.a className={styles.navLink} onClick={() => routeToIndex("1")}>
+          Service 1
+        </motion.a>
+        <motion.a className={styles.navLink} onClick={() => routeToIndex("2")}>
+          Service 2
+        </motion.a>
+        <motion.a className={styles.navLink} onClick={() => routeToIndex("3")}>
+          Service 3
+        </motion.a>
+        <motion.a className={styles.navLink} onClick={() => routeToIndex("4")}>
+          Service 4
+        </motion.a>
+        <motion.a className={styles.navLink} onClick={() => routeToIndex("5")}>
+          Service 5
+        </motion.a>
+        <motion.a className={styles.navLink} onClick={() => routeToIndex("6")}>
+          Service 6
+        </motion.a>
+      </motion.div>
       {children}
     </div>
   );

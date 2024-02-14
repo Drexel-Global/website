@@ -19,6 +19,7 @@ type ScrollImageProps = {
   flexDirection: "row" | "row-reverse" | null;
   translateRightAmount: number | null;
   translateLeftAmount: number | null;
+  scrollId: string | null | undefined;
 };
 
 export const ScrollComponent = ({
@@ -37,6 +38,7 @@ export const ScrollComponent = ({
   flexDirection,
   translateLeftAmount,
   translateRightAmount,
+  scrollId,
 }: ScrollImageProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -80,6 +82,7 @@ export const ScrollComponent = ({
       }
     >
       <motion.div
+        id={scrollId ? scrollId : undefined}
         ref={text ? ref : null}
         className={text ? styles.section : ""}
         style={
