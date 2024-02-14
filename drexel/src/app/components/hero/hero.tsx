@@ -85,11 +85,14 @@ export const Hero = () => {
     ]
   );
 
+  const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+
   return (
     <motion.div
       className={styles.container}
-      style={{ position: "relative", top, left }}
+      style={{ position: "relative", top, left, opacity }}
     >
+      {/* IMAGE HERE... */}
       {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
         scrollId={null}
