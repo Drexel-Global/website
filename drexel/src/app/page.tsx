@@ -6,12 +6,14 @@ import { Hero } from "./components/hero/hero";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
 import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { heroImages } from "./assets/heroImages/heroImages";
+import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
 
   return (
     <main className={styles.container}>
+      {/* <div className={styles.circle} /> */}
       <motion.div
         className={styles.progressBar}
         style={{ scaleX: scrollYProgress, zIndex: 101 }}
@@ -127,6 +129,8 @@ export default function Home() {
           text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
         />
       </CaricatureAsideWrapper>
+      <AboutMeTeaser />
+      <div className={styles.blogContainer}></div>
     </main>
   );
 }
