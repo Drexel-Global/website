@@ -86,13 +86,29 @@ export const Hero = () => {
   );
 
   const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.1], [1, 4]);
 
   return (
     <motion.div
       className={styles.container}
       style={{ position: "relative", top, left, opacity }}
     >
-      {/* IMAGE HERE... */}
+      <motion.div
+        style={{
+          width: "100%",
+          height: "calc(100dvh - 70px)",
+          position: "absolute",
+          scale,
+          top: 0,
+        }}
+      >
+        <Image
+          className={styles.heroImg}
+          src="https://res.cloudinary.com/db09icibj/image/upload/v1707763881/drexel-finance-website/landing/b392sqnl2r715zmxvmh4.jpg"
+          alt="tall buildings in financial district"
+          fill={true}
+        />
+      </motion.div>
       {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
         scrollId={null}
