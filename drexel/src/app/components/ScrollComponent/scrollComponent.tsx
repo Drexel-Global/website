@@ -20,6 +20,7 @@ type ScrollImageProps = {
   translateRightAmount: number | null;
   translateLeftAmount: number | null;
   scrollId: string | null | undefined;
+  serviceName: string | null;
 };
 
 export const ScrollComponent = ({
@@ -39,6 +40,7 @@ export const ScrollComponent = ({
   translateLeftAmount,
   translateRightAmount,
   scrollId,
+  serviceName,
 }: ScrollImageProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -58,63 +60,74 @@ export const ScrollComponent = ({
     right = useTransform(scrollYProgress, rightProgression, rightDefinition);
 
   return (
-    <motion.div
-      className={styles.container}
-      ref={text ? ref : null}
-      style={
-        position === "absolute"
-          ? {
-              position,
-              top,
-              left,
-              right,
-              zIndex: "1",
-            }
-          : {
-              height: "50dvh",
-              margin: "0 auto",
-              width: "70%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: flexDirection || "row",
-            }
-      }
-    >
+    <div className={styles.container}>
       <motion.div
-        id={scrollId ? scrollId : undefined}
+        style={{
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
+        className={styles.headerContainer}
+      >
+        <h3>{serviceName}</h3>
+      </motion.div>
+
+      <motion.div
+        className={styles.content}
         ref={text ? ref : null}
-        className={text ? styles.section : ""}
         style={
-          text
+          position === "absolute"
             ? {
-                transform: isInView
-                  ? "none"
-                  : `translateX(${translateLeftAmount}px)`,
-                opacity: isInView ? 1 : 0,
-                transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                position,
+                top,
+                left,
+                right,
+                zIndex: "1",
               }
-            : {}
+            : {
+                height: "35dvh",
+                margin: "0 auto",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: flexDirection || "row",
+              }
         }
       >
-        {imageSource && width && height && alt && (
-          <Image src={imageSource} width={width} height={height} alt={alt} />
-        )}
-      </motion.div>
-      {text && (
         <motion.div
           className={text ? styles.section : ""}
-          style={{
-            transform: isInView
-              ? "none"
-              : `translateX(${translateRightAmount}px)`,
-            opacity: isInView ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) .5s",
-          }}
+          id={scrollId ? scrollId : undefined}
+          ref={text ? ref : null}
+          style={
+            text
+              ? {
+                  transform: isInView
+                    ? "none"
+                    : `translateX(${translateLeftAmount}px)`,
+                  opacity: isInView ? 1 : 0,
+                  transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+                }
+              : {}
+          }
         >
-          <p className={styles.text}>{text}</p>
+          {imageSource && width && height && alt && (
+            <Image src={imageSource} width={width} height={height} alt={alt} />
+          )}
         </motion.div>
-      )}
-    </motion.div>
+        {text && (
+          <motion.div
+            className={text ? styles.section : ""}
+            style={{
+              transform: isInView
+                ? "none"
+                : `translateX(${translateRightAmount}px)`,
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) .5s",
+            }}
+          >
+            <p className={styles.text}>{text}</p>
+          </motion.div>
+        )}
+      </motion.div>
+    </div>
   );
 };

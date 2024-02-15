@@ -111,6 +111,7 @@ export const Hero = () => {
       </motion.div>
       {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
+        serviceName={null}
         scrollId={null}
         position="absolute"
         text={null}
@@ -155,6 +156,7 @@ export const Hero = () => {
         translateLeftAmount={null}
       />
       <ScrollComponent
+        serviceName={null}
         scrollId={null}
         alt="dollar"
         translateRightAmount={null}
@@ -199,6 +201,7 @@ export const Hero = () => {
         height={150}
       />
       <ScrollComponent
+        serviceName={null}
         scrollId={null}
         alt="dollar"
         translateRightAmount={null}
@@ -244,6 +247,7 @@ export const Hero = () => {
       />
       {/* RIGHT SIDE MONEY SIGNS:  */}
       <ScrollComponent
+        serviceName={null}
         scrollId={null}
         alt="dollar"
         translateRightAmount={null}
@@ -288,6 +292,7 @@ export const Hero = () => {
         height={150}
       />
       <ScrollComponent
+        serviceName={null}
         scrollId={null}
         alt="dollar"
         translateRightAmount={null}
@@ -332,6 +337,7 @@ export const Hero = () => {
         height={150}
       />
       <ScrollComponent
+        serviceName={null}
         scrollId={null}
         alt="dollar"
         translateRightAmount={null}

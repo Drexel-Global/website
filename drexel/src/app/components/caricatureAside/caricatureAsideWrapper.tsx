@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./caricatureAsideWrapper.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
+import { services } from "@/app/data/services";
 
 export const CaricatureAsideWrapper = ({
   children,
@@ -15,7 +16,7 @@ export const CaricatureAsideWrapper = ({
     [0, 0.1, 0.75, 0.77],
     [0, 1, 1, 0]
   );
-  const top = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+  const top = useTransform(scrollYProgress, [0, 0.15], [300, 0]);
 
   return (
     <div className={styles.container} id="services">
@@ -31,25 +32,23 @@ export const CaricatureAsideWrapper = ({
         Our Services
       </motion.h2>
       <motion.div className={styles.pageNav} style={{ top, opacity }}>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("1")}>
-          Service 1
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("2")}>
-          Service 2
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("3")}>
-          Service 3
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("4")}>
-          Service 4
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("5")}>
-          Service 5
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("6")}>
-          Service 6
-        </motion.a>
+        {services.map((service) => {
+          return (
+            <motion.a
+              className={styles.navLink}
+              style={{ top, opacity }}
+              onClick={() =>
+                routeToIndex(
+                  typeof service.scrollId === "string" ? service.scrollId : ""
+                )
+              }
+            >
+              {service.serviceName}
+            </motion.a>
+          );
+        })}
         <motion.a
+          style={{ top, opacity }}
           className={styles.navLink}
           onClick={() => routeToIndex("investor")}
         >
