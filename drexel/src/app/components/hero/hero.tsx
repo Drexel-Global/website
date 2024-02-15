@@ -105,8 +105,8 @@ export const Hero = () => {
         <Image
           className={styles.heroImg}
           src="https://res.cloudinary.com/db09icibj/image/upload/v1707763881/drexel-finance-website/landing/b392sqnl2r715zmxvmh4.jpg"
-          alt="tall buildings in financial district"
           fill={true}
+          alt="tall buildings in financial district"
         />
       </motion.div>
       {/* LEFT SIDE MONEY SIGNS: */}

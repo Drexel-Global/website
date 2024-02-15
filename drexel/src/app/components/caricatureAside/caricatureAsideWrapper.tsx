@@ -4,18 +4,45 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
 import { services } from "@/app/data/services";
 
+const viewportHeight = typeof window !== "undefined" ? window.innerHeight : 0;
+
 export const CaricatureAsideWrapper = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
   const { scrollYProgress } = useScroll();
+  let startPoint = 0;
+  let endPoint = 0;
+
+  if (viewportHeight >= 2000) {
+    console.log(viewportHeight);
+    startPoint = 0.91;
+    endPoint = 0.94;
+  }
+
+  if (viewportHeight >= 1500 && viewportHeight <= 1999) {
+    console.log(viewportHeight);
+    startPoint = 0.85;
+    endPoint = 0.88;
+  }
+  if (viewportHeight >= 1000 && viewportHeight <= 1499) {
+    console.log(viewportHeight);
+    startPoint = 0.77;
+    endPoint = 0.8;
+  }
+  if (viewportHeight >= 500 && viewportHeight <= 999) {
+    console.log(viewportHeight);
+    startPoint = 0.6;
+    endPoint = 0.63;
+  }
 
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.75, 0.77],
+    [0, 0.1, startPoint, endPoint],
     [0, 1, 1, 0]
   );
+
   const top = useTransform(scrollYProgress, [0, 0.15], [300, 0]);
 
   return (
@@ -31,12 +58,16 @@ export const CaricatureAsideWrapper = ({
       >
         Our Services
       </motion.h2>
-      <motion.div className={styles.pageNav} style={{ top, opacity }}>
+      <motion.div
+        className={styles.pageNav}
+        style={{ top, opacity, borderRight: "1px solid white" }}
+      >
         {services.map((service) => {
           return (
-            <motion.a
+            <motion.p
+              key={service.scrollId && parseInt(service.scrollId)}
               className={styles.navLink}
-              style={{ top, opacity }}
+              style={{ top, opacity, textAlign: "center" }}
               onClick={() =>
                 routeToIndex(
                   typeof service.scrollId === "string" ? service.scrollId : ""
@@ -44,16 +75,16 @@ export const CaricatureAsideWrapper = ({
               }
             >
               {service.serviceName}
-            </motion.a>
+            </motion.p>
           );
         })}
-        <motion.a
+        <motion.p
           style={{ top, opacity }}
           className={styles.navLink}
           onClick={() => routeToIndex("investor")}
         >
           The Investor
-        </motion.a>
+        </motion.p>
       </motion.div>
       {children}
     </div>

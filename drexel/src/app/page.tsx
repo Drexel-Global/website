@@ -3,10 +3,13 @@ import React from "react";
 import styles from "./page.module.scss";
 import { motion, useScroll } from "framer-motion";
 import { Hero } from "./components/hero/hero";
-import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
-import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
 import { services } from "./data/services";
+
+// components:
+import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
+import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
+import { BlogCardList } from "./components/blogCard/blogCardList";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -23,6 +26,7 @@ export default function Home() {
         {services.map((service) => {
           return (
             <ScrollComponent
+              key={service.scrollId && parseInt(service.scrollId)}
               scrollId={service.scrollId}
               position={service.position}
               topProgression={service.topProgression}
@@ -58,7 +62,10 @@ export default function Home() {
           fill="#000000"
         />
       </svg>
-      <div className={styles.blogContainer}></div>
+      <div className={styles.blogContainer}>
+        <h2 className={styles.blogsHeader}>Insights</h2>
+        <BlogCardList />
+      </div>
     </main>
   );
 }

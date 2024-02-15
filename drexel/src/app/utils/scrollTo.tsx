@@ -1,6 +1,7 @@
 export const routeToIndex = (id: string) => {
   const element = document.getElementById(id);
   if (element) {
+    // Fix viewport and landscape issue with side nav
     let navbarHeight = 400;
     if (id === "services") navbarHeight = 200;
     if (id === "logo") navbarHeight = 50;

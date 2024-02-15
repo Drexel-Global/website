@@ -23,7 +23,8 @@
   .navLink {
     font-size: 1.6rem;
     transition: all 0.1s ease-in-out;
-    padding: 1rem;
+    // padding: 1rem;
+    line-height: 1;
 
     &:hover {
       cursor: pointer;
