@@ -6,7 +6,7 @@ import styles from "./aboutMeTeaser.module.scss";
 export const AboutMeTeaser = () => {
   return (
     <div className={styles.container} id="investor">
-      <div className={styles.circle} />
+      {/* <div className={styles.circle} /> */}
 
       <h2>The Investor</h2>
       <div className={styles.contentSection}>
