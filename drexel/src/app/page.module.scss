@@ -23,8 +23,8 @@
   }
 
   .blogContainer {
-    border: 2px solid red;
-    height: 1000px;
+    width: 70%;
+    margin: 0 auto;
     position: relative;
     margin-bottom: -400px;
     bottom: 400px;
@@ -39,5 +39,9 @@
   .path {
     bottom: 100rem;
     stroke-width: 0;
+  }
+
+  .blogsHeader {
+    text-align: center;
   }
 }

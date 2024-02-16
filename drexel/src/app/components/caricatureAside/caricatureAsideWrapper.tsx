@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./caricatureAsideWrapper.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
+import { services } from "@/app/data/services";
+
+const viewportHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
 export const CaricatureAsideWrapper = ({
   children,
@@ -9,13 +12,40 @@ export const CaricatureAsideWrapper = ({
   children: React.ReactNode;
 }) => {
   const { scrollYProgress } = useScroll();
+  let startPoint = 0;
+  let endPoint = 0;
+  const [currTab, setCurrTab] = useState("1");
+
+  const assignCurrentTab = (tabClicked: string) => {
+    setCurrTab(tabClicked);
+  };
+  console.log("AFTER SET OUTTER: ", currTab);
+
+  if (viewportHeight >= 2000) {
+    startPoint = 0.91;
+    endPoint = 0.94;
+  }
+
+  if (viewportHeight >= 1500 && viewportHeight <= 1999) {
+    startPoint = 0.85;
+    endPoint = 0.88;
+  }
+  if (viewportHeight >= 1000 && viewportHeight <= 1499) {
+    startPoint = 0.77;
+    endPoint = 0.8;
+  }
+  if (viewportHeight >= 500 && viewportHeight <= 999) {
+    startPoint = 0.6;
+    endPoint = 0.63;
+  }
 
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.75, 0.77],
+    [0, 0.1, startPoint, endPoint],
     [0, 1, 1, 0]
   );
-  const top = useTransform(scrollYProgress, [0, 0.2], [300, 0]);
+
+  const top = useTransform(scrollYProgress, [0, 0.15], [300, 0]);
 
   return (
     <div className={styles.container} id="services">
@@ -30,31 +60,38 @@ export const CaricatureAsideWrapper = ({
       >
         Our Services
       </motion.h2>
-      <motion.div className={styles.pageNav} style={{ top, opacity }}>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("1")}>
-          Service 1
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("2")}>
-          Service 2
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("3")}>
-          Service 3
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("4")}>
-          Service 4
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("5")}>
-          Service 5
-        </motion.a>
-        <motion.a className={styles.navLink} onClick={() => routeToIndex("6")}>
-          Service 6
-        </motion.a>
-        <motion.a
+      <motion.div
+        className={styles.pageNav}
+        style={{ top, opacity, borderRight: "1px solid white" }}
+      >
+        {services.map((service) => {
+          return (
+            <motion.p
+              key={service.scrollId && parseInt(service.scrollId)}
+              className={`${styles.navLink} ${
+                currTab === service.scrollId ? styles.active : ""
+              }`}
+              style={{ top, opacity, textAlign: "center" }}
+              onClick={() => {
+                routeToIndex(
+                  typeof service.scrollId === "string" ? service.scrollId : ""
+                );
+                assignCurrentTab(
+                  typeof service.scrollId === "string" ? service.scrollId : ""
+                );
+              }}
+            >
+              {service.serviceName}
+            </motion.p>
+          );
+        })}
+        <motion.p
+          style={{ top, opacity }}
           className={styles.navLink}
           onClick={() => routeToIndex("investor")}
         >
           The Investor
-        </motion.a>
+        </motion.p>
       </motion.div>
       {children}
     </div>

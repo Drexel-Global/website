@@ -3,10 +3,13 @@ import React from "react";
 import styles from "./page.module.scss";
 import { motion, useScroll } from "framer-motion";
 import { Hero } from "./components/hero/hero";
-import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
-import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
-import { heroImages } from "./assets/heroImages/heroImages";
 import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
+import { services } from "./data/services";
+
+// components:
+import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
+import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
+import { BlogCardList } from "./components/blogCard/blogCardList";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -20,114 +23,30 @@ export default function Home() {
       />
       <Hero />
       <CaricatureAsideWrapper>
-        <ScrollComponent
-          scrollId="1"
-          position={null}
-          topProgression={null}
-          topDefinition={null}
-          leftProgression={null}
-          leftDefinition={null}
-          rightDefinition={null}
-          rightProgression={null}
-          imageSource={heroImages.money}
-          width={150}
-          height={150}
-          alt="dollar"
-          flexDirection="row"
-          translateRightAmount={400}
-          translateLeftAmount={-400}
-          text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
-        />
-        <ScrollComponent
-          scrollId="2"
-          position={null}
-          topProgression={null}
-          topDefinition={null}
-          leftProgression={null}
-          leftDefinition={null}
-          rightDefinition={null}
-          rightProgression={null}
-          imageSource={heroImages.money}
-          width={150}
-          height={150}
-          alt="dollar"
-          flexDirection="row-reverse"
-          translateRightAmount={400}
-          translateLeftAmount={-400}
-          text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
-        />
-        <ScrollComponent
-          scrollId="3"
-          position={null}
-          topProgression={null}
-          topDefinition={null}
-          leftProgression={null}
-          leftDefinition={null}
-          rightDefinition={null}
-          rightProgression={null}
-          imageSource={heroImages.money}
-          width={150}
-          height={150}
-          alt="dollar"
-          flexDirection="row"
-          translateRightAmount={400}
-          translateLeftAmount={-400}
-          text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
-        />
-        <ScrollComponent
-          scrollId="4"
-          position={null}
-          topProgression={null}
-          topDefinition={null}
-          leftProgression={null}
-          leftDefinition={null}
-          rightDefinition={null}
-          rightProgression={null}
-          imageSource={heroImages.money}
-          width={150}
-          height={150}
-          alt="dollar"
-          flexDirection="row-reverse"
-          translateRightAmount={400}
-          translateLeftAmount={-400}
-          text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
-        />
-        <ScrollComponent
-          scrollId="5"
-          position={null}
-          topProgression={null}
-          topDefinition={null}
-          leftProgression={null}
-          leftDefinition={null}
-          rightDefinition={null}
-          rightProgression={null}
-          imageSource={heroImages.money}
-          width={150}
-          height={150}
-          alt="dollar"
-          flexDirection="row"
-          translateRightAmount={400}
-          translateLeftAmount={-400}
-          text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
-        />
-        <ScrollComponent
-          scrollId="6"
-          position={null}
-          topProgression={null}
-          topDefinition={null}
-          leftProgression={null}
-          leftDefinition={null}
-          rightDefinition={null}
-          rightProgression={null}
-          imageSource={heroImages.money}
-          width={150}
-          height={150}
-          alt="dollar"
-          flexDirection="row-reverse"
-          translateRightAmount={400}
-          translateLeftAmount={-400}
-          text="You can use flexbox to ensure that the footer is always at the bottom of the page. This is done by setting the giving the body element min-height: 100vh, display: flex and flex-direction: column. Then, give the footer element a margin-top: auto to make its margin fill the remaining space between it and its previous sibling. Note that this technique will not stretch the previous sibling, but rather push the footer to the bottom of the page."
-        />
+        {services.map((service) => {
+          return (
+            <ScrollComponent
+              key={service.scrollId && parseInt(service.scrollId)}
+              scrollId={service.scrollId}
+              position={service.position}
+              topProgression={service.topProgression}
+              topDefinition={service.topDefinition}
+              leftProgression={service.leftProgression}
+              leftDefinition={service.leftDefinition}
+              rightDefinition={service.rightDefinition}
+              rightProgression={service.rightProgression}
+              imageSource={service.imageSource}
+              width={service.width}
+              height={service.height}
+              alt={service.alt}
+              flexDirection={service.flexDirection}
+              translateRightAmount={service.translateRightAmount}
+              translateLeftAmount={service.translateLeftAmount}
+              text={service.text}
+              serviceName={service.serviceName}
+            />
+          );
+        })}
       </CaricatureAsideWrapper>
       <AboutMeTeaser />
       <svg
@@ -143,7 +62,10 @@ export default function Home() {
           fill="#000000"
         />
       </svg>
-      <div className={styles.blogContainer}></div>
+      <div className={styles.blogContainer}>
+        <h2 className={styles.blogsHeader}>Insights</h2>
+        <BlogCardList />
+      </div>
     </main>
   );
 }
