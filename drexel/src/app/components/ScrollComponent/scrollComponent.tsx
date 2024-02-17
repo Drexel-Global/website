@@ -16,7 +16,7 @@ type ScrollImageProps = {
   alt: string | null;
   text: string | null;
   position: "absolute" | "relative" | null;
-  flexDirection: "row" | "row-reverse" | null;
+  flexDirection: "row" | "row-reverse" | "column" | null;
   translateRightAmount: number | null;
   translateLeftAmount: number | null;
   scrollId: string | null | undefined;
@@ -59,6 +59,12 @@ export const ScrollComponent = ({
   if (rightDefinition && rightProgression)
     right = useTransform(scrollYProgress, rightProgression, rightDefinition);
 
+  const isMobile: boolean = window && window.innerWidth <= 1025;
+  const flDirection: "row" | "row-reverse" | "column" | null = isMobile
+    ? "column"
+    : flexDirection;
+  console.log("SURVEY SAYS: ", flDirection);
+
   return (
     <div className={styles.container}>
       <motion.div
@@ -74,6 +80,7 @@ export const ScrollComponent = ({
       <motion.div
         className={styles.content}
         ref={text ? ref : null}
+        // @ts-ignore
         style={
           position === "absolute"
             ? {
@@ -84,12 +91,8 @@ export const ScrollComponent = ({
                 zIndex: "1",
               }
             : {
-                height: "35dvh",
-                margin: "0 auto",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: flexDirection || "row",
+                // height: "35dvh",
+                flexDirection: flDirection,
               }
         }
       >
@@ -110,7 +113,13 @@ export const ScrollComponent = ({
           }
         >
           {imageSource && width && height && alt && (
-            <Image src={imageSource} width={width} height={height} alt={alt} />
+            <Image
+              className={text === null ? styles.moneyImg : styles.img}
+              src={imageSource}
+              width={width}
+              height={height}
+              alt={alt}
+            />
           )}
         </motion.div>
         {text && (

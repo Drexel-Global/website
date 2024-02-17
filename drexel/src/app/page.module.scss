@@ -33,7 +33,7 @@
 
   .svg {
     position: relative;
-    bottom: 25rem;
+    bottom: 20rem;
   }
 
   .path {
@@ -43,5 +43,45 @@
 
   .blogsHeader {
     text-align: center;
+  }
+}
+
+@media (max-width: $blogCardLimit) {
+  .container {
+    .blogContainer {
+      height: 1500px;
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: $blogCardLimit2) {
+  .container {
+    .blogContainer {
+      height: 1800px;
+    }
+  }
+}
+
+@media (max-width: $svgLimit1) {
+  .container {
+    .blogContainer {
+      bottom: 200px;
+      // margin-bottom: -200px;
+    }
+    .svg {
+      bottom: 10rem;
+    }
+  }
+}
+
+@media (max-width: $svgLimit2) {
+  .container {
+    .blogContainer {
+      bottom: 0px;
+    }
+    .svg {
+      bottom: 0.5rem;
+    }
   }
 }

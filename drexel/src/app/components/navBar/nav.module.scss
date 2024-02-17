@@ -1,4 +1,5 @@
 @import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
 
 .container {
   position: fixed;
@@ -16,9 +17,6 @@
 
     .logoContainer {
       position: absolute;
-      // width: 15rem;
-      // height: 15rem;
-      // top: 4rem;
       left: 5rem;
       .logo {
         @include hoverEffect(1);

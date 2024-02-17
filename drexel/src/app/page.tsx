@@ -62,6 +62,7 @@ export default function Home() {
           fill="#000000"
         />
       </svg>
+      {/* code here: fix blog container size on iphone 12 */}
       <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>
         <BlogCardList />

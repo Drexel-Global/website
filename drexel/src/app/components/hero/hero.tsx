@@ -87,7 +87,7 @@ export const Hero = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.1], [1, 4]);
-
+  console.log(window.innerWidth);
   return (
     <motion.div
       className={styles.container}
@@ -149,8 +149,8 @@ export const Hero = () => {
         rightDefinition={null}
         rightProgression={null}
         imageSource={heroImages.money}
-        width={150}
-        height={150}
+        width={window && window.innerWidth <= 1201 ? 75 : 150}
+        height={window && window.innerWidth <= 1201 ? 75 : 150}
         alt="dollar"
         translateRightAmount={null}
         translateLeftAmount={null}
@@ -197,8 +197,8 @@ export const Hero = () => {
         rightDefinition={null}
         rightProgression={null}
         imageSource={heroImages.money}
-        width={150}
-        height={150}
+        width={window && window.innerWidth <= 1201 ? 75 : 150}
+        height={window && window.innerWidth <= 1201 ? 75 : 150}
       />
       <ScrollComponent
         serviceName={null}
@@ -242,8 +242,8 @@ export const Hero = () => {
         rightDefinition={null}
         rightProgression={null}
         imageSource={heroImages.money}
-        width={150}
-        height={150}
+        width={window && window.innerWidth <= 1201 ? 75 : 150}
+        height={window && window.innerWidth <= 1201 ? 75 : 150}
       />
       {/* RIGHT SIDE MONEY SIGNS:  */}
       <ScrollComponent
@@ -288,8 +288,8 @@ export const Hero = () => {
         leftDefinition={null}
         leftProgression={null}
         imageSource={heroImages.money}
-        width={150}
-        height={150}
+        width={window && window.innerWidth <= 1201 ? 75 : 150}
+        height={window && window.innerWidth <= 1201 ? 75 : 150}
       />
       <ScrollComponent
         serviceName={null}
@@ -333,8 +333,8 @@ export const Hero = () => {
         leftDefinition={null}
         leftProgression={null}
         imageSource={heroImages.money}
-        width={150}
-        height={150}
+        width={window && window.innerWidth <= 1201 ? 75 : 150}
+        height={window && window.innerWidth <= 1201 ? 75 : 150}
       />
       <ScrollComponent
         serviceName={null}
@@ -378,39 +378,58 @@ export const Hero = () => {
         leftDefinition={null}
         leftProgression={null}
         imageSource={heroImages.money}
-        width={150}
-        height={150}
+        width={window && window.innerWidth <= 1201 ? 75 : 150}
+        height={window && window.innerWidth <= 1201 ? 75 : 150}
       />
       <div className={styles.content}>
         <motion.div
           className={styles.textContainer}
           style={{
-            position: "relative",
+            position:
+              window && window.innerWidth <= 1201 ? "absolute" : "relative",
             left,
             top,
+            width: window && window.innerWidth <= 1201 ? "100%" : "",
           }}
         >
           <h1>Drexel Financial Services</h1>
-          <p>"Some Tag Line Here"</p>
+          <p>
+            Unlocking your financial potential starts with partnering with
+            Drexel Financial Services. With our unwavering commitment to your
+            success, we offer more than just financial services – we offer a
+            pathway to your aspirations. Our team of seasoned experts provides
+            tailored solutions designed to maximize your wealth and secure your
+            financial future. At Drexel Financial Services, we prioritize
+            transparency, integrity, and trust, ensuring that every decision is
+            made with your best interests at heart. Experience the difference of
+            personalized attention and strategic guidance that sets us apart.
+            Trust in us to navigate the complexities of finance while you focus
+            on what truly matters – achieving your dreams.
+          </p>
 
           <button onClick={() => routeToIndex("services")}>Our Services</button>
         </motion.div>
-        <motion.div
-          style={{
-            position: "relative",
-            right,
-            bottom,
-            width: "60rem",
-            height: "60rem",
-            zIndex: "2",
-          }}
-        >
-          <Image
-            src={heroImages.bullish}
-            fill={true}
-            alt="bullish stock market animation"
-          />
-        </motion.div>
+        <div className={styles.heroImgContainer}>
+          <motion.div
+            style={{
+              position:
+                window && window.innerWidth <= 1201 ? "absolute" : "relative",
+              right,
+              bottom,
+              width: window && window.innerWidth <= 1201 ? "30rem" : "60rem",
+              height: window && window.innerWidth <= 1201 ? "30rem" : "60rem",
+              zIndex: "2",
+            }}
+            className={styles.imgWrapper}
+          >
+            <Image
+              className={styles.img}
+              src={heroImages.bullish}
+              fill={true}
+              alt="bullish stock market animation"
+            />
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );

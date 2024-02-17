@@ -9,9 +9,25 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export const Nav = () => {
   const { scrollYProgress } = useScroll();
 
-  const width = useTransform(scrollYProgress, [0, 0.1], ["5rem", "15rem"]);
-  const height = useTransform(scrollYProgress, [0, 0.1], ["5rem", "15rem"]);
-  const top = useTransform(scrollYProgress, [0, 0.1], ["1rem", "4rem"]);
+  // fix logo size on iPhone 12 code here
+  const responsiveSize: string =
+    window && window.innerWidth <= 1025 ? "8rem" : "15rem";
+
+  const responseLogoPosition: Array<string> =
+    window && window.innerWidth <= 600 ? ["1rem", "2rem"] : ["1rem", "4rem"];
+
+  const width = useTransform(
+    scrollYProgress,
+    [0, 0.1],
+    ["5rem", responsiveSize]
+  );
+  const height = useTransform(
+    scrollYProgress,
+    [0, 0.1],
+    ["5rem", responsiveSize]
+  );
+
+  const top = useTransform(scrollYProgress, [0, 0.1], responseLogoPosition);
 
   return (
     <nav className={styles.container}>

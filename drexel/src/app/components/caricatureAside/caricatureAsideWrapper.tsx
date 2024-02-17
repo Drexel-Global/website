@@ -44,7 +44,7 @@ export const CaricatureAsideWrapper = ({
     [0, 0.1, startPoint, endPoint],
     [0, 1, 1, 0]
   );
-
+  // code here for top mobile fix
   const top = useTransform(scrollYProgress, [0, 0.15], [300, 0]);
 
   return (

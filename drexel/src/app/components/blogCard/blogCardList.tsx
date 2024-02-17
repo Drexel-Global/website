@@ -108,7 +108,11 @@ export const BlogCardList = () => {
       }}
     >
       {blogs.map((blog) => {
-        if (blog.id <= 6) return <BlogCard key={blog.id} {...blog} />;
+        let blogAmount = 6;
+        if (window && window.innerWidth <= 1110) {
+          blogAmount = 4;
+        }
+        if (blog.id <= blogAmount) return <BlogCard key={blog.id} {...blog} />;
       })}
     </motion.div>
   );
