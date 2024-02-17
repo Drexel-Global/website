@@ -130,7 +130,7 @@ export const services: Array<{
     flexDirection: "row-reverse",
     translateRightAmount: 400,
     translateLeftAmount: -400,
-    text: " For clients with cross-border financial interests, we offer international trust accounts to help safeguard and manage assets across different jurisdictions. Our expertise in international laws and regulations ensures efficient and compliant management. ",
+    text: "For clients with cross-border financial interests, we offer international trust accounts to help safeguard and manage assets across different jurisdictions. Our expertise in international laws and regulations ensures efficient and compliant management. ",
     serviceName: "International Trust Accounts",
   },
   {
