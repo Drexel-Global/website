@@ -20,8 +20,8 @@ export const AboutMeTeaser = () => {
             clients make savvy investment decisions.
           </p>
           <div className={styles.btnContainer}>
-            <Link href="about-me">
-              <button className={styles.ctaBtn}>Read More</button>
+            <Link href="about-investor">
+              <button className={styles.ctaBtn}>About Izhar Shefer</button>
             </Link>
           </div>
         </div>
