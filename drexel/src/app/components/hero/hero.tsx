@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import styles from "./hero.module.scss";
 import { heroImages } from "@/app/assets/heroImages/heroImages";
 import { ScrollComponent } from "../ScrollComponent/scrollComponent";

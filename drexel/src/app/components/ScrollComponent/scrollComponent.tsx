@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import Image from "next/image";
 import { CldImage } from "next-cloudinary";
+
 import styles from "./scrollComponent.module.scss";
 
 type ScrollImageProps = {
