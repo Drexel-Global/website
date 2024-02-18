@@ -29,7 +29,7 @@ export const BlogCard = ({
         />
       </div>
       <div className={styles.content}>
-        <h4>{blogName}</h4>
+        <p className={styles.title}>{blogName}</p>
         <p>{description}</p>
       </div>
     </Link>
