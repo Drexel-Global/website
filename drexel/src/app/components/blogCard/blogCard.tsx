@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import styles from "./blogCard.module.scss";
+import { CldImage } from "next-cloudinary";
+import Link from "next/link";
+import styles from "./blogsCard.module.scss";
 
-type blogCardProps = {
+type blogsProps = {
   id: number;
   image: string;
   description: string;
@@ -16,16 +18,16 @@ export const BlogCard = ({
   description,
   blogName,
   alt,
-}: blogCardProps) => {
+}: blogsProps) => {
   return (
-    <div className={styles.container}>
+    <Link className={styles.container} href={`/blog/${id}`}>
       <div className={styles.imgContainer}>
-        <Image src={image} alt={alt} fill={true} />
+        <CldImage src={image} alt={alt} fill={true} />
       </div>
       <div className={styles.content}>
         <h4>{blogName}</h4>
         <p>{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };

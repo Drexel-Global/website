@@ -1,18 +1,32 @@
 "use client";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./page.module.scss";
-import { motion, useScroll } from "framer-motion";
+import Link from "next/link";
+import { motion, useScroll, useInView } from "framer-motion";
 import { Hero } from "./components/hero/hero";
 import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
 import { services } from "./data/services";
+import { blogs } from "@/app/data/blogs";
 
 // components:
 import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
-import { BlogCardList } from "./components/blogCard/blogCardList";
+import { BlogCard } from "./components/blogCard/blogCard";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const [blogAmount, setBlogAmount] = useState<number>(6);
+
+  useEffect(() => {
+    if (window && window.innerWidth > 769 && window.innerWidth <= 1201) {
+      setBlogAmount(4);
+    }
+    if (window && window.innerWidth <= 768) {
+      setBlogAmount(2);
+    }
+  }, []);
 
   return (
     <main className={styles.container}>
@@ -44,6 +58,7 @@ export default function Home() {
               translateLeftAmount={service.translateLeftAmount}
               text={service.text}
               serviceName={service.serviceName}
+              isHero={service.isHero}
             />
           );
         })}
@@ -65,7 +80,26 @@ export default function Home() {
       {/* code here: fix blog container size on iphone 12 */}
       <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>
-        <BlogCardList />
+        <motion.div
+          ref={ref}
+          className={styles.blogWrapperContainer}
+          style={{
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            opacity: isInView ? 1 : 0,
+            position: "relative",
+            top: isInView ? 0 : "-50px",
+          }}
+        >
+          {blogs.map((blog) => {
+            if (blog.id <= blogAmount)
+              return <BlogCard key={blog.id} {...blog} />;
+          })}
+        </motion.div>
+        <div className={styles.ctaContainer}>
+          <Link href="/blog">
+            <button className={styles.ctaBtn}>See More</button>
+          </Link>
+        </div>
       </div>
     </main>
   );

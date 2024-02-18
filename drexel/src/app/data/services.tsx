@@ -18,6 +18,7 @@ export const services: Array<{
   translateLeftAmount: number | null;
   scrollId: string | null | undefined;
   serviceName: string;
+  isHero: boolean;
 }> = [
   {
     scrollId: "1",
@@ -37,6 +38,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "Our team specializes in comprehensive wealth management services, providing personalized strategies to grow and preserve your wealth effectively. We work closely with our clients to create tailored investment plans that align with their financial goals and risk tolerance.",
     serviceName: "Money Wealth Management",
+    isHero: false,
   },
   {
     scrollId: "2",
@@ -56,6 +58,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "At our practice, we understand the importance of preserving and passing on your legacy to future generations. Our experienced professionals offer expert guidance in trust and estate planning, ensuring that your assets are managed and distributed according to your wishes.",
     serviceName: "Trust and Estate Planning",
+    isHero: false,
   },
   {
     scrollId: "3",
@@ -75,6 +78,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "We offer specialized trust accounts designed to protect and manage your assets for the benefit of designated beneficiaries. Our team ensures the proper administration of trusts, providing peace of mind and long-term financial security.",
     serviceName: "Trust Accounts",
+    isHero: false,
   },
   {
     scrollId: "4",
@@ -94,6 +98,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "For clients with international interests, we provide comprehensive international account services. Our expertise in navigating complex global financial landscapes enables us to optimize your financial resources while adhering to relevant regulations.",
     serviceName: " International Accounts",
+    isHero: false,
   },
   {
     scrollId: "5",
@@ -113,6 +118,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "Our practice offers offshore corporate accounts for clients seeking international business opportunities. These accounts are designed to facilitate global transactions and provide tax-efficient solutions for your corporate needs.",
     serviceName: "Offshore Corporate Accounts",
+    isHero: false,
   },
   {
     scrollId: "6",
@@ -132,6 +138,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "For clients with cross-border financial interests, we offer international trust accounts to help safeguard and manage assets across different jurisdictions. Our expertise in international laws and regulations ensures efficient and compliant management. ",
     serviceName: "International Trust Accounts",
+    isHero: false,
   },
   {
     scrollId: "7",
@@ -151,6 +158,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: " In addition to specialized services, we also offer regular accounts for clients looking for standard banking and financial solutions. Our team ensures these accounts are tailored to meet individual needs and objectives.",
     serviceName: "Regular Accounts",
+    isHero: false,
   },
   {
     scrollId: "8",
@@ -170,6 +178,7 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "Planning for retirement is essential, and our practice provides pension accounts that help you build a secure financial future. We assist in optimizing retirement contributions and investments to ensure a comfortable post-retirement life. ",
     serviceName: "Pension Accounts",
+    isHero: false,
   },
   {
     scrollId: "9",
@@ -189,5 +198,6 @@ export const services: Array<{
     translateLeftAmount: -400,
     text: "Our comprehensive financial planning services encompass all aspects of your financial life. We collaborate with you to create a holistic financial plan, addressing short-term needs and long-term goals, to achieve financial success and peace of mind. In summary, our practice offers a wide range of services, including money wealth management, trust and estate planning, various types of accounts to cater to different needs (trust, international, offshore corporate, regular, and pension accounts), and comprehensive financial planning solutions. We are committed to delivering personalized, professional, and reliable financial guidance to help you achieve your financial aspirations.",
     serviceName: "Financial Planning",
+    isHero: false,
   },
 ];

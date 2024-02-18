@@ -1,7 +1,7 @@
 @import "../../styles/variables.module.scss";
 
 .container {
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
 
   h3 {
@@ -29,6 +29,12 @@
 
   .text {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: $largeDesktop) {
+  .container {
+    width: 70%;
   }
 }
 
