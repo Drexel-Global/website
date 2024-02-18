@@ -96,7 +96,7 @@ export default function Home() {
           })}
         </motion.div>
         <div className={styles.ctaContainer}>
-          <Link href="/blog">
+          <Link href="/blogs">
             <button className={styles.ctaBtn}>See More</button>
           </Link>
         </div>

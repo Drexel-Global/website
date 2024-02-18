@@ -57,13 +57,13 @@ export const Nav = () => {
       <div className={styles.linkSection}>
         <ul>
           <li>
-            <Link href="about-me">About Me</Link>
+            <Link href="about-investor">About The Investor</Link>
           </li>
           <li>
-            <Link href="why-us">Why Us</Link>
+            <Link href="why-choose-us">Why Choose Us</Link>
           </li>
           <li>
-            <Link href="services">Services</Link>
+            <Link href="our-services">Our Services</Link>
           </li>
         </ul>
       </div>
