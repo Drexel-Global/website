@@ -57,7 +57,7 @@ export const Nav = () => {
       <div className={styles.linkSection}>
         <ul>
           <li>
-            <Link href="about-investor">About The Investor</Link>
+            <Link href="about-investor">About Izhar Shefer</Link>
           </li>
           <li>
             <Link href="why-choose-us">Why Choose Us</Link>
