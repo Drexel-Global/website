@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./nav.module.scss";
 import Link from "next/link";
-import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import { routeToIndex } from "@/app/utils/scrollTo";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -44,8 +44,8 @@ export const Nav = () => {
           className={styles.logoContainer}
           style={{ width, height, top }}
         >
-          <Image
-            src="https://res.cloudinary.com/db09icibj/image/upload/v1707929283/drexel-finance-website/landing/xijigz1oqppfnjbdumgo.png"
+          <CldImage
+            src="drexel-finance-website/landing/xijigz1oqppfnjbdumgo"
             fill={true}
             className={styles.logo}
             id="logo"

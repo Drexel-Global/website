@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 import React from "react";

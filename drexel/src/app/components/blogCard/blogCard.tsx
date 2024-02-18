@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 import styles from "./blogsCard.module.scss";
