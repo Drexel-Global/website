@@ -4,6 +4,10 @@
   margin-top: 7rem;
   height: calc(100dvh - 7rem);
 
+  .heroImg {
+    object-fit: cover;
+  }
+
   .content {
     display: flex;
     height: calc(100dvh - 7rem);
