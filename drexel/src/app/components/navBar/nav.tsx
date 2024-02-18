@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./nav.module.scss";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,13 +8,21 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Nav = () => {
   const { scrollYProgress } = useScroll();
+  const [responseLogoPosition, setResponseLogoPosition] = useState<
+    Array<string>
+  >(["1rem", "4rem"]);
+  const [responsiveSize, setResponsiveSize] = useState<string>("15rem");
 
-  // fix logo size on iPhone 12 code here
-  const responsiveSize: string =
-    window && window.innerWidth <= 1025 ? "8rem" : "15rem";
-
-  const responseLogoPosition: Array<string> =
-    window && window.innerWidth <= 600 ? ["1rem", "2rem"] : ["1rem", "4rem"];
+  useEffect(() => {
+    if (window && window.innerWidth > 481 && window.innerWidth <= 1025) {
+      setResponseLogoPosition(["1rem", "2rem"]);
+      setResponsiveSize("8rem");
+    }
+    if (window && window.innerWidth <= 481) {
+      setResponseLogoPosition(["1rem", "1rem"]);
+      setResponsiveSize("5rem");
+    }
+  }, []);
 
   const width = useTransform(
     scrollYProgress,

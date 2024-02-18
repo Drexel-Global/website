@@ -1,0 +1,22 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+@import "../styles/mixins.module.scss";
+
+.container {
+  width: 75%;
+  margin: auto;
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+  }
+
+  .contentContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

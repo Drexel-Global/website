@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import styles from "./scrollComponent.module.scss";
 
 type ScrollImageProps = {
@@ -21,6 +22,7 @@ type ScrollImageProps = {
   translateLeftAmount: number | null;
   scrollId: string | null | undefined;
   serviceName: string | null;
+  isHero: boolean;
 };
 
 export const ScrollComponent = ({
@@ -41,10 +43,22 @@ export const ScrollComponent = ({
   translateRightAmount,
   scrollId,
   serviceName,
+  isHero,
 }: ScrollImageProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const { scrollYProgress } = useScroll();
+  const [isMobile, setIsMobile] = useState<boolean>();
+
+  useEffect(() => {
+    if (window) {
+      setIsMobile(window && window.innerWidth <= 1025);
+    }
+  }, []);
+
+  const flDirection: "row" | "row-reverse" | "column" | null = isMobile
+    ? "column"
+    : flexDirection;
 
   let top;
   let left;
@@ -58,12 +72,6 @@ export const ScrollComponent = ({
 
   if (rightDefinition && rightProgression)
     right = useTransform(scrollYProgress, rightProgression, rightDefinition);
-
-  const isMobile: boolean = window && window.innerWidth <= 1025;
-  const flDirection: "row" | "row-reverse" | "column" | null = isMobile
-    ? "column"
-    : flexDirection;
-  console.log("SURVEY SAYS: ", flDirection);
 
   return (
     <div className={styles.container}>
@@ -113,12 +121,13 @@ export const ScrollComponent = ({
           }
         >
           {imageSource && width && height && alt && (
-            <Image
+            <CldImage
               className={text === null ? styles.moneyImg : styles.img}
               src={imageSource}
               width={width}
               height={height}
               alt={alt}
+              priority={isHero !== null && isHero}
             />
           )}
         </motion.div>

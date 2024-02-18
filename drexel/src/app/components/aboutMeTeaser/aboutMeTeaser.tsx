@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 import React from "react";
 import styles from "./aboutMeTeaser.module.scss";
@@ -25,9 +27,9 @@ export const AboutMeTeaser = () => {
           </div>
         </div>
         <div className={styles.imageContainer}>
-          <Image
+          <CldImage
             className={styles.investorImage}
-            src="https://res.cloudinary.com/db09icibj/image/upload/v1707935774/drexel-finance-website/landing/l8xmg7xrix94gd0fi62n.jpg"
+            src="drexel-finance-website/landing/l8xmg7xrix94gd0fi62n"
             width={300}
             height={300}
             alt="the investor"

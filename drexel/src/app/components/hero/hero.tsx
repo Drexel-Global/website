@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./hero.module.scss";
 import { heroImages } from "@/app/assets/heroImages/heroImages";
 import { ScrollComponent } from "../ScrollComponent/scrollComponent";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
+import { CldImage } from "next-cloudinary";
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
+  const [innerWidth, setInnerWidth] = useState<number>();
+
+  useEffect(() => {
+    if (window) {
+      setInnerWidth(window.innerWidth);
+    }
+  }, []);
 
   const right = useTransform(
     scrollYProgress,
@@ -87,7 +95,7 @@ export const Hero = () => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.1], [1, 4]);
-  console.log(window.innerWidth);
+
   return (
     <motion.div
       className={styles.container}
@@ -102,105 +110,18 @@ export const Hero = () => {
           top: 0,
         }}
       >
-        <Image
+        <CldImage
           className={styles.heroImg}
-          src="https://res.cloudinary.com/db09icibj/image/upload/v1707763881/drexel-finance-website/landing/b392sqnl2r715zmxvmh4.jpg"
+          src={heroImages.background}
           fill={true}
           alt="tall buildings in financial district"
+          priority={true}
+          sizes="(max-width: 1201px) 100vw"
         />
       </motion.div>
       {/* LEFT SIDE MONEY SIGNS: */}
       <ScrollComponent
-        serviceName={null}
-        scrollId={null}
-        position="absolute"
-        text={null}
-        flexDirection={null}
-        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
-        topDefinition={[
-          "41%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-          "1500%",
-        ]}
-        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
-        leftDefinition={[
-          "4%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-          "-2500%",
-        ]}
-        rightDefinition={null}
-        rightProgression={null}
-        imageSource={heroImages.money}
-        width={window && window.innerWidth <= 1201 ? 75 : 150}
-        height={window && window.innerWidth <= 1201 ? 75 : 150}
-        alt="dollar"
-        translateRightAmount={null}
-        translateLeftAmount={null}
-      />
-      <ScrollComponent
-        serviceName={null}
-        scrollId={null}
-        alt="dollar"
-        translateRightAmount={null}
-        translateLeftAmount={null}
-        position="absolute"
-        text={null}
-        flexDirection={null}
-        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
-        topDefinition={[
-          "65%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-          "1000%",
-        ]}
-        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
-        leftDefinition={[
-          "30%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-          "-1000%",
-        ]}
-        rightDefinition={null}
-        rightProgression={null}
-        imageSource={heroImages.money}
-        width={window && window.innerWidth <= 1201 ? 75 : 150}
-        height={window && window.innerWidth <= 1201 ? 75 : 150}
-      />
-      <ScrollComponent
+        isHero={true}
         serviceName={null}
         scrollId={null}
         alt="dollar"
@@ -242,11 +163,104 @@ export const Hero = () => {
         rightDefinition={null}
         rightProgression={null}
         imageSource={heroImages.money}
-        width={window && window.innerWidth <= 1201 ? 75 : 150}
-        height={window && window.innerWidth <= 1201 ? 75 : 150}
+        width={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        height={innerWidth && innerWidth <= 1201 ? 75 : 150}
+      />
+      <ScrollComponent
+        isHero={true}
+        serviceName={null}
+        scrollId={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "61%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+          "1500%",
+        ]}
+        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        leftDefinition={[
+          "4%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+          "-2500%",
+        ]}
+        rightDefinition={null}
+        rightProgression={null}
+        imageSource={heroImages.money}
+        width={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        height={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+      />
+      <ScrollComponent
+        isHero={true}
+        serviceName={null}
+        scrollId={null}
+        alt="dollar"
+        translateRightAmount={null}
+        translateLeftAmount={null}
+        position="absolute"
+        text={null}
+        flexDirection={null}
+        topProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        topDefinition={[
+          "75%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+          "1000%",
+        ]}
+        leftProgression={[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+        leftDefinition={[
+          "30%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+          "-1000%",
+        ]}
+        rightDefinition={null}
+        rightProgression={null}
+        imageSource={heroImages.money}
+        width={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
       {/* RIGHT SIDE MONEY SIGNS:  */}
       <ScrollComponent
+        isHero={true}
         serviceName={null}
         scrollId={null}
         alt="dollar"
@@ -288,10 +302,11 @@ export const Hero = () => {
         leftDefinition={null}
         leftProgression={null}
         imageSource={heroImages.money}
-        width={window && window.innerWidth <= 1201 ? 75 : 150}
-        height={window && window.innerWidth <= 1201 ? 75 : 150}
+        width={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
       <ScrollComponent
+        isHero={true}
         serviceName={null}
         scrollId={null}
         alt="dollar"
@@ -333,10 +348,11 @@ export const Hero = () => {
         leftDefinition={null}
         leftProgression={null}
         imageSource={heroImages.money}
-        width={window && window.innerWidth <= 1201 ? 75 : 150}
-        height={window && window.innerWidth <= 1201 ? 75 : 150}
+        width={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
       <ScrollComponent
+        isHero={true}
         serviceName={null}
         scrollId={null}
         alt="dollar"
@@ -378,18 +394,18 @@ export const Hero = () => {
         leftDefinition={null}
         leftProgression={null}
         imageSource={heroImages.money}
-        width={window && window.innerWidth <= 1201 ? 75 : 150}
-        height={window && window.innerWidth <= 1201 ? 75 : 150}
+        width={innerWidth && innerWidth <= 1201 ? 75 : 150}
+        height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
       <div className={styles.content}>
         <motion.div
           className={styles.textContainer}
           style={{
             position:
-              window && window.innerWidth <= 1201 ? "absolute" : "relative",
+              innerWidth && innerWidth <= 1201 ? "absolute" : "relative",
             left,
             top,
-            width: window && window.innerWidth <= 1201 ? "100%" : "",
+            width: innerWidth && innerWidth <= 1201 ? "100%" : "",
           }}
         >
           <h1>Drexel Financial Services</h1>
@@ -413,16 +429,16 @@ export const Hero = () => {
           <motion.div
             style={{
               position:
-                window && window.innerWidth <= 1201 ? "absolute" : "relative",
+                innerWidth && innerWidth <= 1201 ? "absolute" : "relative",
               right,
               bottom,
-              width: window && window.innerWidth <= 1201 ? "30rem" : "60rem",
-              height: window && window.innerWidth <= 1201 ? "30rem" : "60rem",
+              width: innerWidth && innerWidth <= 1201 ? "30rem" : "60rem",
+              height: innerWidth && innerWidth <= 1201 ? "30rem" : "60rem",
               zIndex: "2",
             }}
             className={styles.imgWrapper}
           >
-            <Image
+            <CldImage
               className={styles.img}
               src={heroImages.bullish}
               fill={true}
