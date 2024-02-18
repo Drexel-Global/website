@@ -22,7 +22,12 @@ export const BlogCard = ({
   return (
     <Link className={styles.container} href={`/blog/${id}`}>
       <div className={styles.imgContainer}>
-        <CldImage src={image} alt={alt} fill={true} />
+        <CldImage
+          className={styles.blogImg}
+          src={image}
+          alt={alt}
+          fill={true}
+        />
       </div>
       <div className={styles.content}>
         <h4>{blogName}</h4>
