@@ -17,6 +17,7 @@
 
     .textContainer {
       width: 50%;
+      // min-width: 100%;
       padding: 0rem 4rem;
       display: flex;
       flex-direction: column;
@@ -27,6 +28,8 @@
         z-index: 2;
       }
       p {
+        font-display: optional;
+        width: 100%;
         text-align: justify;
         z-index: 1;
         font-weight: bold;

@@ -6,12 +6,14 @@ import { motion, useScroll, useInView } from "framer-motion";
 import { Hero } from "./components/hero/hero";
 import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
 import { services } from "./data/services";
-import { blogs } from "@/app/data/blogs";
+import { CldImage } from "next-cloudinary";
 
 // components:
 import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
-import { BlogCard } from "./components/blogCard/blogCard";
+
+// import { BlogCard } from "./components/blogCard/blogCard";
+// import { blogs } from "@/app/data/blogs";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -78,7 +80,40 @@ export default function Home() {
         />
       </svg>
       {/* code here: fix blog container size on iphone 12 */}
-      <div className={styles.blogContainer}>
+      <div className={styles.whyUs}>
+        <h2>Why Choose Us?</h2>
+        <div className={styles.whyUsContent}>
+          <div className={styles.whyUsSection}>
+            <p>
+              Welcome to Drexel Global Consulting, your trusted partner for
+              comprehensive wealth management solutions. Led by Managing
+              Director Izhar Shefer, our team brings over 30 years of experience
+              in crafting personalized investment strategies tailored to your
+              goals and risk tolerance. With a keen understanding of
+              institutional money management practices, we offer competitive
+              pricing without compromising on quality. Whether you're seeking
+              expert guidance in wealth management, trust and estate planning,
+              international accounts, or retirement solutions, we are committed
+              to delivering professional and reliable financial services to help
+              you achieve your aspirations. Choose Drexel Global Consulting for
+              expertise, affordability, and peace of mind on your journey to
+              financial success.
+            </p>
+          </div>
+          <div className={styles.whyUsSection}>
+            <CldImage
+              className={styles.whyUsImage}
+              src="drexel-finance-website/landing/rw2k08gvwfybtx5xgzla"
+              // fill={true}
+              width={300}
+              height={300}
+              alt="the investor"
+            />
+          </div>
+        </div>
+        <button className={styles.ctaBusiness}>Let's Do Business</button>
+      </div>
+      {/* <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>
         <motion.div
           ref={ref}
@@ -100,7 +135,9 @@ export default function Home() {
             <button className={styles.ctaBtn}>See More Blogs</button>
           </Link>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
+
+// Photo by AlphaTradeZone: https://www.pexels.com/photo/fingers-on-ipad-with-graph-on-screen-5833772/

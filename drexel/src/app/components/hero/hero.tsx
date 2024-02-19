@@ -161,7 +161,7 @@ export const Hero = () => {
         ]}
         rightDefinition={null}
         rightProgression={null}
-        imageSource={heroImages.money}
+        imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
@@ -204,7 +204,7 @@ export const Hero = () => {
         ]}
         rightDefinition={null}
         rightProgression={null}
-        imageSource={heroImages.money}
+        imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
         alt="dollar"
@@ -253,7 +253,7 @@ export const Hero = () => {
         ]}
         rightDefinition={null}
         rightProgression={null}
-        imageSource={heroImages.money}
+        imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
@@ -300,7 +300,7 @@ export const Hero = () => {
         ]}
         leftDefinition={null}
         leftProgression={null}
-        imageSource={heroImages.money}
+        imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
@@ -346,7 +346,7 @@ export const Hero = () => {
         ]}
         leftDefinition={null}
         leftProgression={null}
-        imageSource={heroImages.money}
+        imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
@@ -392,7 +392,7 @@ export const Hero = () => {
         ]}
         leftDefinition={null}
         leftProgression={null}
-        imageSource={heroImages.money}
+        imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
       />
