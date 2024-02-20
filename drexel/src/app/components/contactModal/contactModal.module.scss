@@ -1,0 +1,131 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.container {
+  margin-top: 2rem;
+  position: fixed;
+  z-index: 101;
+
+  .formContainer {
+    padding: 2rem;
+    background-color: $darkAccent;
+    border-radius: 1rem;
+
+    label {
+      color: white;
+      margin: 1rem 0;
+    }
+
+    .closeBtn {
+      @include hoverEffect();
+    }
+
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .error {
+      font-size: 1.4rem;
+      color: $danger;
+    }
+
+    textarea {
+      width: 98%;
+      height: 30rem;
+      margin: 0 auto;
+      resize: none;
+      font-size: 1.8rem;
+    }
+
+    .textarea {
+      height: 30rem;
+      margin: 0 auto;
+      resize: none;
+      font-size: 1.8rem;
+    }
+
+    input {
+      font-size: 1.8rem;
+      height: 2.5rem;
+    }
+
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+
+      #submitBtn {
+        margin-top: 2rem;
+      }
+
+      .enabledBtn {
+        @include btnStyles($fontColor: white, $postOpacity: 1);
+        &:hover {
+          transform: translateY(-3px);
+        }
+      }
+
+      .disabledBtn {
+        opacity: 0.3;
+        &:hover {
+          cursor: default;
+          transform: translateY(0px);
+        }
+      }
+
+      button {
+        @include btnStyles($fontColor: white, $postOpacity: 0.3);
+      }
+    }
+  }
+}
+
+.errorContainer {
+  height: 543px;
+  background-color: $darkAccent;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 1rem;
+
+  #serverError {
+    font-size: 1.8rem;
+    width: 100%;
+    color: $danger;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #success {
+    font-size: 1.8rem;
+    width: 100%;
+    color: $success;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+
+    .reset {
+      @include btnStyles($boderColor: white, $fontColor: white);
+    }
+  }
+}
+
+@media (min-width: $smallDesktop) {
+  .container {
+    margin: 2rem auto;
+    width: 50%;
+  }
+  .errorContainer {
+    width: 50%;
+    margin: 2rem auto;
+  }
+}

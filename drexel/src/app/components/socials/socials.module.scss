@@ -1,0 +1,50 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.container {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  a {
+    text-decoration: none;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    @include hoverEffect(1);
+  }
+
+  .socialsContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: -1rem;
+    margin: auto;
+  }
+
+  .img {
+    @include hoverEffect(1);
+  }
+}
+
+@media (max-width: $desktop) {
+  .container {
+    width: 50%;
+    a {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-width: $Mobile) {
+  .container {
+    width: 100%;
+    transform: translate(-50%, -10%);
+  }
+}

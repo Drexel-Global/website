@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from "react";
 import styles from "./hero.module.scss";
-import { heroImages } from "@/app/assets/heroImages/heroImages";
+import {
+  heroImages,
+  // getImageUrlWithWidth,
+} from "@/app/assets/heroImages/heroImages";
 import { ScrollComponent } from "../ScrollComponent/scrollComponent";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
 import { CldImage } from "next-cloudinary";
 
+// components:
+import { Socials } from "../socials/socials";
+
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
   const [innerWidth, setInnerWidth] = useState<number>();
+  // const [desiredWidth, setDesiredWidth] = useState<number>(500);
+
+  // const desiredWidth = 500;
+  // const sanitizedUrl = getImageUrlWithWidth(heroImages.bullish, desiredWidth);
+  // console.log(sanitizedUrl);
 
   useEffect(() => {
     if (window) {
@@ -119,7 +130,7 @@ export const Hero = () => {
         />
       </motion.div>
       {/* LEFT SIDE MONEY SIGNS: */}
-      <ScrollComponent
+      {/* <ScrollComponent
         isHero={true}
         serviceName={null}
         scrollId={null}
@@ -256,9 +267,9 @@ export const Hero = () => {
         imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
-      />
+      /> */}
       {/* RIGHT SIDE MONEY SIGNS:  */}
-      <ScrollComponent
+      {/* <ScrollComponent
         isHero={true}
         serviceName={null}
         scrollId={null}
@@ -395,16 +406,13 @@ export const Hero = () => {
         imageSource={heroImages.money2}
         width={innerWidth && innerWidth <= 1201 ? 75 : 150}
         height={innerWidth && innerWidth <= 1201 ? 75 : 150}
-      />
+      /> */}
       <div className={styles.content}>
         <motion.div
           className={styles.textContainer}
           style={{
-            position:
-              innerWidth && innerWidth <= 1201 ? "absolute" : "relative",
             left,
             top,
-            width: innerWidth && innerWidth <= 1201 ? "100%" : "",
           }}
         >
           <h1>Drexel Financial Services</h1>
@@ -424,27 +432,29 @@ export const Hero = () => {
 
           <button onClick={() => routeToIndex("services")}>Our Services</button>
         </motion.div>
-        <div className={styles.heroImgContainer}>
-          <motion.div
-            style={{
-              position:
-                innerWidth && innerWidth <= 1201 ? "absolute" : "relative",
-              right,
-              bottom,
-              width: innerWidth && innerWidth <= 1201 ? "30rem" : "60rem",
-              height: innerWidth && innerWidth <= 1201 ? "30rem" : "60rem",
-              zIndex: "2",
-            }}
-            className={styles.imgWrapper}
-          >
-            <CldImage
-              className={styles.img}
-              src={heroImages.bullish}
-              fill={true}
-              alt="bullish stock market animation"
-            />
-          </motion.div>
-        </div>
+
+        <motion.div
+          className={styles.imgWrapper}
+          style={{
+            right,
+            bottom,
+            transform:
+              innerWidth && innerWidth <= 1201 ? "translateX(-50%)" : "none",
+            zIndex: "2",
+            objectFit: "cover",
+          }}
+        >
+          <CldImage
+            className={styles.img}
+            src={heroImages.bullish}
+            width={600}
+            height={600}
+            alt="bullish stock market animation"
+          />
+        </motion.div>
+      </div>
+      <div>
+        <Socials />
       </div>
     </motion.div>
   );
