@@ -17,7 +17,14 @@ export const AboutMeTeaser = () => {
             Izhar Shefer is the managing director of drexel global cosulting ,
             bringing with him 30 years of experience in wealth management. With
             a strong background in consulting, Izhar is dedicated to helping
-            clients make savvy investment decisions.
+            clients make savvy investment decisions. Our services include
+            managing portfolios tailored to clients' objectives and risk
+            tolerance. Izhar possesses expert knowledge in how institutions
+            manage their own money, and he is committed to bringing this
+            valuable insight to our clients. Trust us to provide comprehensive
+            wealth management solutions backed by years of experience and a deep
+            understanding of the industry." Please feel free to make any
+            adjustments or additions to the response as per your requirements
           </p>
           <div className={styles.btnContainer}>
             <Link href="about-investor">

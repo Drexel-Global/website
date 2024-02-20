@@ -17,7 +17,6 @@
 
     .textContainer {
       width: 50%;
-      // min-width: 100%;
       padding: 0rem 4rem;
       display: flex;
       flex-direction: column;
@@ -35,6 +34,7 @@
         font-weight: bold;
       }
       button {
+        z-index: 1;
         border: none;
         width: 15rem;
         height: 5rem;
@@ -57,16 +57,12 @@
       }
     }
 
-    .heroImgContainer {
+    .imgWrapper {
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 50%;
       width: 50%;
-    }
-
-    .bullishContainer {
-      img {
-        z-index: 2;
-      }
     }
   }
 }
@@ -83,18 +79,21 @@
   .container {
     .content {
       display: flex;
-      flex-direction: column-reverse;
-      width: 100%;
+      flex-direction: column;
+      min-width: 100%;
     }
     .textContainer {
-      width: 100%;
+      position: absolute;
+      min-width: 100%;
       padding: 0rem 1rem;
       height: 100%;
-      transform: translate(0%, 0%);
+      // transform: translate(0%, 0%);
     }
     .imgWrapper {
-      top: 10rem;
-      left: 10rem;
+      display: none;
+      .img {
+        display: none;
+      }
     }
   }
 }
@@ -103,9 +102,6 @@
   .container {
     h1 {
       font-size: 3.4rem;
-    }
-    .img {
-      display: none;
     }
   }
 }

@@ -56,14 +56,11 @@ export const Nav = () => {
       </div>
       <div className={styles.linkSection}>
         <ul>
-          <li>
-            <Link href="about-investor">About Izhar Shefer</Link>
-          </li>
+          {/* <li>
+            <Link href="blogs">Our Insights</Link>
+          </li> */}
           <li>
             <Link href="why-choose-us">Why Choose Us</Link>
-          </li>
-          <li>
-            <Link href="our-services">Our Services</Link>
           </li>
         </ul>
       </div>
