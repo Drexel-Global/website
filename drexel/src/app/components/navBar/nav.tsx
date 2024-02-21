@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./nav.module.scss";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
@@ -7,11 +8,13 @@ import { routeToIndex } from "@/app/utils/scrollTo";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Nav = () => {
+  const currPath = usePathname();
   const { scrollYProgress } = useScroll();
   const [responseLogoPosition, setResponseLogoPosition] = useState<
     Array<string>
   >(["1rem", "4rem"]);
   const [responsiveSize, setResponsiveSize] = useState<string>("15rem");
+  const [ctaElement, setCtaElement] = useState<HTMLElement>();
 
   useEffect(() => {
     if (window && window.innerWidth > 481 && window.innerWidth <= 1025) {
@@ -21,6 +24,11 @@ export const Nav = () => {
     if (window && window.innerWidth <= 481) {
       setResponseLogoPosition(["1rem", "1rem"]);
       setResponsiveSize("5rem");
+    }
+    if (document) {
+      const elements: HTMLElement | null =
+        document?.getElementById("ctaContactBtn");
+      if (elements) setCtaElement(elements);
     }
   }, []);
 
@@ -37,12 +45,20 @@ export const Nav = () => {
 
   const top = useTransform(scrollYProgress, [0, 0.1], responseLogoPosition);
 
+  const toggleModal = () => {
+    ctaElement?.click();
+  };
+
   return (
     <nav className={styles.container}>
       <div className={styles.logoSection}>
         <motion.div
           className={styles.logoContainer}
-          style={{ width, height, top }}
+          style={{
+            width: currPath === "/" ? width : "5rem",
+            height: currPath === "/" ? height : "5rem",
+            top: currPath === "/" ? top : "1rem",
+          }}
         >
           <CldImage
             src="drexel-finance-website/landing/xijigz1oqppfnjbdumgo"
@@ -56,14 +72,29 @@ export const Nav = () => {
       </div>
       <div className={styles.linkSection}>
         <ul>
-          {/* <li>
+          <li>
             <Link href="blogs">Our Insights</Link>
-          </li> */}
+          </li>
           <li>
             <Link href="why-choose-us">Why Choose Us</Link>
           </li>
+          <button
+            // onClick={() => setIsModalOpen(!isModalOpen)}
+            onClick={toggleModal}
+            className={styles.ctaBusiness}
+          >
+            Let's Do Business
+          </button>
         </ul>
       </div>
+      {/* {isModalOpen && (
+        <div className={styles.modal}>
+          <ContactModal
+            setIsModalOpen={setIsModalOpen}
+            isModalOpen={isModalOpen}
+          />
+        </div>
+      )} */}
     </nav>
   );
 };
