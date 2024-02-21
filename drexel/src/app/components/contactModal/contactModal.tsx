@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./contactModal.module.scss";
 import { useForm, Controller } from "react-hook-form";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import { CldImage } from "next-cloudinary";
+import { motion, useInView } from "framer-motion";
 
 // components:
 import BallSpinner from "../loaders/ballSpinner";
@@ -27,6 +28,8 @@ type modalProps = {
 };
 
 export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -117,7 +120,11 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
     errors?.success?.message === undefined
   ) {
     return (
-      <div className={styles.container}>
+      <motion.div
+        className={styles.container}
+        initial={{ opacity: 0, marginBottom: "20rem" }}
+        whileInView={{ opacity: 1, marginBottom: "0rem" }}
+      >
         <form
           className={styles.formContainer}
           onSubmit={handleSubmit(onSubmit)}
@@ -218,7 +225,7 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
             )}
           </div>
         </form>
-      </div>
+      </motion.div>
     );
   }
   if (
