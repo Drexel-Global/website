@@ -415,7 +415,7 @@ export const Hero = () => {
             top,
           }}
         >
-          <h1>Drexel Financial Services</h1>
+          <h1>Drexel Global Consulting Wealth Management</h1>
           <p>
             Unlocking your financial potential starts with partnering with
             Drexel Financial Services. With our unwavering commitment to your
