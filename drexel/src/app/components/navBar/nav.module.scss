@@ -10,10 +10,20 @@
   top: 0;
   background-color: #050a30;
   z-index: 100;
+
+  .modal {
+    position: fixed;
+    height: calc(100dvh - 7rem);
+    width: 100vw;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .logoSection {
     display: flex;
     align-items: center;
-    width: 25%;
+    width: 60%;
 
     .logoContainer {
       position: absolute;
@@ -26,11 +36,14 @@
   .linkSection {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    width: 75%;
+    justify-content: space-around;
+    width: 40%;
     ul {
       display: flex;
       list-style-type: none;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
     }
     li {
       margin-left: 1rem;
@@ -38,6 +51,20 @@
     }
     a {
       text-decoration: none;
+    }
+
+    .ctaBusiness {
+      @include hoverEffect(1);
+      border: none;
+      width: 15rem;
+      height: 5rem;
+      border-radius: 1.5rem;
+      background-color: $lightAccent;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: all 0.1s ease-in-out;
+      opacity: 1;
     }
   }
 }

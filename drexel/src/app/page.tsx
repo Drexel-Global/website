@@ -130,6 +130,7 @@ export default function Home() {
           <button
             onClick={() => setIsModalOpen(!isModalOpen)}
             className={styles.ctaBusiness}
+            id="ctaContactBtn"
           >
             Let's Do Business
           </button>

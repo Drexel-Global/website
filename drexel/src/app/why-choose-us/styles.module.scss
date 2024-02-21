@@ -1,0 +1,31 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+
+.container {
+  height: calc(100dvh - 7rem);
+  margin-top: 7rem;
+  .headerImgContainer {
+    position: relative;
+    aspect-ratio: 4000 / 1200;
+    max-height: 40%;
+    width: 100%;
+    .headerImg {
+      object-fit: contain;
+      object-position: top;
+    }
+  }
+  .section {
+    border: 2px solid red;
+    width: 148rem;
+    margin: auto;
+  }
+}
+
+@media (max-width: 1600px) {
+  .container {
+    .section {
+      border: 2px solid blue;
+      width: 96.5%;
+    }
+  }
+}
