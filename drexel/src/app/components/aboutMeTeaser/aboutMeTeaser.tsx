@@ -1,6 +1,5 @@
 "use client";
 import { CldImage } from "next-cloudinary";
-import Link from "next/link";
 import React from "react";
 import styles from "./aboutMeTeaser.module.scss";
 
@@ -26,11 +25,6 @@ export const AboutMeTeaser = () => {
             understanding of the industry." Please feel free to make any
             adjustments or additions to the response as per your requirements
           </p>
-          <div className={styles.btnContainer}>
-            <Link href="about-investor">
-              <button className={styles.ctaBtn}>About Izhar Shefer</button>
-            </Link>
-          </div>
         </div>
         <div className={styles.imageContainer}>
           <CldImage
