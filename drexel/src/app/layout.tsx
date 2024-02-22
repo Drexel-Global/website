@@ -12,7 +12,11 @@ export const metadata = {
     "A company offering Money Wealth Management, Trust and Estate Planning, Trust Accounts, International Accounts, Offshore Corporate Accounts, International Trust Accounts, Regular Accounts, Pension Accounts, & Financial Planning.",
 };
 
-export const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -22,6 +26,4 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}
