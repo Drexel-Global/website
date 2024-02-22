@@ -25,11 +25,6 @@ export const Nav = () => {
       setResponseLogoPosition(["1rem", "1rem"]);
       setResponsiveSize("5rem");
     }
-    if (document) {
-      const elements: HTMLElement | null =
-        document?.getElementById("ctaContactBtn");
-      if (elements) setCtaElement(elements);
-    }
   }, []);
 
   const width = useTransform(
@@ -73,28 +68,16 @@ export const Nav = () => {
       <div className={styles.linkSection}>
         <ul>
           <li>
-            <Link href="blogs">Our Insights</Link>
+            <Link href="/">Home</Link>
           </li>
+          {/* <li>
+            <Link href="blogs">Our Insights</Link>
+          </li> */}
           <li>
             <Link href="why-choose-us">Why Choose Us</Link>
           </li>
-          <button
-            // onClick={() => setIsModalOpen(!isModalOpen)}
-            onClick={toggleModal}
-            className={styles.ctaBusiness}
-          >
-            Let's Do Business
-          </button>
         </ul>
       </div>
-      {/* {isModalOpen && (
-        <div className={styles.modal}>
-          <ContactModal
-            setIsModalOpen={setIsModalOpen}
-            isModalOpen={isModalOpen}
-          />
-        </div>
-      )} */}
     </nav>
   );
 };

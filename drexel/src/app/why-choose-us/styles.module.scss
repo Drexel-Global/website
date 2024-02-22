@@ -2,8 +2,17 @@
 @import "../styles/variables.module.scss";
 
 .container {
-  height: calc(100dvh - 7rem);
   margin-top: 7rem;
+
+  .backToHomeContainer {
+    top: 2rem;
+    left: 2rem;
+    z-index: 101;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid red;
+  }
   .headerImgContainer {
     position: relative;
     aspect-ratio: 4000 / 1200;
@@ -15,17 +24,83 @@
     }
   }
   .section {
-    border: 2px solid red;
     width: 148rem;
     margin: auto;
+    h1,
+    h2 {
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    p {
+      font-size: 2.8rem;
+      text-align: justify;
+      margin-top: 5rem;
+    }
+
+    p:last-child {
+      margin-bottom: 5rem;
+    }
+
+    .values {
+      font-weight: bold;
+    }
+
+    .value {
+      margin: auto;
+      width: 50%;
+    }
+  }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    .ctaBusiness {
+      @include hoverEffect(1);
+      border: none;
+      width: 15rem;
+      height: 5rem;
+      border-radius: 1.5rem;
+      background-color: $lightAccent;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: all 0.1s ease-in-out;
+      opacity: 1;
+      margin-bottom: 5rem;
+    }
   }
 }
 
 @media (max-width: 1600px) {
   .container {
     .section {
-      border: 2px solid blue;
+      // border: 2px solid blue;
       width: 96.5%;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .container {
+    .section {
+      .headerImgContainer {
+        max-height: 80%;
+        width: 100%;
+      }
+      .headerImg {
+        object-fit: contain;
+        object-position: top;
+      }
+      .paraOne {
+        width: 80%;
+        margin: auto;
+      }
+      p {
+        font-size: large;
+      }
+      .value {
+        width: 80%;
+      }
     }
   }
 }

@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from "./contactModal.module.scss";
 import { useForm, Controller } from "react-hook-form";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import { CldImage } from "next-cloudinary";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 // components:
 import BallSpinner from "../loaders/ballSpinner";
@@ -28,8 +28,6 @@ type modalProps = {
 };
 
 export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -56,7 +54,13 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
     const payload = {
       ...data,
     };
-
+    console.log("PAYLOAD: ", payload);
+    console.log(
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
+      payload,
+      process.env.NEXT_PUBLIC_PUBLIC_KEY
+    );
     if (
       process.env.NEXT_PUBLIC_SERVICE_ID &&
       process.env.NEXT_PUBLIC_TEMPLATE_ID &&
@@ -71,24 +75,28 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then((res) => {
+          console.log("RES .THEN: ", res);
           setError("success", {
             type: "manual",
             message:
-              "😊 Your message was sent successfully! Please, allow me a few days to respond! I am looking forward to chatting!",
+              "Your email was recieved! Please, give us a few business days and a member of the team will respond back to you. Thank you.",
           });
         })
         .catch((err) => {
+          console.log("CATCH: ", err);
           setError("serverError", {
             type: "manual",
             message: err?.response?.data.error
-              ? `😟😩 ${err?.response?.data.error}`
-              : "😟😩 An error occurred on the server. Please try again later.",
+              ? `${err?.response?.data.error}`
+              : "An issue occurred. Please try again later or contact us at izharshefer@gmail.com.",
           });
         });
     }
   };
 
   const onReCAPTCHAChange = (captchaCode: string | null) => {
+    console.log("CODE: ", captchaCode);
+
     if (!captchaCode) {
       return;
     }
@@ -99,6 +107,7 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
           captcha: captchaCode,
         })
         .then((res) => {
+          console.log("CAPTCHA RES: ", res);
           setValue("isCaptchaSolved", true);
         })
         .catch((err) => {
@@ -122,8 +131,8 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
     return (
       <motion.div
         className={styles.container}
-        initial={{ opacity: 0, marginBottom: "20rem" }}
-        whileInView={{ opacity: 1, marginBottom: "0rem" }}
+        initial={{ opacity: 0, top: "40%" }}
+        whileInView={{ opacity: 1, top: "50%" }}
       >
         <form
           className={styles.formContainer}

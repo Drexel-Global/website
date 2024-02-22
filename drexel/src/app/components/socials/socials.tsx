@@ -3,9 +3,25 @@ import styles from "./socials.module.scss";
 import { socials } from "@/app/data/socials";
 import { CldImage } from "next-cloudinary";
 
-export const Socials = () => {
+type socialsProps = {
+  position: "static" | "relative" | "absolute" | "sticky" | "fixed";
+  translateVal1: string;
+  translateVal2: string;
+};
+
+export const Socials = ({
+  position,
+  translateVal1,
+  translateVal2,
+}: socialsProps) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        position: position,
+        transform: `translate(${translateVal1}%, ${translateVal2}%)`,
+      }}
+    >
       <a href="tel:13055271186">+1-(305)-527-1186</a>
       <div className={styles.socialsContainer}>
         {socials.map((platform) => {

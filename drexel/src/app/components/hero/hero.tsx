@@ -4,13 +4,14 @@ import {
   heroImages,
   // getImageUrlWithWidth,
 } from "@/app/assets/heroImages/heroImages";
-import { ScrollComponent } from "../ScrollComponent/scrollComponent";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
 import { CldImage } from "next-cloudinary";
 
 // components:
 import { Socials } from "../socials/socials";
+import { ScrollComponent } from "../ScrollComponent/scrollComponent";
+import { CtaButton } from "../ctaButton/ctaButton";
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
@@ -416,21 +417,28 @@ export const Hero = () => {
           }}
         >
           <h1>Drexel Global Consulting Wealth Management</h1>
-          <p>
-            Unlocking your financial potential starts with partnering with
-            Drexel Financial Services. With our unwavering commitment to your
-            success, we offer more than just financial services – we offer a
-            pathway to your aspirations. Our team of seasoned experts provides
-            tailored solutions designed to maximize your wealth and secure your
-            financial future. At Drexel Financial Services, we prioritize
-            transparency, integrity, and trust, ensuring that every decision is
-            made with your best interests at heart. Experience the difference of
-            personalized attention and strategic guidance that sets us apart.
-            Trust in us to navigate the complexities of finance while you focus
-            on what truly matters – achieving your dreams.
+
+          <h3 className={styles.headlineMobile}>
+            Unlocking your financial potential starts by partnering with
+          </h3>
+          <h3 className={styles.drexel}>Drexel!</h3>
+
+          <p className={styles.headlineTabAndUp}>
+            Unlocking your financial potential starts by partnering with Drexel
+            Financial Services. With our unwavering commitment to your success,
+            we offer more than just financial services – we offer a pathway to
+            your aspirations. Our team of seasoned experts provides tailored
+            solutions designed to maximize your wealth and secure your financial
+            future. At Drexel Financial Services, we prioritize transparency,
+            integrity, and trust, ensuring that every decision is made with your
+            best interests at heart. Experience the difference of personalized
+            attention and strategic guidance that sets us apart. Trust in us to
+            navigate the complexities of finance while you focus on what truly
+            matters – achieving your dreams.
           </p>
 
           <button onClick={() => routeToIndex("services")}>Our Services</button>
+          <CtaButton />
         </motion.div>
 
         <motion.div
@@ -454,7 +462,7 @@ export const Hero = () => {
         </motion.div>
       </div>
       <div>
-        <Socials />
+        <Socials position="absolute" translateVal2="-50" translateVal1="-50" />
       </div>
     </motion.div>
   );
