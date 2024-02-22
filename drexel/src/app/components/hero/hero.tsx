@@ -7,20 +7,26 @@ import {
 import { motion, useScroll, useTransform } from "framer-motion";
 import { routeToIndex } from "@/app/utils/scrollTo";
 import { CldImage } from "next-cloudinary";
+import dynamic from "next/dynamic";
+import BallSpinner from "../loaders/ballSpinner";
 
 // components:
 import { Socials } from "../socials/socials";
 import { ScrollComponent } from "../ScrollComponent/scrollComponent";
-import { CtaButton } from "../ctaButton/ctaButton";
+
+// import { CtaButton } from "../ctaButton/ctaButton";
+const HeavyCtaButton = dynamic(() => import("../ctaButton/ctaButton"), {
+  ssr: false,
+  loading: () => (
+    <div>
+      <BallSpinner />
+    </div>
+  ),
+});
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
   const [innerWidth, setInnerWidth] = useState<number>();
-  // const [desiredWidth, setDesiredWidth] = useState<number>(500);
-
-  // const desiredWidth = 500;
-  // const sanitizedUrl = getImageUrlWithWidth(heroImages.bullish, desiredWidth);
-  // console.log(sanitizedUrl);
 
   useEffect(() => {
     if (window) {
@@ -438,7 +444,7 @@ export const Hero = () => {
           </p>
 
           <button onClick={() => routeToIndex("services")}>Our Services</button>
-          <CtaButton />
+          <HeavyCtaButton />
         </motion.div>
 
         <motion.div

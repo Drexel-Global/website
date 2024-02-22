@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 // components:
 import { ContactModal } from "../contactModal/contactModal";
 
-export const CtaButton = () => {
+function CtaButton() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   console.log(isModalOpen);
 
@@ -35,4 +35,6 @@ export const CtaButton = () => {
       </div>
     </div>
   );
-};
+}
+
+export default CtaButton;

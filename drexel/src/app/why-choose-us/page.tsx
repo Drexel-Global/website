@@ -2,9 +2,22 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { CldImage } from "next-cloudinary";
+import dynamic from "next/dynamic";
+import BallSpinner from "../components/loaders/ballSpinner";
 
-import { CtaButton } from "../components/ctaButton/ctaButton";
 import { Socials } from "../components/socials/socials";
+
+const HeavyCtaButton = dynamic(
+  () => import("../components/ctaButton/ctaButton"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className={styles.spinnerContainer}>
+        <BallSpinner />
+      </div>
+    ),
+  }
+);
 
 const WhyUsPage = () => {
   return (
@@ -34,7 +47,7 @@ const WhyUsPage = () => {
           Global Consulting for expertise, affordability, and peace of mind on
           your journey to financial success.
         </p>
-        <CtaButton />
+        <HeavyCtaButton />
         <h2 className={styles.values}>Our Values</h2>
         <h2>Expertise</h2>
         <p className={styles.value}>
@@ -78,7 +91,7 @@ const WhyUsPage = () => {
           complexities of the financial landscape and focus on what matters most
           to you.
         </p>
-        <CtaButton />
+        <HeavyCtaButton />
       </div>
     </div>
   );

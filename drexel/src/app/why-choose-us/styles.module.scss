@@ -41,6 +41,10 @@
     p:last-child {
       margin-bottom: 5rem;
     }
+    .spinnerContainer {
+      display: flex;
+      justify-content: center;
+    }
 
     .values {
       font-weight: bold;
