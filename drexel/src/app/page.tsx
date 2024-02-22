@@ -11,43 +11,33 @@ import { CldImage } from "next-cloudinary";
 // components:
 import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
-import { ContactModal } from "./components/contactModal/contactModal";
+import { CtaButton } from "./components/ctaButton/ctaButton";
 
 // import { BlogCard } from "./components/blogCard/blogCard";
 // import { blogs } from "@/app/data/blogs";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-  const [blogAmount, setBlogAmount] = useState<number>(6);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (window && window.innerWidth > 769 && window.innerWidth <= 1201) {
-      setBlogAmount(4);
-    }
-    if (window && window.innerWidth <= 768) {
-      setBlogAmount(2);
-    }
-  }, []);
+  // FOR BLOGS:
+
+  // const ref = useRef(null);
+  // const isInView = useInView(ref);
+  // const [blogAmount, setBlogAmount] = useState<number>(6);
+
+  // useEffect(() => {
+  //   if (window && window.innerWidth > 769 && window.innerWidth <= 1201) {
+  //     setBlogAmount(4);
+  //   }
+  //   if (window && window.innerWidth <= 768) {
+  //     setBlogAmount(2);
+  //   }
+  // }, []);
 
   return (
-    <div
-      className={styles.blurred}
-      // style={{ filter: isModalOpen ? "blur(5px" : "" }}
-    >
+    <div className={styles.blurred}>
       <div />
       <main className={styles.container}>
-        {/* <div className={styles.circle} /> */}
-        {isModalOpen && (
-          <div className={styles.modal}>
-            <ContactModal
-              setIsModalOpen={setIsModalOpen}
-              isModalOpen={isModalOpen}
-            />
-          </div>
-        )}
         <motion.div
           className={styles.progressBar}
           style={{ scaleX: scrollYProgress, zIndex: 101 }}
@@ -90,11 +80,9 @@ export default function Home() {
             width="100vw"
             className={styles.path}
             d="M0 100 Q125 150 250 100 T500 100 V0 H0 Z"
-            // fill="#050a30"
             fill="#000000"
           />
         </svg>
-        {/* code here: fix blog container size on iphone 12 */}
         <div className={styles.whyUs}>
           <h2>Why Choose Us?</h2>
           <div className={styles.whyUsContent}>
@@ -127,13 +115,10 @@ export default function Home() {
               />
             </div>
           </div>
-          <button
-            onClick={() => setIsModalOpen(!isModalOpen)}
-            className={styles.ctaBusiness}
-            id="ctaContactBtn"
-          >
-            Let's Do Business
-          </button>
+          <Link className={styles.readMore} href="why-choose-us">
+            <button className={styles.ctaBusiness}>Read More</button>
+          </Link>
+          <CtaButton />
         </div>
         {/* <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>

@@ -23,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // filter: blur(5px);
   }
 
   .progressBar {
@@ -117,6 +116,9 @@
 
     h2 {
       text-align: center;
+    }
+    .readMore {
+      margin: auto;
     }
     .ctaBusiness {
       margin: auto;

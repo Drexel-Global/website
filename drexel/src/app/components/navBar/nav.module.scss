@@ -23,7 +23,7 @@
   .logoSection {
     display: flex;
     align-items: center;
-    width: 60%;
+    width: 70%;
 
     .logoContainer {
       position: absolute;
@@ -37,7 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 40%;
+    width: 30%;
     ul {
       display: flex;
       list-style-type: none;
@@ -48,9 +48,11 @@
     li {
       margin-left: 1rem;
       list-style: none;
+      text-align: center;
     }
     a {
       text-decoration: none;
+      @include hoverEffect(0.5);
     }
 
     .ctaBusiness {
@@ -82,9 +84,27 @@
 @media (max-width: $tablet) {
   .container {
     .logoSection {
+      width: 40%;
       .logoContainer {
         left: 7%;
       }
+    }
+    .linkSection {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: $Mobile) {
+  .container {
+    .logoSection {
+      width: 20%;
+      .logoContainer {
+        left: 7%;
+      }
+    }
+    .linkSection {
+      width: 80%;
     }
   }
 }
