@@ -7,11 +7,25 @@ import { Hero } from "./components/hero/hero";
 import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
 import { services } from "./data/services";
 import { CldImage } from "next-cloudinary";
+import dynamic from "next/dynamic";
+import BallSpinner from "./components/loaders/ballSpinner";
 
 // components:
 import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
-import { CtaButton } from "./components/ctaButton/ctaButton";
+// import { CtaButton } from "./components/ctaButton/ctaButton";
+
+const HeavyCtaButton = dynamic(
+  () => import("./components/ctaButton/ctaButton"),
+  {
+    ssr: false,
+    loading: () => (
+      <div>
+        <BallSpinner />
+      </div>
+    ),
+  }
+);
 
 // import { BlogCard } from "./components/blogCard/blogCard";
 // import { blogs } from "@/app/data/blogs";
@@ -118,7 +132,7 @@ export default function Home() {
           <Link className={styles.readMore} href="why-choose-us">
             <button className={styles.ctaBusiness}>Read More</button>
           </Link>
-          <CtaButton />
+          <HeavyCtaButton />
         </div>
         {/* <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>
