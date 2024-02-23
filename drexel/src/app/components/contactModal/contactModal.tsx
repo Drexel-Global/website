@@ -54,13 +54,6 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
     const payload = {
       ...data,
     };
-    console.log("PAYLOAD: ", payload);
-    console.log(
-      process.env.NEXT_PUBLIC_SERVICE_ID,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      payload,
-      process.env.NEXT_PUBLIC_PUBLIC_KEY
-    );
     if (
       process.env.NEXT_PUBLIC_SERVICE_ID &&
       process.env.NEXT_PUBLIC_TEMPLATE_ID &&
@@ -75,7 +68,6 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then((res) => {
-          console.log("RES .THEN: ", res);
           setError("success", {
             type: "manual",
             message:
@@ -83,7 +75,6 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
           });
         })
         .catch((err) => {
-          console.log("CATCH: ", err);
           setError("serverError", {
             type: "manual",
             message: err?.response?.data.error
@@ -95,8 +86,6 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
   };
 
   const onReCAPTCHAChange = (captchaCode: string | null) => {
-    console.log("CODE: ", captchaCode);
-
     if (!captchaCode) {
       return;
     }
@@ -107,7 +96,6 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
           captcha: captchaCode,
         })
         .then((res) => {
-          console.log("CAPTCHA RES: ", res);
           setValue("isCaptchaSolved", true);
         })
         .catch((err) => {
