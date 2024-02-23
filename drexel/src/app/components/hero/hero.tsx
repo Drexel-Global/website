@@ -12,7 +12,7 @@ import BallSpinner from "../loaders/ballSpinner";
 
 // components:
 import { Socials } from "../socials/socials";
-import { ScrollComponent } from "../ScrollComponent/scrollComponent";
+// import { ScrollComponent } from "../ScrollComponent/scrollComponent";
 
 // import { CtaButton } from "../ctaButton/ctaButton";
 const HeavyCtaButton = dynamic(() => import("../ctaButton/ctaButton"), {

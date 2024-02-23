@@ -54,6 +54,15 @@
       text-decoration: none;
       @include hoverEffect(0.5);
     }
+    .btnContainer {
+      height: 5rem;
+      padding: 0rem 0rem;
+
+      button {
+        margin-top: -2.1rem;
+        top: 0;
+      }
+    }
 
     .ctaBusiness {
       @include hoverEffect(1);

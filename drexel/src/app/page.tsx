@@ -130,7 +130,7 @@ export default function Home() {
             </div>
           </div>
           <Link className={styles.readMore} href="why-choose-us">
-            <button className={styles.ctaBusiness}>Read More</button>
+            <button className={styles.ctaBusiness}>Our Values</button>
           </Link>
           <HeavyCtaButton />
         </div>
