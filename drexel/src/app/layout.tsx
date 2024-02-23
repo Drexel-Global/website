@@ -7,7 +7,7 @@ import { Nav } from "./components/navBar/nav";
 import { Footer } from "./components/footer/footer";
 
 export const metadata = {
-  title: "Drexel Financial Services",
+  title: "Drexel Global Consulting Wealth Management",
   description:
     "A company offering Money Wealth Management, Trust and Estate Planning, Trust Accounts, International Accounts, Offshore Corporate Accounts, International Trust Accounts, Regular Accounts, Pension Accounts, & Financial Planning.",
 };
