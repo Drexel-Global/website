@@ -137,3 +137,13 @@
     }
   }
 }
+
+@media (max-width: $Mobile) {
+  .container {
+    .content {
+      .textContainer {
+        margin-top: -10rem;
+      }
+    }
+  }
+}
