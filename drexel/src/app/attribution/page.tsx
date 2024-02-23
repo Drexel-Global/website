@@ -80,6 +80,129 @@ const page = () => {
         >
           Bull market icons created by heisenberg_jr - Flaticon
         </a>
+        <div>
+          {" "}
+          Some Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/sukma-aditia"
+            title="Sukma Aditia"
+          >
+            {" "}
+            Sukma Aditia{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/smashicons"
+            title="Smashicons"
+          >
+            {" "}
+            Smashicons{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a href="" title="syafii5758">
+            {" "}
+            syafii5758{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/uniconlabs"
+            title="Uniconlabs"
+          >
+            {" "}
+            Uniconlabs{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/lagot-design"
+            title="Lagot Design"
+          >
+            {" "}
+            Lagot Design{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a href="https://www.freepik.com" title="Freepik">
+            {" "}
+            Freepik{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/arafat-uddin"
+            title="Arafat Uddin"
+          >
+            {" "}
+            Arafat Uddin{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">
+            {" "}
+            Eucalyp{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a href="https://www.flaticon.com/authors/nawicon" title="nawicon">
+            {" "}
+            nawicon{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
         <p>
           An attribution on a stock image is a credit given to the original
           creator or owner of the image. It serves to acknowledge and recognize

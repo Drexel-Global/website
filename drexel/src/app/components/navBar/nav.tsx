@@ -14,7 +14,6 @@ export const Nav = () => {
     Array<string>
   >(["1rem", "4rem"]);
   const [responsiveSize, setResponsiveSize] = useState<string>("15rem");
-  const [ctaElement, setCtaElement] = useState<HTMLElement>();
 
   useEffect(() => {
     if (window && window.innerWidth > 481 && window.innerWidth <= 1025) {
@@ -39,10 +38,6 @@ export const Nav = () => {
   );
 
   const top = useTransform(scrollYProgress, [0, 0.1], responseLogoPosition);
-
-  const toggleModal = () => {
-    ctaElement?.click();
-  };
 
   return (
     <nav className={styles.container}>

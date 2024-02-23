@@ -18,8 +18,10 @@
     a {
       text-decoration: none;
       @include hoverEffect(1);
+      font-size: 1.8rem;
     }
     p {
+      font-size: 1.8rem;
       width: 80%;
       text-align: justify;
     }
