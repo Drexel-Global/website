@@ -161,5 +161,3 @@ export default function Home() {
     </div>
   );
 }
-
-// Photo by AlphaTradeZone: https://www.pexels.com/photo/fingers-on-ipad-with-graph-on-screen-5833772/
