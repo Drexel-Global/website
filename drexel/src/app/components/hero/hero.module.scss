@@ -142,7 +142,17 @@
   .container {
     .content {
       .textContainer {
-        margin-top: -10rem;
+        margin-top: -2rem;
+        h1 {
+          font-size: 2.8rem;
+        }
+        h3 {
+          font-size: 2.4rem;
+        }
+        .drexel {
+          font-size: 2.4rem;
+          margin-top: -2rem;
+        }
       }
     }
   }
