@@ -6,17 +6,6 @@ import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { routeToIndex } from "@/app/utils/scrollTo";
 import { motion, useScroll, useTransform } from "framer-motion";
-import dynamic from "next/dynamic";
-import BallSpinner from "../ctaButton/ctaButton";
-
-const HeavyCtaButton = dynamic(() => import("../ctaButton/ctaButton"), {
-  ssr: false,
-  loading: () => (
-    <div>
-      <BallSpinner />
-    </div>
-  ),
-});
 
 export const Nav = () => {
   const currPath = usePathname();
@@ -87,9 +76,6 @@ export const Nav = () => {
           <li>
             <Link href="why-choose-us">Why Choose Us</Link>
           </li>
-          <div className={styles.btnContainer}>
-            <HeavyCtaButton />
-          </div>
         </ul>
       </div>
     </nav>
