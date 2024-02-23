@@ -5,7 +5,6 @@ import { ContactModal } from "../contactModal/contactModal";
 
 function CtaButton() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  console.log(isModalOpen);
 
   const toggleModal = (currState: boolean) => {
     if (!currState) {

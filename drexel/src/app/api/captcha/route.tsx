@@ -7,8 +7,6 @@ export async function POST(req: NextRequest) {
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captcha}`
     );
     const captchaValidation = await response.json();
-    console.log("SERVER: ", captchaValidation);
-    console.log("SERVER: ", response);
     if (captchaValidation.success) {
       return NextResponse.json(
         {
