@@ -1,5 +1,6 @@
 import "./globals.scss";
 import { Outfit } from "next/font/google";
+import type { Viewport } from "next";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -10,6 +11,10 @@ export const metadata = {
   title: "Drexel Global Consulting Wealth Management",
   description:
     "A company offering Money Wealth Management, Trust and Estate Planning, Trust Accounts, International Accounts, Offshore Corporate Accounts, International Trust Accounts, Regular Accounts, Pension Accounts, & Financial Planning.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#050a30",
 };
 
 export default function RootLayout({
