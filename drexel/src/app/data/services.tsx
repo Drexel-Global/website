@@ -167,7 +167,7 @@ export const services: Array<{
     leftDefinition: null,
     rightDefinition: null,
     rightProgression: null,
-    imageSource: "drexel-finance-website/landing/fnz7qwocymk32j9xh5ip",
+    imageSource: "tandem_lswqmj",
     width: 150,
     height: 150,
     alt: "dollar",
