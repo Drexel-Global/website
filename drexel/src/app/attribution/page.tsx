@@ -203,6 +203,21 @@ const page = () => {
             www.flaticon.com'
           </a>
         </div>
+        <div>
+          {" "}
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/uniconlabs"
+            title="Uniconlabs"
+          >
+            {" "}
+            Uniconlabs{" "}
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com'
+          </a>
+        </div>
         <p>
           An attribution on a stock image is a credit given to the original
           creator or owner of the image. It serves to acknowledge and recognize

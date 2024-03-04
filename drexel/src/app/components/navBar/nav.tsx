@@ -25,7 +25,7 @@ export const Nav = () => {
       setResponsiveSize("5rem");
     }
   }, []);
-
+  console.log("CURR PATH: ", currPath);
   const width = useTransform(
     scrollYProgress,
     [0, 0.1],
@@ -62,13 +62,15 @@ export const Nav = () => {
       </div>
       <div className={styles.linkSection}>
         <ul>
-          <li>
+          <li className={currPath === `/` ? styles.active : ""}>
             <Link href="/">Home</Link>
           </li>
-          {/* <li>
-            <Link href="blogs">Our Insights</Link>
-          </li> */}
-          <li>
+          {currPath === "/" && (
+            <li onClick={() => routeToIndex("services")}>
+              <a>Services</a>
+            </li>
+          )}
+          <li className={currPath === `/why-choose-us` ? styles.active : ""}>
             <Link href="why-choose-us">Why Choose Us</Link>
           </li>
         </ul>
