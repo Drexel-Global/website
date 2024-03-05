@@ -43,4 +43,65 @@
       line-height: 2;
     }
   }
+
+  .performanceContainer {
+    display: flex;
+    padding: 2rem;
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    p {
+      @include hoverEffect(1);
+      color: black;
+    }
+
+    .left {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-right: 1px solid black;
+      p {
+        text-align: center;
+      }
+    }
+    .right {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      .timePeriodContainer p {
+        text-align: center;
+      }
+      .contentContainer {
+        display: flex;
+        height: 80%;
+        .contentLeft {
+          display: flex;
+          justify-content: center;
+          width: 50%;
+          align-items: center;
+          flex-direction: column;
+
+          p {
+            text-align: center;
+          }
+        }
+        .contentRight {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
