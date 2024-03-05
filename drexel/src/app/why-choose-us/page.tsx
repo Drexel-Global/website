@@ -47,7 +47,7 @@ const WhyUsPage = () => {
           Global Consulting for expertise, affordability, and peace of mind on
           your journey to financial success.
         </p>
-        <HeavyCtaButton />
+        <HeavyCtaButton type="contact" textContent="Let's Do Business" />
         <h2 className={styles.values}>Our Values</h2>
         <h2>Expertise</h2>
         <p className={styles.value}>
@@ -91,7 +91,7 @@ const WhyUsPage = () => {
           complexities of the financial landscape and focus on what matters most
           to you.
         </p>
-        <HeavyCtaButton />
+        <HeavyCtaButton type="contact" textContent="Let's Do Business" />
       </div>
     </div>
   );

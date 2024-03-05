@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import styles from "./styles.module.scss";
+
 // components:
 import { ContactModal } from "../contactModal/contactModal";
+import { PerformanceModal } from "../performanceModal/performanceModal";
 
-function CtaButton() {
+type ctaButtonProps = {
+  type: string;
+  textContent: string;
+};
+
+function CtaButton({ type, textContent }: ctaButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const toggleModal = (currState: boolean) => {
@@ -16,9 +23,17 @@ function CtaButton() {
 
   return (
     <div className={styles.container}>
-      {isModalOpen && (
+      {isModalOpen && type === "contact" && (
         <div className={styles.modalContainer}>
           <ContactModal
+            setIsModalOpen={setIsModalOpen}
+            isModalOpen={isModalOpen}
+          />
+        </div>
+      )}
+      {isModalOpen && type === "performance" && (
+        <div className={styles.modalContainer}>
+          <PerformanceModal
             setIsModalOpen={setIsModalOpen}
             isModalOpen={isModalOpen}
           />
@@ -29,7 +44,7 @@ function CtaButton() {
           onClick={() => toggleModal(isModalOpen)}
           className={styles.ctaBusiness}
         >
-          Let's Do Business
+          {textContent}
         </button>
       </div>
     </div>

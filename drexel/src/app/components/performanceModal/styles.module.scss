@@ -1,0 +1,46 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.container {
+  background-color: white;
+  color: black;
+  position: fixed;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80dvh;
+  border-radius: 1.5rem;
+
+  .closeBtn {
+    position: absolute;
+    @include hoverEffect(1);
+    top: 0.5rem;
+  }
+
+  .navigator {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 50%;
+    p {
+      color: black;
+      text-align: center !important;
+      @include hoverEffect(1);
+    }
+    .active {
+      color: blue;
+      border-bottom: 5px solid black;
+    }
+  }
+  .tradindStyle {
+    width: 50%;
+    margin: 0 auto;
+
+    .text {
+      color: black;
+      font-weight: bold;
+      line-height: 2;
+    }
+  }
+}

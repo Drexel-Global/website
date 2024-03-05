@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./hero.module.scss";
 import { heroImages } from "@/app/assets/heroImages/heroImages";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { routeToIndex } from "@/app/utils/scrollTo";
+// import { routeToIndex } from "@/app/utils/scrollTo";
 import { CldImage } from "next-cloudinary";
 import dynamic from "next/dynamic";
 import BallSpinner from "../loaders/ballSpinner";
@@ -160,8 +160,9 @@ export const Hero = () => {
             matters – achieving your dreams.
           </p>
 
-          <button onClick={() => routeToIndex("services")}>Our Services</button>
-          <HeavyCtaButton />
+          {/* <button onClick={() => routeToIndex("services")}>Our Services</button> */}
+          <HeavyCtaButton type="contact" textContent="Let's Do Business" />
+          <HeavyCtaButton type="performance" textContent="Past Performance" />
         </motion.div>
 
         <motion.div
