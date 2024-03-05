@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { CldImage } from "next-cloudinary";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import BallSpinner from "../loaders/ballSpinner";
+import { performance } from "@/app/data/performance";
 
 type tabType = "performance" | "style";
 
@@ -27,6 +28,18 @@ export const PerformanceModal = ({
   setIsModalOpen,
 }: modalProps) => {
   const [currentTab, setCurrentTab] = useState<tabType>("performance");
+  const [portfolioId, setPortfolioId] = useState<number>(0);
+  const [selectedPortfolio, setSelectedPortfolio] = useState(
+    performance[portfolioId]
+  );
+
+  useEffect(() => {
+    setSelectedPortfolio(performance[portfolioId]);
+  }, [portfolioId]);
+
+  const handlePortfolioSelected = (portfolioId: number) => {
+    setPortfolioId(portfolioId);
+  };
 
   const handleTabClick = (type: tabType) => {
     setCurrentTab(type);
@@ -35,6 +48,8 @@ export const PerformanceModal = ({
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  console.log("Curr Port: ", selectedPortfolio);
 
   return (
     <motion.div
@@ -67,8 +82,32 @@ export const PerformanceModal = ({
       </div>
       <div>
         {currentTab === "performance" ? (
-          <div>
-            <h1>Past Performance</h1>
+          <div className={styles.performanceContainer}>
+            <div className={styles.left}>
+              <p onClick={() => handlePortfolioSelected(0)}>Portfolio 1</p>
+              <p onClick={() => handlePortfolioSelected(1)}>Portfolio 2</p>
+              <p onClick={() => handlePortfolioSelected(2)}>Portfolio 3</p>
+            </div>
+
+            <div className={styles.right}>
+              <div className={styles.timePeriodContainer}>
+                <h3>Time Period:</h3>
+                <p>{selectedPortfolio.timePeriod}</p>
+              </div>
+              <div className={styles.contentContainer}>
+                <div className={styles.contentLeft}>
+                  <p>Initial Value: {selectedPortfolio.initialValue}</p>
+                  <p>Ending Value: {selectedPortfolio.endingValue}</p>
+                  <p>Change In Value: {selectedPortfolio.valueChange}</p>
+                </div>
+                <div className={styles.contentRight}>
+                  <p>Deposit: {selectedPortfolio.deposit}</p>
+                  <p>Withdrawals: {selectedPortfolio.withDrawal}</p>
+                  <p>Net: {selectedPortfolio.net}</p>
+                </div>
+              </div>
+              <HeavyCtaButton type="contact" textContent="Let's Do Business" />
+            </div>
           </div>
         ) : (
           <div className={styles.tradindStyle}>
@@ -93,7 +132,7 @@ export const PerformanceModal = ({
               I am keen to connect with you at your earliest convenience to
               delve into this strategy in greater depth.
             </p>
-            {/* <HeavyCtaButton type="contact" textContent="Let's Do Business" /> */}
+            <HeavyCtaButton type="contact" textContent="Let's Do Business" />
           </div>
         )}
       </div>
