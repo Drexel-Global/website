@@ -12,18 +12,46 @@ export const CaricatureAsideWrapper = ({
   const { scrollYProgress } = useScroll();
   let startPoint = 0;
   let endPoint = 0;
-  const [currTab, setCurrTab] = useState("1");
   const [innerHeight, setInnerHeight] = useState<number>();
+  const [furthestNorthId, setFurthestNorthId] = useState<string | null>(null);
 
   useEffect(() => {
     if (window) {
       setInnerHeight(window.innerHeight);
     }
-  }, []);
+    const handleScroll = () => {
+      // Initialize variables to keep track of the furthest north element
+      let furthestTop = Number.POSITIVE_INFINITY;
+      let furthestId = null;
 
-  const assignCurrentTab = (tabClicked: string) => {
-    setCurrTab(tabClicked);
-  };
+      // Iterate through each service
+      services.forEach((service) => {
+        // Get the corresponding element by its ID
+        const element = document.getElementById(service.scrollId || "");
+        if (element) {
+          // Get the bounding rectangle of the element
+          const rect = element.getBoundingClientRect();
+
+          // Check if the element is the furthest north
+          if (rect.top < furthestTop && rect.top >= 0) {
+            furthestTop = rect.top;
+            furthestId = service.scrollId;
+          }
+        }
+      });
+
+      // Set the furthest north element's ID
+      setFurthestNorthId(furthestId);
+    };
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   if (innerHeight && innerHeight >= 2000) {
     startPoint = 0.91;
@@ -94,14 +122,11 @@ export const CaricatureAsideWrapper = ({
             <motion.p
               key={service.scrollId && parseInt(service.scrollId)}
               className={`${styles.navLink} ${
-                currTab === service.scrollId ? styles.active : ""
+                furthestNorthId === service.scrollId ? styles.active : ""
               }`}
               style={{ top, opacity, textAlign: "center" }}
               onClick={() => {
                 routeToIndex(
-                  typeof service.scrollId === "string" ? service.scrollId : ""
-                );
-                assignCurrentTab(
                   typeof service.scrollId === "string" ? service.scrollId : ""
                 );
               }}

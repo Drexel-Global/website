@@ -132,7 +132,7 @@ export default function Home() {
           <Link className={styles.readMore} href="why-choose-us">
             <button className={styles.ctaBusiness}>Our Values</button>
           </Link>
-          <HeavyCtaButton />
+          <HeavyCtaButton type="contact" textContent="Let's Do Business" />
         </div>
         {/* <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>

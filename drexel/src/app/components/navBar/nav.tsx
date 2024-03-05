@@ -25,7 +25,7 @@ export const Nav = () => {
       setResponsiveSize("5rem");
     }
   }, []);
-  console.log("CURR PATH: ", currPath);
+
   const width = useTransform(
     scrollYProgress,
     [0, 0.1],

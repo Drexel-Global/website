@@ -133,9 +133,7 @@ export const ContactModal = ({ isModalOpen, setIsModalOpen }: modalProps) => {
               src="drexel-finance-website/landing/e5xv3xlnwtzcwzpgmaxe"
               width={50}
               height={50}
-              //   fill={true}
-              alt="tall buildings in financial district"
-              //   priority={true}
+              alt="close icon"
               sizes="(max-width: 1201px) 100vw"
             />
           </div>

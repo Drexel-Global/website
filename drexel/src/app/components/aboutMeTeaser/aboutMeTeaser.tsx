@@ -2,6 +2,18 @@
 import { CldImage } from "next-cloudinary";
 import React from "react";
 import styles from "./aboutMeTeaser.module.scss";
+import dynamic from "next/dynamic";
+
+import BallSpinner from "../loaders/ballSpinner";
+
+const HeavyCtaButton = dynamic(() => import("../ctaButton/ctaButton"), {
+  ssr: false,
+  loading: () => (
+    <div>
+      <BallSpinner />
+    </div>
+  ),
+});
 
 export const AboutMeTeaser = () => {
   return (
@@ -25,6 +37,7 @@ export const AboutMeTeaser = () => {
             understanding of the industry." Please feel free to make any
             adjustments or additions to the response as per your requirements
           </p>
+          <HeavyCtaButton type="performance" textContent="Past Performance" />
         </div>
         <div className={styles.imageContainer}>
           <CldImage

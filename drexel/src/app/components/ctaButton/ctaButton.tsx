@@ -33,7 +33,10 @@ function CtaButton({ type, textContent }: ctaButtonProps) {
       )}
       {isModalOpen && type === "performance" && (
         <div className={styles.modalContainer}>
-          <PerformanceModal />
+          <PerformanceModal
+            setIsModalOpen={setIsModalOpen}
+            isModalOpen={isModalOpen}
+          />
         </div>
       )}
       <div className={styles.btnContainer}>
