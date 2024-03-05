@@ -55,7 +55,6 @@
       font-size: 1.8rem;
       text-decoration: none;
       @include hoverEffect(0.5);
-      height: 1rem;
     }
     .active {
       border-bottom: 2px solid white;
