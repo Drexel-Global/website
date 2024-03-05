@@ -67,7 +67,7 @@ export const Nav = () => {
           </li>
           {currPath === "/" && (
             <li onClick={() => routeToIndex("services")}>
-              <a>Services</a>
+              <p>Services</p>
             </li>
           )}
           <li className={currPath === `/why-choose-us` ? styles.active : ""}>
