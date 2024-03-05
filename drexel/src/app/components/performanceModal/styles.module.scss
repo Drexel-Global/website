@@ -130,18 +130,16 @@
       padding: 1rem;
     }
     .tradindStyle::-webkit-scrollbar {
-      width: 12px; /* Width of the scrollbar */
+      width: 12px;
     }
 
-    /* Style the scrollbar track */
     .tradindStyle::-webkit-scrollbar-track {
-      background: transparent; /* Background color of the track */
+      background: transparent;
     }
 
-    /* Style the scrollbar handle */
     .tradindStyle::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.5); /* Color of the scrollbar handle */
-      border-radius: 6px; /* Radius of the scrollbar handle */
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 6px;
     }
   }
 }
