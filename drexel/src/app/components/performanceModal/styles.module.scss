@@ -24,6 +24,7 @@
     margin: 0 auto;
     width: 50%;
     p {
+      z-index: 0 !important;
       color: black;
       text-align: center !important;
       @include hoverEffect(1);
