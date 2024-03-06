@@ -123,6 +123,10 @@
     }
     .linkSection {
       width: 80%;
+      a,
+      p {
+        font-size: 1.6rem;
+      }
     }
   }
 }
