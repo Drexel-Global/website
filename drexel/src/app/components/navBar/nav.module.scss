@@ -88,9 +88,13 @@
 @media (max-width: $largeDesktop) {
   .container {
     .logoSection {
+      width: 60%;
       .logoContainer {
         left: 4%;
       }
+    }
+    .linkSection {
+      width: 40%;
     }
   }
 }
@@ -98,13 +102,13 @@
 @media (max-width: $tablet) {
   .container {
     .logoSection {
-      width: 40%;
+      width: 30%;
       .logoContainer {
         left: 7%;
       }
     }
     .linkSection {
-      width: 60%;
+      width: 70%;
     }
   }
 }
@@ -119,6 +123,10 @@
     }
     .linkSection {
       width: 80%;
+      a,
+      p {
+        font-size: 1.6rem;
+      }
     }
   }
 }
