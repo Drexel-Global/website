@@ -68,6 +68,11 @@
       border-right: 1px solid black;
       p {
         text-align: center;
+        width: 40%;
+      }
+      .active {
+        color: blue;
+        border-bottom: 2.5px solid black;
       }
     }
     .right {
@@ -80,6 +85,20 @@
       .contentContainer {
         display: flex;
         height: 80%;
+        .nested {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+          .neg {
+            margin-left: 0px;
+            color: red;
+          }
+          .pos {
+            margin-left: 0px;
+            color: green;
+          }
+        }
         .contentLeft {
           display: flex;
           justify-content: center;
@@ -89,6 +108,7 @@
 
           p {
             text-align: center;
+            font-size: 1.6rem;
           }
         }
         .contentRight {
@@ -99,7 +119,8 @@
           flex-direction: column;
 
           p {
-            text-align: center;
+            font-size: large;
+            font-size: 1.6rem;
           }
         }
       }
@@ -111,6 +132,45 @@
   .container {
     .tradindStyle {
       width: 80%;
+    }
+    .performanceContainer {
+      .right {
+        overflow-y: scroll;
+
+        .contentContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .nested {
+            width: 80% !important;
+            margin: auto;
+          }
+
+          .contentLeft {
+            width: 90% !important;
+          }
+          .contentRight {
+            width: 90% !important;
+
+            p {
+              font-size: medium;
+            }
+          }
+        }
+      }
+      .right::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      .right::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .right::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+      }
     }
   }
 }
@@ -141,6 +201,13 @@
     .tradindStyle::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 6px;
+    }
+  }
+  .performanceContainer {
+    .left {
+      p {
+        width: 90% !important;
+      }
     }
   }
 }

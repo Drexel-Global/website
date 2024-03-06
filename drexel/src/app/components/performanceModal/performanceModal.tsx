@@ -49,7 +49,7 @@ export const PerformanceModal = ({
     setIsModalOpen(!isModalOpen);
   };
 
-  console.log("Curr Port: ", selectedPortfolio);
+  console.log(portfolioId);
 
   return (
     <motion.div
@@ -84,9 +84,24 @@ export const PerformanceModal = ({
         {currentTab === "performance" ? (
           <div className={styles.performanceContainer}>
             <div className={styles.left}>
-              <p onClick={() => handlePortfolioSelected(0)}>Portfolio 1</p>
-              <p onClick={() => handlePortfolioSelected(1)}>Portfolio 2</p>
-              <p onClick={() => handlePortfolioSelected(2)}>Portfolio 3</p>
+              <p
+                className={portfolioId === 0 ? styles.active : ""}
+                onClick={() => handlePortfolioSelected(0)}
+              >
+                Portfolio 1
+              </p>
+              <p
+                className={portfolioId === 1 ? styles.active : ""}
+                onClick={() => handlePortfolioSelected(1)}
+              >
+                Portfolio 2
+              </p>
+              <p
+                className={portfolioId === 2 ? styles.active : ""}
+                onClick={() => handlePortfolioSelected(2)}
+              >
+                Portfolio 3
+              </p>
             </div>
 
             <div className={styles.right}>
@@ -96,14 +111,38 @@ export const PerformanceModal = ({
               </div>
               <div className={styles.contentContainer}>
                 <div className={styles.contentLeft}>
-                  <p>Initial Value: {selectedPortfolio.initialValue}</p>
-                  <p>Ending Value: {selectedPortfolio.endingValue}</p>
-                  <p>Change In Value: {selectedPortfolio.valueChange}</p>
+                  <div className={styles.nested}>
+                    <p>Initial Value: </p>
+                    <p className={styles.pos}>
+                      {selectedPortfolio.initialValue}
+                    </p>
+                  </div>
+                  <div className={styles.nested}>
+                    <p>Ending Value: </p>
+                    <p className={styles.pos}>
+                      {selectedPortfolio.endingValue}
+                    </p>
+                  </div>
+                  <div className={styles.nested}>
+                    <p>Change In Value: </p>
+                    <p className={styles.pos}>
+                      {selectedPortfolio.valueChange}
+                    </p>
+                  </div>
                 </div>
                 <div className={styles.contentRight}>
-                  <p>Deposit: {selectedPortfolio.deposit}</p>
-                  <p>Withdrawals: {selectedPortfolio.withDrawal}</p>
-                  <p>Net: {selectedPortfolio.net}</p>
+                  <div className={styles.nested}>
+                    <p>Deposit: </p>
+                    <p className={styles.pos}>{selectedPortfolio.deposit}</p>
+                  </div>
+                  <div className={styles.nested}>
+                    <p>Withdrawals: </p>
+                    <p className={styles.neg}>{selectedPortfolio.withDrawal}</p>
+                  </div>
+                  <div className={styles.nested}>
+                    <p>Net:</p>
+                    <p className={styles.neg}>{selectedPortfolio.net}</p>
+                  </div>
                 </div>
               </div>
               <HeavyCtaButton type="contact" textContent="Let's Do Business" />
