@@ -183,6 +183,12 @@ export const Hero = () => {
             height={600}
             alt="bullish stock market animation"
           />
+          <iframe
+            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
+            width="100%"
+            height="1000"
+            frameborder="0"
+          ></iframe>
         </motion.div>
       </div>
       <div>
