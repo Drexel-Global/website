@@ -24,6 +24,25 @@
     }
   }
   .section {
+    padding-bottom: 20rem;
+    .topReviewContainer {
+      padding: 2rem 0rem;
+      height: 20rem;
+      width: 50%;
+      margin: auto;
+      .reviews {
+        height: 20rem;
+      }
+    }
+    .reviewContainer {
+      padding: 2rem 0rem;
+      height: 20rem;
+      width: 50%;
+      margin: auto;
+      .reviews {
+        height: 40rem;
+      }
+    }
     width: 148rem;
     margin: auto;
     h1,
@@ -78,7 +97,6 @@
 @media (max-width: 1600px) {
   .container {
     .section {
-      // border: 2px solid blue;
       width: 96.5%;
     }
   }
@@ -87,6 +105,16 @@
 @media (max-width: $tablet) {
   .container {
     .section {
+      .topReviewContainer {
+        padding: 2rem 0rem;
+        width: 80%;
+        .reviews {
+          height: 20rem;
+        }
+      }
+      .reviewContainer {
+        width: 80%;
+      }
       .headerImgContainer {
         max-height: 80%;
         width: 100%;

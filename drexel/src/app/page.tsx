@@ -133,14 +133,16 @@ export default function Home() {
             <button className={styles.ctaBusiness}>Our Values</button>
           </Link>
           <HeavyCtaButton type="contact" textContent="Let's Do Business" />
-          <iframe
-            className={styles.reviews}
-            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
-            width="100%"
-            height="1000"
-            // @ts-ignore
-            frameborder="0"
-          ></iframe>
+          <div className={styles.reviewContainer}>
+            <iframe
+              className={styles.reviews}
+              src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
+              width="100%"
+              height="1000"
+              // @ts-ignore
+              frameborder="0"
+            ></iframe>
+          </div>
         </div>
         {/* <div className={styles.blogContainer}>
         <h2 className={styles.blogsHeader}>Insights</h2>

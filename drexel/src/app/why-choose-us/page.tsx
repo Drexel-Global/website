@@ -32,6 +32,16 @@ const WhyUsPage = () => {
       </div>
       <div className={styles.section}>
         <Socials position="static" translateVal1="0" translateVal2="0" />
+        <div className={styles.topReviewContainer}>
+          <iframe
+            className={styles.reviews}
+            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
+            width="100%"
+            height="1000"
+            // @ts-ignore
+            frameborder="0"
+          ></iframe>
+        </div>
         <h1>Why Choose Us?</h1>
         <p className={styles.paraOne}>
           Welcome to Drexel Global Consulting, your trusted partner for
@@ -92,6 +102,16 @@ const WhyUsPage = () => {
           to you.
         </p>
         <HeavyCtaButton type="contact" textContent="Let's Do Business" />
+        <div className={styles.reviewContainer}>
+          <iframe
+            className={styles.reviews}
+            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
+            width="100%"
+            height="1000"
+            // @ts-ignore
+            frameborder="0"
+          ></iframe>
+        </div>
       </div>
     </div>
   );

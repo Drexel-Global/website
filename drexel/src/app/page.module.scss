@@ -91,6 +91,16 @@
     display: flex;
     flex-direction: column;
 
+    .reviewContainer {
+      padding-top: 2rem;
+      height: 20rem;
+      width: 50%;
+      margin: auto;
+      .reviews {
+        height: 40rem;
+      }
+    }
+
     .whyUsContent {
       display: flex;
       // flex-direction: column;
@@ -154,6 +164,9 @@
 @media (max-width: $desktop) {
   .container {
     .whyUs {
+      .reviewContainer {
+        width: 100%;
+      }
       margin-top: 0rem;
       .whyUsContent {
         flex-direction: column-reverse;
@@ -181,9 +194,6 @@
           width: 100%;
         }
       }
-    }
-    .reviews {
-      margin-top: 2rem;
     }
   }
 }
