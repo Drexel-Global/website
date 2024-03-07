@@ -185,6 +185,7 @@ export const Hero = () => {
           />
 
           <iframe
+            className={styles.reviews}
             src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
             width="100%"
             height="1000"
