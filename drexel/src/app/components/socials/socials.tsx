@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./socials.module.scss";
+import Link from "next/link";
 import { socials } from "@/app/data/socials";
 import { CldImage } from "next-cloudinary";
 
@@ -26,15 +27,21 @@ export const Socials = ({
       <div className={styles.socialsContainer}>
         {socials.map((platform) => {
           return (
-            <CldImage
-              key={platform.id}
-              className={styles.img}
-              src={platform.src}
-              height={50}
-              width={50}
-              alt={platform.alt}
-              priority={true}
-            />
+            <Link
+              href={platform.link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <CldImage
+                key={platform.id}
+                className={styles.img}
+                src={platform.src}
+                height={50}
+                width={50}
+                alt={platform.alt}
+                priority={true}
+              />
+            </Link>
           );
         })}
       </div>
