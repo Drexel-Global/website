@@ -37,7 +37,7 @@
   .tradindStyle {
     width: 50%;
     margin: 0 auto;
-
+    padding: 2rem;
     .text {
       color: black;
       font-weight: bold;
@@ -207,6 +207,17 @@
     .left {
       p {
         width: 90% !important;
+      }
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .container {
+    .navigator {
+      p {
+        margin-right: 0.5rem;
+        margin-top: 2rem;
+        font-size: 1.2rem;
       }
     }
   }
