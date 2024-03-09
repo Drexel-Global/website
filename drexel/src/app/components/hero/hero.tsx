@@ -160,7 +160,6 @@ export const Hero = () => {
             matters – achieving your dreams.
           </p>
 
-          {/* <button onClick={() => routeToIndex("services")}>Our Services</button> */}
           <HeavyCtaButton type="contact" textContent="Let's Do Business" />
           <HeavyCtaButton type="performance" textContent="Past Performance" />
         </motion.div>
