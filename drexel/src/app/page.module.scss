@@ -2,17 +2,6 @@
 @import "./styles/mixins.module.scss";
 
 .container {
-  // .circle {
-  //   width: 1000px;
-  //   height: 1000px;
-  //   border-radius: 50%;
-  //   background-color: rgb(112, 112, 112); /* Background color */
-  //   position: absolute;
-  //   top: -10rem;
-  //   left: -30rem;
-  //   z-index: 98;
-  //   opacity: 0.5;
-  // }
   z-index: 0;
 
   .modal {
@@ -51,7 +40,7 @@
 
   .svg {
     position: relative;
-    bottom: 20rem;
+    bottom: 0rem;
   }
 
   .path {
@@ -103,7 +92,6 @@
 
     .whyUsContent {
       display: flex;
-      // flex-direction: column;
     }
 
     .whyUsSection {
@@ -210,9 +198,6 @@
   .container {
     .blogContainer {
       bottom: 200px;
-    }
-    .svg {
-      bottom: 10rem;
     }
   }
 }
