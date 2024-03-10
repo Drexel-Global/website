@@ -40,7 +40,7 @@ export const AboutMeTeaser = () => {
         <div className={styles.imageContainer}>
           <CldImage
             className={styles.investorImage}
-            src="drexel-finance-website/landing/l8xmg7xrix94gd0fi62n"
+            src="drexel-finance-website/landing/zupqzpxvjgnxse6luoav"
             width={300}
             height={300}
             alt="the investor"
