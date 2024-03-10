@@ -18,7 +18,7 @@ const HeavyCtaButton = dynamic(() => import("../ctaButton/ctaButton"), {
 export const AboutMeTeaser = () => {
   return (
     <div className={styles.container} id="investor">
-      <h2>The Investor</h2>
+      <h2>The Owner / Managing Director</h2>
       <div className={styles.contentSection}>
         <div className={styles.textSection}>
           <h3>Izhar Shefer</h3>
