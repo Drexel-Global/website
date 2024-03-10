@@ -73,16 +73,17 @@
   }
 
   .whyUs {
-    width: 50%;
+    border: 2px solid red;
     margin: auto;
     display: flex;
     flex-direction: column;
+    width: 50%;
 
     .reviewContainer {
       height: 20rem;
       width: 50%;
       margin: auto;
-      margin-top: 10rem;
+      margin-top: 5rem;
       .reviews {
         height: 40rem;
       }

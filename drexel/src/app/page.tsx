@@ -98,7 +98,7 @@ export default function Home() {
           })}
         </CaricatureAsideWrapper>
 
-        <div className={styles.whyUs}>
+        <div className={styles.whyUs} id="why-choose-us">
           <h2>Why Choose Us?</h2>
           <div className={styles.whyUsContent}>
             <div className={styles.whyUsSection}>

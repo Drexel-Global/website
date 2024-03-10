@@ -145,9 +145,9 @@ export const CaricatureAsideWrapper = ({
         <motion.p
           style={{ top, opacity }}
           className={styles.navLink}
-          onClick={() => routeToIndex("investor")}
+          onClick={() => routeToIndex("why-choose-us")}
         >
-          The Managing Director
+          Why Choose Us
         </motion.p>
       </motion.div>
       {children}
