@@ -53,7 +53,7 @@ const WhyUsPage = () => {
           quality. Whether you're seeking expert guidance in wealth management,
           trust and estate planning, international accounts, or retirement
           solutions, we are committed to delivering professional and reliable
-          financial services to help you achieve your aspirations. Choose Drexel
+          financial services to help you achieve your goals. Choose Drexel
           Global Consulting for expertise, affordability, and peace of mind on
           your journey to financial success.
         </p>
@@ -69,8 +69,8 @@ const WhyUsPage = () => {
         <h2>Personalization</h2>
         <p className={styles.value}>
           We believe in the power of personalized financial strategies. By
-          understanding your unique circumstances and aspirations, we craft
-          tailored solutions that align perfectly with your objectives and risk
+          understanding your unique circumstances and goals, we craft tailored
+          solutions that align perfectly with your objectives and risk
           tolerance.
         </p>
         <h2>Affordability</h2>
@@ -89,9 +89,9 @@ const WhyUsPage = () => {
         <h2>Results-driven</h2>
         <p className={styles.value}>
           We are dedicated to delivering tangible results that help you achieve
-          your financial aspirations. Through diligent planning, strategic
-          investment, and proactive management, we aim to maximize your wealth
-          and secure your financial future.
+          your financial goals. Through diligent planning, strategic investment,
+          and proactive management, we aim to maximize your wealth and secure
+          your financial future.
         </p>
         <h2>Peace of mind</h2>
         <p className={styles.value}>

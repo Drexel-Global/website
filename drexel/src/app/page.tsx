@@ -57,6 +57,19 @@ export default function Home() {
           style={{ scaleX: scrollYProgress, zIndex: 101 }}
         />
         <Hero />
+        <AboutMeTeaser />
+        <svg
+          className={styles.svg}
+          viewBox="0 0 500 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            width="100vw"
+            className={styles.path}
+            d="M0 100 Q125 150 250 100 T500 100 V0 H0 Z"
+            fill="#000000"
+          />
+        </svg>
         <CaricatureAsideWrapper>
           {services.map((service) => {
             return (
@@ -84,20 +97,8 @@ export default function Home() {
             );
           })}
         </CaricatureAsideWrapper>
-        <AboutMeTeaser />
-        <svg
-          className={styles.svg}
-          viewBox="0 0 500 200"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            width="100vw"
-            className={styles.path}
-            d="M0 100 Q125 150 250 100 T500 100 V0 H0 Z"
-            fill="#000000"
-          />
-        </svg>
-        <div className={styles.whyUs}>
+
+        <div className={styles.whyUs} id="why-choose-us">
           <h2>Why Choose Us?</h2>
           <div className={styles.whyUsContent}>
             <div className={styles.whyUsSection}>

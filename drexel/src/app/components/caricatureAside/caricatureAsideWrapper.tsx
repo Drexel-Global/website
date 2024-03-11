@@ -117,6 +117,13 @@ export const CaricatureAsideWrapper = ({
         className={styles.pageNav}
         style={{ top, opacity, borderRight: "1px solid white" }}
       >
+        <motion.p
+          style={{ top, opacity }}
+          className={styles.navLink}
+          onClick={() => routeToIndex("investor")}
+        >
+          The Managing Director
+        </motion.p>
         {services.map((service) => {
           return (
             <motion.p
@@ -138,9 +145,9 @@ export const CaricatureAsideWrapper = ({
         <motion.p
           style={{ top, opacity }}
           className={styles.navLink}
-          onClick={() => routeToIndex("investor")}
+          onClick={() => routeToIndex("why-choose-us")}
         >
-          The Investor
+          Why Choose Us
         </motion.p>
       </motion.div>
       {children}
