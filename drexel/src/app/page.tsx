@@ -135,7 +135,7 @@ export default function Home() {
             <button className={styles.ctaBusiness}>Our Values</button>
           </Link>
           <HeavyCtaButton type="contact" textContent="Let's Do Business" />
-          <div className={styles.reviewContainer}>
+          <div className={styles.reviewContainerDesktop}>
             <Review />
           </div>
         </div>
