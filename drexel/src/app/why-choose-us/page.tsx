@@ -26,7 +26,7 @@ const WhyUsPage = () => {
       <div className={styles.headerImgContainer}>
         <CldImage
           className={styles.headerImg}
-          src="drexel-finance-website/landing/rqhvqlo4aqfmumad9swi"
+          src="drexel-finance-website/landing/usqnukoinfkjvvquim78"
           fill={true}
           alt="the investor"
         />
