@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import BallSpinner from "../components/loaders/ballSpinner";
 
 import { Socials } from "../components/socials/socials";
+import { Review } from "../components/reviewComponent/review";
 
 const HeavyCtaButton = dynamic(
   () => import("../components/ctaButton/ctaButton"),
@@ -33,14 +34,7 @@ const WhyUsPage = () => {
       <div className={styles.section}>
         <Socials position="static" translateVal1="0" translateVal2="0" />
         <div className={styles.topReviewContainer}>
-          <iframe
-            className={styles.reviews}
-            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
-            width="100%"
-            height="1000"
-            // @ts-ignore
-            frameborder="0"
-          ></iframe>
+          <Review />
         </div>
         <h1>Why Choose Us?</h1>
         <p className={styles.paraOne}>
@@ -103,14 +97,7 @@ const WhyUsPage = () => {
         </p>
         <HeavyCtaButton type="contact" textContent="Let's Do Business" />
         <div className={styles.reviewContainer}>
-          <iframe
-            className={styles.reviews}
-            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
-            width="100%"
-            height="1000"
-            // @ts-ignore
-            frameborder="0"
-          ></iframe>
+          <Review />
         </div>
       </div>
     </div>

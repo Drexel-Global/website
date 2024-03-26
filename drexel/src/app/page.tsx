@@ -1,8 +1,8 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 import styles from "./page.module.scss";
 import Link from "next/link";
-import { motion, useScroll, useInView } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { Hero } from "./components/hero/hero";
 import { AboutMeTeaser } from "./components/aboutMeTeaser/aboutMeTeaser";
 import { services } from "./data/services";
@@ -14,6 +14,7 @@ import BallSpinner from "./components/loaders/ballSpinner";
 import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
 // import { CtaButton } from "./components/ctaButton/ctaButton";
+import { Review } from "./components/reviewComponent/review";
 
 const HeavyCtaButton = dynamic(
   () => import("./components/ctaButton/ctaButton"),
@@ -135,14 +136,7 @@ export default function Home() {
           </Link>
           <HeavyCtaButton type="contact" textContent="Let's Do Business" />
           <div className={styles.reviewContainer}>
-            <iframe
-              className={styles.reviews}
-              src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
-              width="100%"
-              height="1000"
-              // @ts-ignore
-              frameborder="0"
-            ></iframe>
+            <Review />
           </div>
         </div>
         {/* <div className={styles.blogContainer}>
