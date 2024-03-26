@@ -183,8 +183,9 @@ export const Hero = () => {
             height={600}
             alt="bullish stock market animation"
           />
-
-          <Review />
+          <div className={styles.widgetContainer}>
+            <Review />
+          </div>
         </motion.div>
       </div>
       <div>
