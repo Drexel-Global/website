@@ -9,6 +9,7 @@ import BallSpinner from "../loaders/ballSpinner";
 
 // components:
 import { Socials } from "../socials/socials";
+import { Review } from "../reviewComponent/review";
 
 const HeavyCtaButton = dynamic(() => import("../ctaButton/ctaButton"), {
   ssr: false,
@@ -183,14 +184,7 @@ export const Hero = () => {
             alt="bullish stock market animation"
           />
 
-          <iframe
-            className={styles.reviews}
-            src="https://afb93a38dca34e9389f3aea070402c25.elf.site"
-            width="100%"
-            height="1000"
-            // @ts-ignore
-            frameborder="0"
-          ></iframe>
+          <Review />
         </motion.div>
       </div>
       <div>
