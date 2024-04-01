@@ -26,7 +26,7 @@ const WhyUsPage = () => {
       <div className={styles.headerImgContainer}>
         <CldImage
           className={styles.headerImg}
-          src="drexel-finance-website/landing/usqnukoinfkjvvquim78"
+          src="drexel-finance-website/landing/rhmvweipg1g6xrkihivb"
           fill={true}
           alt="the investor"
         />
@@ -40,16 +40,17 @@ const WhyUsPage = () => {
         <p className={styles.paraOne}>
           Welcome to Drexel Global Consulting, your trusted partner for
           comprehensive wealth management solutions. Led by Managing Director
-          Izhar Shefer, our team brings over 30 years of experience in crafting
-          personalized investment strategies tailored to your goals and risk
-          tolerance. With a keen understanding of institutional money management
-          practices, we offer competitive pricing without compromising on
-          quality. Whether you're seeking expert guidance in wealth management,
-          trust and estate planning, international accounts, or retirement
-          solutions, we are committed to delivering professional and reliable
-          financial services to help you achieve your goals. Choose Drexel
-          Global Consulting for expertise, affordability, and peace of mind on
-          your journey to financial success.
+          Izhar "Izzy" Shefer, Izzy brings 30 years of experience from working
+          with Smith Barney, Prudential Securities, and Merrill Lynch and is
+          skilled in crafting personalized investment strategies tailored to
+          your goals and risk tolerance. With a keen understanding of
+          institutional money management practices, Izzy offers competitive
+          pricing without compromising on quality. Whether you're seeking expert
+          guidance in wealth management, trust and estate planning,
+          international accounts, or retirement solutions, Izzy is committed to
+          delivering professional and reliable financial services to help you
+          achieve your goals. Choose Drexel Global Consulting for expertise,
+          affordability, and peace of mind on your journey to financial success.
         </p>
         <HeavyCtaButton type="contact" textContent="Let's Do Business" />
         <h2 className={styles.values}>Our Values</h2>

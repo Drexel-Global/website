@@ -161,8 +161,8 @@ export const Hero = () => {
             matters – achieving your dreams.
           </p>
 
-          <HeavyCtaButton type="contact" textContent="Let's Do Business" />
           <HeavyCtaButton type="performance" textContent="Past Performance" />
+          <HeavyCtaButton type="contact" textContent="Let's Do Business" />
         </motion.div>
 
         <motion.div
