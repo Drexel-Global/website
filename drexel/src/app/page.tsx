@@ -106,18 +106,18 @@ export default function Home() {
               <p>
                 Welcome to Drexel Global Consulting, your trusted partner for
                 comprehensive wealth management solutions. Led by Managing
-                Director Izhar Shefer, our team brings over 30 years of
-                experience in crafting personalized investment strategies
-                tailored to your goals and risk tolerance. With a keen
-                understanding of institutional money management practices, we
-                offer competitive pricing without compromising on quality.
+                Director Izhar "Izzy" Shefer, Izzy brings 30 years of experience
+                from working with Smith Barney, Prudential Securities, and
+                Merrill Lynch and is skilled in crafting personalized investment
+                strategies tailored to your goals and risk tolerance. With a
+                keen understanding of institutional money management practices,
+                Izzy offers competitive pricing without compromising on quality.
                 Whether you're seeking expert guidance in wealth management,
                 trust and estate planning, international accounts, or retirement
-                solutions, we are committed to delivering professional and
-                reliable financial services to help you achieve your
-                aspirations. Choose Drexel Global Consulting for expertise,
-                affordability, and peace of mind on your journey to financial
-                success.
+                solutions, Izzy is committed to delivering professional and
+                reliable financial services to help you achieve your goals.
+                Choose Drexel Global Consulting for expertise, affordability,
+                and peace of mind on your journey to financial success.
               </p>
             </div>
             <div className={styles.whyUsSection}>

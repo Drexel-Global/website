@@ -218,6 +218,11 @@ const page = () => {
             www.flaticon.com'
           </a>
         </div>
+        <div>
+          <a href="https://www.pexels.com/photo/sea-coast-of-monaco-17346705/">
+            Mike Kit
+          </a>
+        </div>
         <p>
           An attribution on a stock image is a credit given to the original
           creator or owner of the image. It serves to acknowledge and recognize
