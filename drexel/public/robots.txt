@@ -6,4 +6,4 @@ User-agent: googlebot-mobile
 Disallow: 
 User-agent: *
 Disallow: 
-Sitemap: https://drexel-gilt.vercel.app/sitemap.xml
+Sitemap: https://www.drexel.global/sitemap.xml
