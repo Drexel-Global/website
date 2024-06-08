@@ -31,6 +31,7 @@ export const Socials = ({
               href={platform.link}
               rel="noopener noreferrer"
               target="_blank"
+              key={platform?.id}
             >
               <CldImage
                 key={platform.id}

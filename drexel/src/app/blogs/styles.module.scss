@@ -2,6 +2,28 @@
 @import "../styles/variables.module.scss";
 
 .container {
-  border: 2px solid red;
-  height: 100dvh;
+  margin-top: 8.5rem;
+  .headerContainer {
+    display: flex;
+    justify-content: center;
+  }
+  h3 {
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+  }
+}
+
+.errorContainer {
+  margin-top: 8.5rem;
+  height: calc(100dvh - 22.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .textContainer {
+    text-align: center;
+    width: 70%;
+  }
 }
