@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 // import MediaAndAside from "./mediaAndAside/mediaAndAside";
 import ArticleHero from "./articleHero/articleHero";
 import RichTextRenderer from "./richTextRenderer/richTextRenderer";
-// import Socials from "./socials/socials";
+import { Socials } from "../components/socials/socials";
 import dynamic from "next/dynamic";
 
 // spinner:
@@ -145,7 +145,11 @@ const Picker = ({ section, article, categories }: pickerProps) => {
     );
   }
   if (section.__component === "socials.socials") {
-    return <>{/* <Socials /> */}</>;
+    return (
+      <>
+        <Socials position="static" translateVal1="0" translateVal2="0" />
+      </>
+    );
   }
   if (section.__component === "code-block.code-block") {
     return <>{/* <HeavyContactForm section={section} /> */}</>;

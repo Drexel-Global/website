@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./socials.module.scss";
 import Link from "next/link";
