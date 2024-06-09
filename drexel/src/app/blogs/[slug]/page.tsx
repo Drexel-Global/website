@@ -78,7 +78,7 @@ async function getData(slug: string) {
   ];
 
   const [res1, res2, res3] = await Promise.all(
-    urls.map((url) => fetch(url, { next: { revalidate: 300 } }))
+    urls.map((url) => fetch(url, { next: { revalidate: 0 } }))
   );
 
   if (res1.status !== 200 || res2.status !== 200 || res3.status !== 200) {

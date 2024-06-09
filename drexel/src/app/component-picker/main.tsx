@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 // components:
 // import MediaAndAside from "./mediaAndAside/mediaAndAside";
 import ArticleHero from "./articleHero/articleHero";
-// import RichTextRenderer from "./richTextRenderer/richTextRenderer";
+import RichTextRenderer from "./richTextRenderer/richTextRenderer";
 // import Socials from "./socials/socials";
 import dynamic from "next/dynamic";
 
@@ -123,11 +123,15 @@ type pickerProps = {
 };
 
 const Picker = ({ section, article, categories }: pickerProps) => {
-  if (section.__component === "text.text") {
-    return <>{/* <RichTextRenderer nodes={section?.text} /> */}</>;
+  if (section.__component === "plain-text.plain-text") {
+    console.log("SECTION: ", section);
+    return (
+      <>
+        <RichTextRenderer nodes={section?.text} />
+      </>
+    );
   }
   if (section.__component === "article-hero.article-hero") {
-    console.log("SECTION: ", section);
     return (
       <>
         <ArticleHero

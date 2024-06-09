@@ -1,0 +1,22 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.container {
+  .heading {
+    text-align: center;
+  }
+  .planTextContainer {
+    width: 100%;
+    .plainText {
+      text-align: justify;
+      padding: 2rem;
+      font-size: 2.2rem;
+    }
+  }
+  .boldText {
+    font-weight: bolder !important;
+  }
+  .italic {
+    font-style: italic !important;
+  }
+}

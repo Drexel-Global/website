@@ -6,7 +6,6 @@ import Image from "next/image";
 import dateUtils from "../../utils/dateUtils";
 
 type ArticleHeroProps = {
-  //   section: any;
   section: {
     id: number;
     __component: string;
