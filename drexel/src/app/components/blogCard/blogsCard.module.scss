@@ -10,6 +10,16 @@
   text-decoration: none;
 
   .content {
+    .catContainer {
+      display: flex;
+      align-items: center;
+      .bullet {
+        margin-right: 1rem;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+      }
+    }
     .title {
       font-size: 3rem;
       font-weight: bold;

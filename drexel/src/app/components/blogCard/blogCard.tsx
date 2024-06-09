@@ -13,7 +13,7 @@ type blogsProps = {
     data: Array<{
       id: number;
       attributes: {
-        Name: string;
+        text: string;
       };
     }>;
   };
@@ -39,6 +39,22 @@ export const BlogCard = ({
         />
       </div>
       <div className={styles.content}>
+        {categories?.data?.map((cat) => {
+          console.log(cat);
+          let color = "";
+          if (cat?.attributes.text === "Technical") color = "red";
+          if (cat?.attributes.text === "Opinion") color = "green";
+          if (cat?.attributes.text === "Advice") color = "yellow";
+          return (
+            <div key={id} className={styles.catContainer}>
+              <div
+                style={{ backgroundColor: color }}
+                className={styles.bullet}
+              ></div>
+              <p>{cat?.attributes?.text}</p>
+            </div>
+          );
+        })}
         <p className={styles.title}>{title}</p>
         <p>{description}</p>
       </div>

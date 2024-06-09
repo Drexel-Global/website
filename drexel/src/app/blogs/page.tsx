@@ -16,10 +16,10 @@ async function getBlogs() {
   if (res.status !== 200) throw new Error("Failed to fetch data");
 
   const blogs = blogsArray?.data.map((blog: any) => {
-    console.log(
-      "BEFORE CLENSE: ",
-      blog?.attributes?.previewImage?.data?.attributes?.url
-    );
+    // console.log(
+    //   "BEFORE CLENSE: ",
+    //   blog?.attributes?.previewImage?.data?.attributes?.url
+    // );
     return {
       ...blog,
       attributes: {

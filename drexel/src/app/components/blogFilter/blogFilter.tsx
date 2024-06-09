@@ -19,7 +19,7 @@ type BlogFilterProps = {
         data: Array<{
           id: number;
           attributes: {
-            Name: string;
+            text: string;
           };
         }>;
       };
@@ -30,7 +30,7 @@ type BlogFilterProps = {
 
 // TO DO: get categories from Izzy & update blog card to show category.
 
-const categories = ["None", "Opinion", "Technical"];
+const categories = ["None", "Opinion", "Technical", "Advice"];
 
 const BlogFilter = ({ articles }: BlogFilterProps) => {
   const [selectedCategory, setSelectedCategory] = useState("None");
@@ -70,7 +70,7 @@ const BlogFilter = ({ articles }: BlogFilterProps) => {
                 data: Array<{
                   id: number;
                   attributes: {
-                    Name: string;
+                    text: string;
                   };
                 }>;
               };
@@ -92,7 +92,7 @@ const BlogFilter = ({ articles }: BlogFilterProps) => {
             } else {
               if (
                 selectedCategory ===
-                articles?.attributes?.categories?.data[0]?.attributes?.Name
+                articles?.attributes?.categories?.data[0]?.attributes?.text
               ) {
                 return (
                   <BlogCard
