@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./styles.module.scss";
 
@@ -11,14 +12,17 @@ import dynamic from "next/dynamic";
 // spinner:
 import BallSpinner from "../components/loaders/ballSpinner";
 
-// const HeavyContactForm = dynamic(() => import("./codeBlock/codeBlock"), {
-//   ssr: false,
-//   loading: () => (
-//     <div className={styles.contactSpinnerContainer}>
-//       <BallSpinner />
-//     </div>
-//   ),
-// });
+const HeavyCtaButton = dynamic(
+  () => import("../components/ctaButton/ctaButton"),
+  {
+    ssr: false,
+    loading: () => (
+      <div>
+        <BallSpinner />
+      </div>
+    ),
+  }
+);
 
 type pickerProps = {
   section: {
@@ -123,8 +127,8 @@ type pickerProps = {
 };
 
 const Picker = ({ section, article, categories }: pickerProps) => {
+  console.log("SECTION: ", section);
   if (section.__component === "plain-text.plain-text") {
-    console.log("SECTION: ", section);
     return (
       <>
         <RichTextRenderer nodes={section?.text} />
@@ -151,14 +155,15 @@ const Picker = ({ section, article, categories }: pickerProps) => {
       </>
     );
   }
-  if (section.__component === "code-block.code-block") {
-    return <>{/* <HeavyContactForm section={section} /> */}</>;
+  if (section.__component === "cta-button.cta-button") {
+    return (
+      <>
+        <HeavyCtaButton type="contact" textContent="Let's Do Business" />
+      </>
+    );
   }
   if (section.__component === "content-aside.content-aside") {
     return <>{/* <MediaAndAside section={section} /> */}</>;
-  }
-  if (section.__component === "text.text") {
-    return <>{/* <RichTextRenderer nodes={section?.text} /> */}</>;
   }
 
   return null;
