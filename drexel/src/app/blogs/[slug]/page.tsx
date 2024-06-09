@@ -192,7 +192,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <Picker
                 key={section?.id}
                 section={section}
-                // categories={blog?.article?.data[0]?.attributes?.categories}
+                categories={blog?.article?.data[0]?.attributes?.categories}
                 article={blog?.article?.data[0]}
               />
             );

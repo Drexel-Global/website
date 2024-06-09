@@ -32,17 +32,17 @@ type ArticleHeroProps = {
       updatedAt: string;
     };
   };
-  //   categories: {
-  //     data: Array<{
-  //       id: number;
-  //       attributes: {
-  //         Name: string;
-  //         createdAt: string;
-  //         updatedAt: string;
-  //         publishedAt: string;
-  //       };
-  //     }>;
-  //   };
+  categories: {
+    data: Array<{
+      id: number;
+      attributes: {
+        text: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+      };
+    }>;
+  };
   title: string;
   publishDate: string;
   lastUpdate: string;
@@ -51,7 +51,7 @@ type ArticleHeroProps = {
 const ArticleHero = ({
   section,
   title,
-  //   categories,
+  categories,
   publishDate,
   lastUpdate,
 }: ArticleHeroProps) => {
@@ -66,23 +66,20 @@ const ArticleHero = ({
         />
       </div>
       <div className={styles.articleInfo}>
-        {/* {categories?.data?.map((cat, index) => {
+        {categories?.data?.map((cat, index) => {
           let color = "";
-          if (cat?.attributes.Name === "Technical") color = "red";
-          if (cat?.attributes.Name === "Opinion") color = "green";
+          if (cat?.attributes.text === "Technical") color = "red";
+          if (cat?.attributes.text === "Opinion") color = "green";
           return (
-            <div
-              key={index}
-              className={`${styles.catContainer} ${styles.info}`}
-            >
+            <div key={index} className={`${styles.catContainer}`}>
               <div
                 style={{ backgroundColor: color }}
                 className={styles.bullet}
               ></div>
-              <p>{cat?.attributes.Name}</p>
+              <p>{cat?.attributes.text}</p>
             </div>
           );
-        })} */}
+        })}
         <div className={`${styles.dates} ${styles.info}`}>
           <p>Published On: {dateUtils(publishDate)}</p>
         </div>

@@ -97,17 +97,17 @@ type pickerProps = {
       };
     };
   };
-  //   categories: {
-  //     data: Array<{
-  //       id: number;
-  //       attributes: {
-  //         Name: string;
-  //         createdAt: string;
-  //         updatedAt: string;
-  //         publishedAt: string;
-  //       };
-  //     }>;
-  //   };
+  categories: {
+    data: Array<{
+      id: number;
+      attributes: {
+        text: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+      };
+    }>;
+  };
   article: {
     id: number;
     attributes: {
@@ -122,7 +122,7 @@ type pickerProps = {
   };
 };
 
-const Picker = ({ section, article }: pickerProps) => {
+const Picker = ({ section, article, categories }: pickerProps) => {
   if (section.__component === "text.text") {
     return <>{/* <RichTextRenderer nodes={section?.text} /> */}</>;
   }
@@ -133,7 +133,7 @@ const Picker = ({ section, article }: pickerProps) => {
         <ArticleHero
           section={section}
           title={article?.attributes?.Title}
-          //   categories={categories}
+          categories={categories}
           publishDate={article?.attributes?.publishDate}
           lastUpdate={article?.attributes?.updatedAt}
         />
