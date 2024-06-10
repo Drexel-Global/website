@@ -45,6 +45,7 @@ type ArticleHeroProps = {
   title: string;
   publishDate: string;
   lastUpdate: string;
+  author: string;
 };
 
 const ArticleHero = ({
@@ -53,7 +54,9 @@ const ArticleHero = ({
   categories,
   publishDate,
   lastUpdate,
+  author,
 }: ArticleHeroProps) => {
+  console.log("HERO: ", section);
   // TO DO: add author & search for other meta data that should be in article.
   return (
     <div className={styles.container}>
@@ -79,6 +82,9 @@ const ArticleHero = ({
             </div>
           );
         })}
+        <div className={`${styles.dates} ${styles.info}`}>
+          <p>Author: {author}</p>
+        </div>
         <div className={`${styles.dates} ${styles.info}`}>
           <p>Published On: {dateUtils(publishDate)}</p>
         </div>

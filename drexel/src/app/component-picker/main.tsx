@@ -122,12 +122,13 @@ type pickerProps = {
       createdAt: string;
       updatedAt: string;
       publishedAt: string;
+      author: string;
     };
   };
 };
 
 const Picker = ({ section, article, categories }: pickerProps) => {
-  console.log("SECTION: ", section);
+  console.log("SECTION: ", article);
   if (section.__component === "plain-text.plain-text") {
     return (
       <>
@@ -144,6 +145,7 @@ const Picker = ({ section, article, categories }: pickerProps) => {
           categories={categories}
           publishDate={article?.attributes?.publishDate}
           lastUpdate={article?.attributes?.updatedAt}
+          author={article?.attributes?.author}
         />
       </>
     );
