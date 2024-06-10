@@ -83,7 +83,7 @@ export const CaricatureAsideWrapper = ({
 
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.1, startPoint, endPoint],
+    [0, 0.3, startPoint, endPoint],
     [0, 1, 1, 0]
   );
 
