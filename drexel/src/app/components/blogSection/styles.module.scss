@@ -1,0 +1,28 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+.blogContainer {
+  display: flex;
+  flex-wrap: wrap;
+  .seeMoreContainer {
+    margin: 0 auto;
+    margin-bottom: 4rem;
+    .ctaBtn {
+      @include hoverEffect(1);
+      border: none;
+      width: 15rem;
+      height: 5rem;
+      border-radius: 1.5rem;
+      background-color: $lightAccent;
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: all 0.1s ease-in-out;
+      opacity: 1;
+    }
+  }
+}

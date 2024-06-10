@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 // components:
 import Picker from "@/app/component-picker/main";
+import RelatedPosts from "@/app/component-picker/relatedPosts/relatedPosts";
 
 // TO DO: UPDATE META DATA
 export async function generateMetadata({
@@ -105,109 +106,107 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const blog = await getData(params?.slug);
   console.log("DATA", blog?.sections.data[0]?.attributes?.section);
   return (
-    <>
-      <div className={styles.container}>
-        {blog?.sections.data[0]?.attributes?.section.map(
-          (section: {
-            id: number;
-            __component: string;
-            is_flipped: boolean;
-            orientation: string;
-            code: Array<{
-              type: string;
-              children: Array<{ text: string; type: string }>;
-            }>;
-            text:
-              | Array<{
-                  type: "heading";
-                  level: number;
-                  children: Array<{
-                    text: string;
-                    type: "text";
-                  }>;
-                }>
-              | Array<{
-                  type: "paragraph";
-                  children: Array<
-                    | {
+    <div className={styles.container}>
+      {blog?.sections.data[0]?.attributes?.section.map(
+        (section: {
+          id: number;
+          __component: string;
+          is_flipped: boolean;
+          orientation: string;
+          code: Array<{
+            type: string;
+            children: Array<{ text: string; type: string }>;
+          }>;
+          text:
+            | Array<{
+                type: "heading";
+                level: number;
+                children: Array<{
+                  text: string;
+                  type: "text";
+                }>;
+              }>
+            | Array<{
+                type: "paragraph";
+                children: Array<
+                  | {
+                      text: string;
+                      type: "text";
+                    }
+                  | {
+                      url: string;
+                      type: "link";
+                      children: Array<{
                         text: string;
                         type: "text";
-                      }
-                    | {
-                        url: string;
-                        type: "link";
-                        children: Array<{
-                          text: string;
-                          type: "text";
-                        }>;
-                      }
-                  >;
-                }>;
-            media: {
-              data: {
-                id: number;
-                attributes: {
-                  url: string;
-                  formats: {
-                    large: {
-                      url: string;
-                    };
-                    small: {
-                      url: string;
-                    };
-                    medium: {
-                      url: string;
-                    };
+                      }>;
+                    }
+                >;
+              }>;
+          media: {
+            data: {
+              id: number;
+              attributes: {
+                url: string;
+                formats: {
+                  large: {
+                    url: string;
                   };
-                  provider_metadata: {
-                    public_id: string;
-                    resource_type: string;
+                  small: {
+                    url: string;
+                  };
+                  medium: {
+                    url: string;
+                  };
+                };
+                provider_metadata: {
+                  public_id: string;
+                  resource_type: string;
+                };
+              };
+            };
+          };
+          imageSource: {
+            data: {
+              id: string;
+              attributes: {
+                formats: {
+                  small: {
+                    url: string;
+                  };
+                  medium: {
+                    url: string;
+                  };
+                  thumbnail: {
+                    url: string;
                   };
                 };
               };
             };
-            imageSource: {
-              data: {
-                id: string;
-                attributes: {
-                  formats: {
-                    small: {
-                      url: string;
-                    };
-                    medium: {
-                      url: string;
-                    };
-                    thumbnail: {
-                      url: string;
-                    };
-                  };
-                };
-              };
-              createdAt: string;
-              updatedAt: string;
-            };
-          }) => {
-            console.log("LOOP: ", section);
-            return (
-              <Picker
-                key={section?.id}
-                section={section}
-                categories={blog?.article?.data[0]?.attributes?.categories}
-                article={blog?.article?.data[0]}
-              />
-            );
+            createdAt: string;
+            updatedAt: string;
+          };
+        }) => {
+          console.log("LOOP: ", section);
+          return (
+            <Picker
+              key={section?.id}
+              section={section}
+              categories={blog?.article?.data[0]?.attributes?.categories}
+              article={blog?.article?.data[0]}
+            />
+          );
+        }
+      )}
+      <div className={styles.relatedContainer}>
+        <RelatedPosts
+          currentCategory={
+            blog?.article?.data[0]?.attributes?.categories?.data[0]?.attributes
+              .text
           }
-        )}
-        {/* <div>
-          <HeavyRelatedPosts
-            currentCategory={
-              blog?.article?.data[0]?.attributes?.categories?.data[0]
-                ?.attributes.Name
-            }
-            articles={blog?.articles?.data}
-          />
-        </div> */}
+          articles={blog?.articles?.data}
+        />
       </div>
-    </>
+    </div>
   );
 }

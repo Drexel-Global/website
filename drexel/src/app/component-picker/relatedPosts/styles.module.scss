@@ -1,0 +1,52 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+  }
+  .emptyListConatiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h3 {
+      text-align: center;
+    }
+    .ctaBtn {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 12rem;
+      height: 6rem;
+      color: white;
+      font-size: 1.8rem;
+      margin: auto;
+      border: 0.2rem solid $mainColor;
+
+      &:hover {
+        @include hoverEffect();
+      }
+    }
+  }
+
+  .articleContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: $smallDesktop) {
+  .container {
+    height: 90rem;
+    .articleContainer {
+      flex-direction: row;
+    }
+  }
+}

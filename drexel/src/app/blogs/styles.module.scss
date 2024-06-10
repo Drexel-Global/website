@@ -3,14 +3,22 @@
 
 .container {
   margin-top: 8.5rem;
+  display: flex;
+  flex-direction: column;
+
   .headerContainer {
     display: flex;
     justify-content: center;
+    margin: auto;
   }
   h3 {
     margin: 0 auto;
     text-align: center;
     width: 90%;
+  }
+
+  .relatedContainer {
+    margin-bottom: 20rem;
   }
 }
 

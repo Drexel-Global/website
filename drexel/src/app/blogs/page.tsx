@@ -10,16 +10,12 @@ async function getBlogs() {
       ? "http://localhost:1337/api/blog-articles?populate=*"
       : `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blog-articles?populate=*`;
   // revalidated every 5 minutes
-  const res = await fetch(currentEnvUrls, { next: { revalidate: 300 } });
+  const res = await fetch(currentEnvUrls, { next: { revalidate: 0 } });
   const blogsArray = await res.json();
 
   if (res.status !== 200) throw new Error("Failed to fetch data");
 
   const blogs = blogsArray?.data.map((blog: any) => {
-    // console.log(
-    //   "BEFORE CLENSE: ",
-    //   blog?.attributes?.previewImage?.data?.attributes?.url
-    // );
     return {
       ...blog,
       attributes: {
@@ -34,12 +30,12 @@ async function getBlogs() {
 
 export default async function Page() {
   const blogs = await getBlogs();
-  console.log("IN PAGE: ", blogs);
+
   return (
     <div
       className={styles.container}
       style={{
-        height: blogs?.length <= 4 ? "calc(100dvh - 22.5rem)" : "100dvh",
+        height: blogs?.length <= 4 ? "calc(100dvh - 22.5rem)" : undefined,
       }}
     >
       <div className={styles.headerContainer}>
