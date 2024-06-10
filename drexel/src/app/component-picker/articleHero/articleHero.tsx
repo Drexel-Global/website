@@ -43,7 +43,7 @@ type ArticleHeroProps = {
     }>;
   };
   title: string;
-  publishDate: string;
+  publishedAt: string;
   lastUpdate: string;
   author: string;
 };
@@ -52,7 +52,7 @@ const ArticleHero = ({
   section,
   title,
   categories,
-  publishDate,
+  publishedAt,
   lastUpdate,
   author,
 }: ArticleHeroProps) => {
@@ -86,7 +86,7 @@ const ArticleHero = ({
           <p>Author: {author}</p>
         </div>
         <div className={`${styles.dates} ${styles.info}`}>
-          <p>Published On: {dateUtils(publishDate)}</p>
+          <p>Published On: {dateUtils(publishedAt)}</p>
         </div>
         <div className={`${styles.dates} ${styles.info}`}>
           <p>Last Updated On: {dateUtils(lastUpdate)}</p>

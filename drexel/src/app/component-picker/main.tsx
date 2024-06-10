@@ -143,7 +143,7 @@ const Picker = ({ section, article, categories }: pickerProps) => {
           section={section}
           title={article?.attributes?.Title}
           categories={categories}
-          publishDate={article?.attributes?.publishDate}
+          publishedAt={article?.attributes?.publishedAt}
           lastUpdate={article?.attributes?.updatedAt}
           author={article?.attributes?.author}
         />
