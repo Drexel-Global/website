@@ -1,0 +1,13 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+
+.contactSpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+}
+.sectionContainer {
+  margin-bottom: 5rem;
+}

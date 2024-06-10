@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 // components:
-// import MediaAndAside from "./mediaAndAside/mediaAndAside";
+import MediaAndAside from "./content-aside/content-aside";
 import ArticleHero from "./articleHero/articleHero";
 import RichTextRenderer from "./richTextRenderer/richTextRenderer";
 import { Socials } from "../components/socials/socials";
@@ -157,13 +157,17 @@ const Picker = ({ section, article, categories }: pickerProps) => {
   }
   if (section.__component === "cta-button.cta-button") {
     return (
-      <>
+      <div className={styles.sectionContainer}>
         <HeavyCtaButton type="contact" textContent="Let's Do Business" />
-      </>
+      </div>
     );
   }
   if (section.__component === "content-aside.content-aside") {
-    return <>{/* <MediaAndAside section={section} /> */}</>;
+    return (
+      <>
+        <MediaAndAside section={section} />
+      </>
+    );
   }
 
   return null;

@@ -208,11 +208,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           />
         </div> */}
       </div>
-      <div className={styles.contactSection}>
-        <h2>Contact Me</h2>
-
-        {/* <HeavyContactForm /> */}
-      </div>
     </>
   );
 }
