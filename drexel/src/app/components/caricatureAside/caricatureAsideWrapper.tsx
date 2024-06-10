@@ -55,7 +55,7 @@ export const CaricatureAsideWrapper = ({
 
   if (innerHeight && innerHeight >= 2000) {
     startPoint = 0.91;
-    endPoint = 0.94;
+    endPoint = 0.98;
   }
 
   if (
@@ -117,13 +117,13 @@ export const CaricatureAsideWrapper = ({
         className={styles.pageNav}
         style={{ top, opacity, borderRight: "1px solid white" }}
       >
-        <motion.p
+        {/* <motion.p
           style={{ top, opacity }}
           className={styles.navLink}
           onClick={() => routeToIndex("investor")}
         >
           The Managing Director
-        </motion.p>
+        </motion.p> */}
         {services.map((service) => {
           return (
             <motion.p
