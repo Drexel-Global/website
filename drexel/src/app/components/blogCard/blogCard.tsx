@@ -9,6 +9,7 @@ type blogsProps = {
   description: string;
   previewImage: string;
   slug: string;
+  alt: string;
   categories: {
     data: Array<{
       id: number;
@@ -26,6 +27,7 @@ export const BlogCard = ({
   previewImage,
   slug,
   categories,
+  alt,
 }: blogsProps) => {
   return (
     <Link className={styles.container} href={`/blogs/${slug}`}>
@@ -34,13 +36,12 @@ export const BlogCard = ({
           className={styles.blogImg}
           src={previewImage}
           // TO DO: fix alt
-          alt=""
+          alt={alt}
           fill={true}
         />
       </div>
       <div className={styles.content}>
         {categories?.data?.map((cat) => {
-          console.log(cat);
           let color = "";
           if (cat?.attributes.text === "Technical") color = "red";
           if (cat?.attributes.text === "Opinion") color = "green";

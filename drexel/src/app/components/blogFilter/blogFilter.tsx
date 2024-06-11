@@ -15,6 +15,7 @@ type BlogFilterProps = {
       updatedAt: string;
       publishedAt: string;
       previewImage: string;
+      alt: string;
       categories: {
         data: Array<{
           id: number;
@@ -66,6 +67,7 @@ const BlogFilter = ({ articles }: BlogFilterProps) => {
               updatedAt: string;
               publishedAt: string;
               previewImage: string;
+              alt: string;
               categories: {
                 data: Array<{
                   id: number;
@@ -87,6 +89,7 @@ const BlogFilter = ({ articles }: BlogFilterProps) => {
                   previewImage={articles?.attributes?.previewImage}
                   categories={articles?.attributes?.categories}
                   slug={articles?.attributes?.slug}
+                  alt={articles?.attributes?.alt}
                 />
               );
             } else {
@@ -103,6 +106,7 @@ const BlogFilter = ({ articles }: BlogFilterProps) => {
                     previewImage={articles?.attributes?.previewImage}
                     categories={articles?.attributes?.categories}
                     slug={articles?.attributes?.slug}
+                    alt={articles?.attributes?.alt}
                   />
                 );
               }

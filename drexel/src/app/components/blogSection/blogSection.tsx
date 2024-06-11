@@ -16,7 +16,6 @@ const BlogSection = () => {
     axios
       .get(currentEnvUrls)
       .then((res) => {
-        console.log(res);
         const blogs = res?.data?.data.map((blog: any) => {
           return {
             ...blog,
@@ -39,7 +38,10 @@ const BlogSection = () => {
     setVisibleBlogs((prevVisibleBlogs) => prevVisibleBlogs + 3);
   };
 
-  console.log("MAIN PAGE: ", blogs);
+  if (!blogs) {
+    return null;
+  }
+
   return (
     <>
       <div className={styles.header}>
@@ -57,6 +59,7 @@ const BlogSection = () => {
                 updatedAt: string;
                 publishedAt: string;
                 previewImage: string;
+                alt: string;
                 categories: {
                   data: Array<{
                     id: number;
@@ -68,7 +71,6 @@ const BlogSection = () => {
                 slug: string;
               };
             }) => {
-              // console.log(articles?.attributes?.title);
               return (
                 <BlogCard
                   key={articles?.id}
@@ -78,6 +80,7 @@ const BlogSection = () => {
                   previewImage={articles?.attributes?.previewImage}
                   categories={articles?.attributes?.categories}
                   slug={articles?.attributes?.slug}
+                  alt={articles?.attributes?.alt}
                 />
               );
             }

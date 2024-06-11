@@ -9,7 +9,7 @@ async function getBlogs() {
     process.env.NEXT_PUBLIC_NODE_ENV === "development"
       ? "http://localhost:1337/api/blog-articles?populate=*"
       : `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}/api/blog-articles?populate=*`;
-  // revalidated every 5 minutes
+
   const res = await fetch(currentEnvUrls, { next: { revalidate: 0 } });
   const blogsArray = await res.json();
 
@@ -30,7 +30,6 @@ async function getBlogs() {
 
 export default async function Page() {
   const blogs = await getBlogs();
-
   return (
     <div
       className={styles.container}

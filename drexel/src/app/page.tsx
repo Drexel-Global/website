@@ -29,9 +29,6 @@ const HeavyCtaButton = dynamic(
   }
 );
 
-// import { BlogCard } from "./components/blogCard/blogCard";
-// import { blogs } from "@/app/data/blogs";
-
 export default function Home() {
   const { scrollYProgress } = useScroll();
 

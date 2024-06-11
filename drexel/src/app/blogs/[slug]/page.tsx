@@ -104,7 +104,6 @@ type Props = {
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const blog = await getData(params?.slug);
-  console.log("DATA", blog?.sections.data[0]?.attributes?.section);
   return (
     <div className={styles.container}>
       {blog?.sections.data[0]?.attributes?.section.map(
@@ -187,7 +186,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
             updatedAt: string;
           };
         }) => {
-          console.log("LOOP: ", section);
           return (
             <Picker
               key={section?.id}

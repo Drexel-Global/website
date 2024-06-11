@@ -17,7 +17,7 @@ const HeavyCtaButton = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div>
+      <div className={styles.spinnerContainer}>
         <BallSpinner />
       </div>
     ),
@@ -128,7 +128,6 @@ type pickerProps = {
 };
 
 const Picker = ({ section, article, categories }: pickerProps) => {
-  console.log("SECTION: ", article);
   if (section.__component === "plain-text.plain-text") {
     return (
       <>
