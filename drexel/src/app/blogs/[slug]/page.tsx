@@ -6,7 +6,6 @@ import type { Metadata } from "next";
 import Picker from "@/app/component-picker/main";
 import RelatedPosts from "@/app/component-picker/relatedPosts/relatedPosts";
 
-// TO DO: UPDATE META DATA
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata | undefined> {
@@ -14,22 +13,28 @@ export async function generateMetadata({
   const blog = blogs?.article?.data[0];
   if (!blog) return;
 
+  const keywordString =
+    blog?.attributes?.keywords?.data[0]?.attributes?.keywordList;
+  const keywordArray = keywordString
+    ? keywordString.split(",").map((item: any) => item.trim())
+    : [];
+
   return {
-    title: `${blog?.attributes?.Title} | by: ${blog?.attributes?.author}`,
+    title: `${blog?.attributes?.title} | by: ${blog?.attributes?.author}`,
     description: blog?.attributes?.description,
     metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
-    authors: { name: "Samuel Torres" },
-    creator: "Samuel Torres",
-    publisher: "Samuel Torres",
-    // keywords: ['Next.js', 'React', 'JavaScript'],
+    authors: { name: "Izhar Shefer" },
+    creator: "Izhar Shefer",
+    publisher: "Izhar Shefer",
+    keywords: [...keywordArray],
     alternates: {
       canonical: `/blogs/${params?.slug}`,
     },
     openGraph: {
-      title: `Samuel Torres: ${blog?.attributes?.Title}`,
+      title: `Izhar Shefer: ${blog?.attributes?.title}`,
       description: blog?.attributes?.description,
       url: `${process.env.NEXT_PUBLIC_BASE_URL}blogs/${params?.slug}`,
-      siteName: "Samuel Torres Portfolio",
+      siteName: "Drexel Global Consulting Wealth Management by: Izhar Shefer",
       type: "article",
       locale: "en_US",
       images: [
@@ -43,9 +48,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Samuel Torres: ${blog?.attributes?.Title}`,
+      title: `Izhar Shefer: ${blog?.attributes?.title}`,
       description: blog?.attributes?.description,
-      creator: "Samuel Torres",
+      creator: "Izhar Shefer",
       images: [
         {
           url: blog?.attributes?.previewImage?.data?.attributes?.formats?.large

@@ -8,9 +8,30 @@ import { Nav } from "./components/navBar/nav";
 import { Footer } from "./components/footer/footer";
 
 export const metadata = {
-  title: "Drexel Global Consulting Wealth Management",
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
+  title: {
+    default: "Drexel Global Consulting Wealth Management by: Izhar Shefer",
+    template:
+      "%s | Drexel Global Consulting Wealth Management by: Izhar Shefer",
+  },
   description:
-    "A company offering Money Wealth Management, Trust and Estate Planning, Trust Accounts, International Accounts, Offshore Corporate Accounts, International Trust Accounts, Regular Accounts, Pension Accounts, & Financial Planning.",
+    "Welcome to Drexel Global Consulting, your trusted partner for comprehensive wealth management solutions. Led by Managing Director Izhar Shefer, our team brings over 30 years of experience in crafting personalized investment strategies tailored to your goals and risk tolerance.",
+  openGraph: {
+    title: "Drexel Global Consulting Wealth Management by: Izhar Shefer",
+    description:
+      "Welcome to Drexel Global Consulting, your trusted partner for comprehensive wealth management solutions. Led by Managing Director Izhar Shefer, our team brings over 30 years of experience in crafting personalized investment strategies tailored to your goals and risk tolerance.",
+    type: "website",
+    locale: "en_US",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    siteName: "Drexel Global Consulting Wealth Management by: Izhar Shefer",
+    images: [
+      {
+        url: "https://res.cloudinary.com/db09icibj/image/upload/v1718139107/drexel-finance-website/landing/dchrtnkjmrup5uvnlqk8.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
@@ -24,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <meta
           property="og:image"
           content="https://res.cloudinary.com/db09icibj/image/upload/v1708646861/drexel-finance-website/landing/gt5auctopfbx3ml9mtwx.png"
@@ -38,7 +59,7 @@ export default function RootLayout({
           personalized investment strategies tailored to your goals and risk
           tolerance."
         />
-      </head>
+      </head> */}
       <body className={inter.className}>
         <Nav />
         {children}

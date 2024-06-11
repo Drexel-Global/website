@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import { Metadata } from "next";
 
 // components:
 import BlogFilter from "../components/blogFilter/blogFilter";
@@ -27,6 +28,11 @@ async function getBlogs() {
 
   return blogs;
 }
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Search through list of blogs by category.",
+};
 
 export default async function Page() {
   const blogs = await getBlogs();
