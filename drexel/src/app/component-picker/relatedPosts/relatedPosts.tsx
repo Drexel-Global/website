@@ -63,7 +63,7 @@ const RelatedPosts = ({ articles, currentCategory }: relatedPostProps) => {
   };
 
   const recommendedArticles = generateRandomArticles(articles, currentCategory);
-  // TO DO: Related posts needs to be fixed to enable less than 3 reccommendations to be shown.
+
   return (
     <div className={styles.container}>
       <div>

@@ -35,7 +35,6 @@ export const BlogCard = ({
         <CldImage
           className={styles.blogImg}
           src={previewImage}
-          // TO DO: fix alt
           alt={alt}
           fill={true}
         />

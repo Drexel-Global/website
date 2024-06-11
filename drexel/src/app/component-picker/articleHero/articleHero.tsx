@@ -56,7 +56,6 @@ const ArticleHero = ({
   lastUpdate,
   author,
 }: ArticleHeroProps) => {
-  // TO DO: add author & search for other meta data that should be in article.
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>

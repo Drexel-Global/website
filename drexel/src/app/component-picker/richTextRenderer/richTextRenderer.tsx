@@ -42,8 +42,6 @@ export type RichTextNodeProps = {
       }>;
 };
 
-// TO DO: Replace with strapi richText package.
-
 const RichTextRenderer = ({ nodes }: RichTextNodeProps) => {
   let key: number = 0;
   return (
