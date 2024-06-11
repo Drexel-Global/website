@@ -7,6 +7,7 @@ import BallSpinner from "../components/loaders/ballSpinner";
 
 import { Socials } from "../components/socials/socials";
 import { Review } from "../components/reviewComponent/review";
+import BlogSection from "../components/blogSection/blogSection";
 
 const HeavyCtaButton = dynamic(
   () => import("../components/ctaButton/ctaButton"),
@@ -99,6 +100,9 @@ const WhyUsPage = () => {
         <HeavyCtaButton type="contact" textContent="Let's Do Business" />
         <div className={styles.reviewContainer}>
           <Review />
+        </div>
+        <div>
+          <BlogSection />
         </div>
       </div>
     </div>

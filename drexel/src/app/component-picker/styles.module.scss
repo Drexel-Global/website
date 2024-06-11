@@ -1,0 +1,19 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  // margin-top: 5rem;
+}
+
+.contactSpinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+}
+.sectionContainer {
+  margin-bottom: 5rem;
+}

@@ -1,0 +1,33 @@
+@import "../../styles/mixins.module.scss";
+@import "../../styles/variables.module.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  .textContainer {
+    width: 100%;
+  }
+  .mediaContainer {
+    width: 90%;
+    margin: 0 auto;
+    .imgContainer {
+      position: relative;
+      height: 40rem;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $smallDesktop) {
+  .container {
+    flex-direction: row;
+    margin: 0 auto;
+    .mediaContainer {
+      margin: none;
+      .imgContainer {
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+  }
+}
