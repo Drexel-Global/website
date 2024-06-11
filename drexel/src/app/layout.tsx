@@ -45,21 +45,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <head>
-        <meta
-          property="og:image"
-          content="https://res.cloudinary.com/db09icibj/image/upload/v1708646861/drexel-finance-website/landing/gt5auctopfbx3ml9mtwx.png"
-        />
-        <meta property="og:image:alt" content="hero of webpage landing" />
-        <meta
-          property="og:description"
-          content="Welcome to Drexel Global Consulting, your trusted partner for
-          comprehensive wealth management solutions. Led by Managing Director
-          Izhar Shefer, our team brings over 30 years of experience in crafting
-          personalized investment strategies tailored to your goals and risk
-          tolerance."
-        />
-      </head> */}
       <body className={inter.className}>
         <Nav />
         {children}
