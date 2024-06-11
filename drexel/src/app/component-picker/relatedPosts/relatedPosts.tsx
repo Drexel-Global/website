@@ -15,6 +15,7 @@ type articlesType = Array<{
     description: string;
     updatedAt: string;
     publishedAt: string;
+    alt: string;
     previewImage: {
       data: {
         attributes: {
@@ -92,6 +93,7 @@ const RelatedPosts = ({ articles, currentCategory }: relatedPostProps) => {
               }
               categories={articles?.attributes?.categories}
               slug={articles?.attributes?.slug}
+              alt={articles?.attributes?.alt}
             />
           );
         })}
