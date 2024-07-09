@@ -29,9 +29,15 @@ type BlogFilterProps = {
   }>;
 };
 
-// TO DO: get categories from Izzy & update blog card to show category.
-
-const categories = ["None", "Opinion", "Technical", "Advice"];
+// TO DO: Add services as categories. Add to Strapi as category as well.
+const categories = [
+  "None",
+  "Portfolio Strategy",
+  "Opinion",
+  "Trusts",
+  "Advice",
+  "International Account",
+];
 
 const BlogFilter = ({ articles }: BlogFilterProps) => {
   const [selectedCategory, setSelectedCategory] = useState("None");
