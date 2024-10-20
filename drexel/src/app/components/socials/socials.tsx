@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./socials.module.scss";
 import Link from "next/link";
@@ -31,6 +32,7 @@ export const Socials = ({
               href={platform.link}
               rel="noopener noreferrer"
               target="_blank"
+              key={platform?.id}
             >
               <CldImage
                 key={platform.id}

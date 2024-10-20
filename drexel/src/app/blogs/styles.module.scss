@@ -1,0 +1,37 @@
+@import "../styles/mixins.module.scss";
+@import "../styles/variables.module.scss";
+
+.container {
+  margin-top: 8.5rem;
+  display: flex;
+  flex-direction: column;
+
+  .headerContainer {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  h3 {
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+  }
+
+  .relatedContainer {
+    margin-bottom: 20rem;
+  }
+}
+
+.errorContainer {
+  margin-top: 8.5rem;
+  height: calc(100dvh - 22.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .textContainer {
+    text-align: center;
+    width: 70%;
+  }
+}

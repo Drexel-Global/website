@@ -15,6 +15,7 @@ import { ScrollComponent } from "./components/ScrollComponent/scrollComponent";
 import { CaricatureAsideWrapper } from "./components/caricatureAside/caricatureAsideWrapper";
 // import { CtaButton } from "./components/ctaButton/ctaButton";
 import { Review } from "./components/reviewComponent/review";
+import BlogSection from "./components/blogSection/blogSection";
 
 const HeavyCtaButton = dynamic(
   () => import("./components/ctaButton/ctaButton"),
@@ -28,26 +29,8 @@ const HeavyCtaButton = dynamic(
   }
 );
 
-// import { BlogCard } from "./components/blogCard/blogCard";
-// import { blogs } from "@/app/data/blogs";
-
 export default function Home() {
   const { scrollYProgress } = useScroll();
-
-  // FOR BLOGS:
-
-  // const ref = useRef(null);
-  // const isInView = useInView(ref);
-  // const [blogAmount, setBlogAmount] = useState<number>(6);
-
-  // useEffect(() => {
-  //   if (window && window.innerWidth > 769 && window.innerWidth <= 1201) {
-  //     setBlogAmount(4);
-  //   }
-  //   if (window && window.innerWidth <= 768) {
-  //     setBlogAmount(2);
-  //   }
-  // }, []);
 
   return (
     <div className={styles.blurred}>
@@ -138,30 +121,10 @@ export default function Home() {
           <div className={styles.reviewContainerDesktop}>
             <Review />
           </div>
+          <div>
+            <BlogSection />
+          </div>
         </div>
-        {/* <div className={styles.blogContainer}>
-        <h2 className={styles.blogsHeader}>Insights</h2>
-        <motion.div
-          ref={ref}
-          className={styles.blogWrapperContainer}
-          style={{
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            opacity: isInView ? 1 : 0,
-            position: "relative",
-            top: isInView ? 0 : "-50px",
-          }}
-        >
-          {blogs.map((blog) => {
-            if (blog.id <= blogAmount)
-              return <BlogCard key={blog.id} {...blog} />;
-          })}
-        </motion.div>
-        <div className={styles.ctaContainer}>
-          <Link href="/blogs">
-            <button className={styles.ctaBtn}>See More Blogs</button>
-          </Link>
-        </div>
-      </div> */}
       </main>
     </div>
   );

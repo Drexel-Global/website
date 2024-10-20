@@ -49,8 +49,6 @@ export const PerformanceModal = ({
     setIsModalOpen(!isModalOpen);
   };
 
-  console.log(portfolioId);
-
   return (
     <motion.div
       className={styles.container}
