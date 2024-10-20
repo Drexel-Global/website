@@ -73,9 +73,9 @@ export const Nav = () => {
           <li className={currPath === `/why-choose-us` ? styles.active : ""}>
             <Link href="why-choose-us">Why Choose Us</Link>
           </li>
-          <li className={currPath.includes("blogs") ? styles.active : ""}>
+          {/* <li className={currPath.includes("blogs") ? styles.active : ""}>
             <Link href="/blogs">Blog</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
